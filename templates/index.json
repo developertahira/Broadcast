@@ -47,7 +47,7 @@
         "image": "shopify://shop_images/broadcast-hero-gradient-removebg-preview.png",
         "overlay_color": "#756969",
         "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image_height": "large",
         "desktop_content_position": "bottom-left",
         "show_text_box": false,
         "desktop_content_alignment": "center",
