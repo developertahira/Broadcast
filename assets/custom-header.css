@@ -1,0 +1,19 @@
+.main-container {
+    background-color: antiquewhite;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+.inner-container {
+    display: flex;
+    justify-content: space-around;
+}
+.menu nav ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+
+}
+.transparent-header {
+    background-color: transparent;
+  }
