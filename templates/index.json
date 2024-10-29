@@ -9,63 +9,43 @@
  */
 {
   "sections": {
-    "image_banner_QD3gGY": {
+    "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading_PwNrqL": {
+        "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Everyday Luxury",
-            "heading_size": "h1"
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
           }
         },
-        "text_DxbyQ9": {
-          "type": "text",
-          "settings": {
-            "text": "Beautiful pieces to pass down for generations",
-            "text_style": "body"
-          }
-        },
-        "buttons_HzLCUj": {
+        "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "SHOP ALL PRODUCTS",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "SHOP SALE",
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading_PwNrqL",
-        "text_DxbyQ9",
-        "buttons_HzLCUj"
+        "heading",
+        "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/broadcast-hero-gradient-removebg-preview.png",
-        "overlay_color": "#756969",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-left",
+        "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-4",
         "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
-      }
-    },
-    "image_within_text_KBEccQ": {
-      "type": "image-within-text",
-      "settings": {
-      }
-    },
-    "marquee_news_bar_DWRDwk": {
-      "type": "marquee-news-bar",
-      "settings": {
       }
     },
     "featured_collection": {
@@ -79,11 +59,12 @@
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
+        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "swipe_on_mobile": false,
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -91,16 +72,13 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner_QD3gGY",
-    "image_within_text_KBEccQ",
-    "marquee_news_bar_DWRDwk",
+    "image_banner",
     "featured_collection"
   ]
 }
