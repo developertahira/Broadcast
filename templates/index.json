@@ -63,6 +63,11 @@
       "settings": {
       }
     },
+    "marquee_news_bar_DWRDwk": {
+      "type": "marquee-news-bar",
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -91,9 +96,57 @@
         "padding_bottom": 36
       }
     },
-    "marquee_news_bar_DWRDwk": {
-      "type": "marquee-news-bar",
+    "multicolumn_6nFkke": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dryBjB": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_F6rteB": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EkLUjz": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dryBjB",
+        "column_F6rteB",
+        "column_EkLUjz"
+      ],
       "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -101,6 +154,7 @@
     "image_banner",
     "image_within_text_KBEccQ",
     "marquee_news_bar_DWRDwk",
-    "featured_collection"
+    "featured_collection",
+    "multicolumn_6nFkke"
   ]
 }
