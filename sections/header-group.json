@@ -17,16 +17,24 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "New arrival are here! Take a Peek now",
+            "link": ""
+          }
+        },
+        "announcement_RGGghH": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Shipping over $250",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_RGGghH"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
