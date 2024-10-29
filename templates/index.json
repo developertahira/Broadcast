@@ -58,6 +58,11 @@
         "show_text_below": false
       }
     },
+    "image_within_text_KBEccQ": {
+      "type": "image-within-text",
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -86,8 +91,8 @@
         "padding_bottom": 36
       }
     },
-    "image_within_text_KBEccQ": {
-      "type": "image-within-text",
+    "marquee_news_bar_DWRDwk": {
+      "type": "marquee-news-bar",
       "settings": {
       }
     }
@@ -95,6 +100,7 @@
   "order": [
     "image_banner",
     "image_within_text_KBEccQ",
+    "marquee_news_bar_DWRDwk",
     "featured_collection"
   ]
 }
