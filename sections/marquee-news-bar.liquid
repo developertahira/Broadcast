@@ -1,0 +1,107 @@
+<!-- Sections/press-quotes.liquid -->
+<section class="press-quotes marquee">
+  <div class="marquee__content">
+ 
+    <div class="press-quote">
+      <p>"Beautifully crafted, every piece." </p>
+      <span class="press-logo">
+        <img src="{{ 'vogue.png' | asset_url }}" alt="Allure Logo" >
+      </span>
+      
+    </div>
+    <div class="press-quote">
+      <p>"Setting a new standard in chic, modern jewelry."</p>
+      <span class="press-logo">
+        <img src="{{ 'marie.png' | asset_url }}" alt="Vogue Logo">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>"Exquisite craftsmanship meets sustainability."</p>
+      <span class="press-logo">
+        <img src="{{ 'allure.png' | asset_url }}" alt="Another Logo">
+      </span>
+    </div>
+    <!-- Duplicate the content to create a seamless loop -->
+    <div class="press-quote">
+      <p>"Beautifully crafted, every piece."</p>
+      <span class="press-logo">
+        <img src="{{ 'allure-logo.png' | asset_url }}" alt="Allure Logo">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>"Setting a new standard in chic, modern jewelry."</p>
+      <span class="press-logo">
+        <img src="{{ 'vogue-logo.png' | asset_url }}" alt="Vogue Logo">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>"Exquisite craftsmanship meets sustainability."</p>
+      <span class="press-logo">
+        <img src="{{ 'another-logo.png' | asset_url }}" alt="Another Logo">
+      </span>
+    </div>
+
+  </div>
+</section>
+<style>
+    /* Styles for press-quotes marquee effect */
+.press-quotes {
+  background-color: #f7f4f0; /* Light background color */
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
+.marquee__content {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee 20s linear infinite; /* Adjust speed with duration */
+}
+
+.press-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 40px; /* Adjust spacing between quotes */
+  white-space: nowrap;
+}
+
+.press-quote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+  margin: 0;
+}
+
+.press-logo img {
+  width: 80px;
+  height: auto;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+.press-logo img:hover {
+  opacity: 1;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+</style>
+
+{% schema %}
+    {
+        "name": "Live update",
+        "settings": [
+            ],
+            "presets": [
+                {
+                    "name": "News-bar"
+                }
+            ]
+    }
+    {% endschema %}
+
+

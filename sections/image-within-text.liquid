@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="{{ 'image-within-text.css' | asset_url }}">
+<!-- Sections/text-with-images.liquid -->
+<section class="text-with-images">
+  <div class="text-with-images__container">
+    <h2 class="moder-text">
+      Shop our modern
+      <span class="text-with-images__image zoom-in-effect" >
+        <img src="{{ 'image1.png' | asset_url }}" alt="Image 1">
+      </span>
+      heirlooms, bestselling fine jewelry
+      <span class="text-with-images__image zoom-in-effect" >
+        <img src="{{ 'image2.png' | asset_url }}" alt="Image 2">
+      </span>
+      and thoughtfully
+      <span class="text-with-images__image zoom-in-effect" >
+        <img src="{{ 'image3.png' | asset_url }}" alt="Image 2">
+      </span>
+      curated collections.
+    </h2>
+  </div>
+</section>
+
+{% schema %}
+{
+    "name": "Image-within-text",
+    "settings": [
+        ],
+        "presets": [
+            {
+                "name": "image-within-text"
+            }
+        ]
+}
+{% endschema %}

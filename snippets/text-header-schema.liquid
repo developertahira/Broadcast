@@ -1,0 +1,64 @@
+
+  <div class="top-header">
+   <div class="top-header-container">
+      <nav>
+         <ul class="top-header-menu">
+            <li><a href="/pages/theme-features">Theme Features</a></li>
+            <li><a href="/blogs/news">Blog</a></li>
+            <li><a href="/pages/faq">FAQ</a></li>
+         </ul>
+      </nav>
+      <div class="top-header-icons">
+          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                <img src="{{ 'icon-tiktock.svg' | asset_url }}" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src="{{ 'icon-insta.svg' | asset_url }}" alt="Insta">
+        </a>
+         <a href="/pages/gift-card">Gift Card</a>
+         <span>CAD $</span>
+
+      </div>
+   </div>
+</div>
+
+<style>
+    .top-header {
+   padding: 10px 0;
+   border-bottom: 1px solid #747474;
+}
+
+.top-header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.top-header-menu {
+   display: flex;
+   gap: 20px;
+}
+
+.top-header-menu li {
+   list-style: none;
+}
+
+.top-header-menu a {
+   text-decoration: none;
+   color: #ffffff;
+   font-weight: 500;
+}
+
+.top-header-icons {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+} 
+.top-header-icons a, span {
+    color: white;
+    text-decoration: none;
+}
+</style>

@@ -9,6 +9,7 @@
         padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
         content: '';
         display: block;
+        
       }
     }
 
@@ -20,11 +21,17 @@
         display: block;
       }
     }
+    @media screen and (max-width: 749px) {
+    .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
+      margin-top: 150px;
+    }
+}
   {%- endstyle -%}
 {%- endif -%}
 
 {%- style -%}
   #Banner-{{ section.id }}::after {
+    background-color: {{ section.settings.overlay_color }};
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 {%- endstyle -%}
@@ -184,6 +191,13 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000",
+      "info": "Set the overlay color."
     },
     {
       "type": "range",

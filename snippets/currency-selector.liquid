@@ -1,0 +1,26 @@
+
+{% if shop.enabled_currencies.size > 1 %}
+    <div class="currency-selector">
+      <form method="get" action="/cart">
+        <select name="currency" id="currency" onchange="this.form.submit()">
+          {% for currency in shop.enabled_currencies %}
+            <option value="{{ currency }}" {% if currency == cart.currency %}selected{% endif %}>
+              {{ currency }}
+            </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+  {% endif %}
+
+  <style>
+    .currency-selector {
+  margin: 10px 0;
+}
+
+.currency-selector select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+  </style>
