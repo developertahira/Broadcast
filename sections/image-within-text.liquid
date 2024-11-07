@@ -3,19 +3,21 @@
 <section class="text-with-images">
   <div class="text-with-images__container">
     <h2 class="moder-text">
-      Shop our modern
+      {{section.settings.text_1}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ 'image1.png' | asset_url }}" alt="Image 1">
+        <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image with Zoom Effect">
       </span>
-      heirlooms, bestselling fine jewelry
+      {{section.settings.text_2}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ 'image2.png' | asset_url }}" alt="Image 2">
+        <img src="{{ section.settings.image_2 | img_url: 'master' }}" alt="Image with Zoom Effect">
+
       </span>
-      and thoughtfully
+      {{section.settings.text_3}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ 'image3.png' | asset_url }}" alt="Image 2">
+        <img src="{{ section.settings.image_3 | img_url: 'master' | default: 'vogue.png' }}" alt="Image with Zoom Effect">      
       </span>
-      curated collections.
+      {{section.settings.text_4}}
+      
     </h2>
   </div>
 </section>
@@ -24,6 +26,41 @@
 {
     "name": "Image-within-text",
     "settings": [
+      {
+        "type": "text",
+        "id": "text_1",
+        "label": "first Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "First image"
+      },
+      {
+        "type": "text",
+        "id": "text_2",
+        "label": "second Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Second image"
+      },
+      {
+        "type": "text",
+        "id": "text_3",
+        "label": "Third Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Third image"
+      },
+      {
+        "type": "text",
+        "id": "text_4",
+        "label": "fourth Text"
+      }
         ],
         "presets": [
             {

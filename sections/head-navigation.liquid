@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="{{ 'custom-header.css' | asset_url }}">
+{{ 'custom-header.css' | asset_url | stylesheet_tag }}
 
 <div class="main-container">
   <div class="inner-container">
@@ -27,27 +27,16 @@
       <img src="{{ 'icon-insta.svg' | asset_url }}" alt="insta">
     </a>
   {% endif %}
+  {% if section.settings.linked_page != blank %}
+    {% assign linked_page = pages[section.settings.linked_page] %}
+    <div class="header-page-name">
+      {{ linked_page.title }}
+    </div>
+  {% endif %}
   </div>
 
   </div>
 </div>
-
-
-  
-  {% if shop.enabled_currencies.size > 1 %}
-    <div class="currency-selector">
-      <form method="get" action="/cart">
-        <select name="currency" id="currency" onchange="this.form.submit()">
-          {% for currency in shop.enabled_currencies %}
-            <option value="{{ currency }}" {% if currency == cart.currency %}selected{% endif %}>
-              {{ currency }}
-            </option>
-          {% endfor %}
-        </select>
-      </form>
-    </div>
-  {% endif %}
-  {% render 'currency-selector' %}
 
 {% schema %}
 {
@@ -67,6 +56,11 @@
         "type": "url",
       "id": "insta_link",
       "label": "insta Link"
+    },
+    {
+    "type": "page",
+    "id": "linked_page",
+    "label": "Select a page to display in header"
     }
   ],
   "presets": [

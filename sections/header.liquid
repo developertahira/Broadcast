@@ -141,7 +141,9 @@
       assign localization_forms = true
     endif
   -%}
-
+{% comment  %} 
+      
+{% endcomment %}
 {% render 'text-header-schema' %} 
 
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
@@ -497,11 +499,6 @@
       "info": "t:sections.header.settings.logo_help.content"
     },
     {
-        "type": "url",
-      "id": "tiktock_link",
-      "label": "tiktock Link"
-    },
-    {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
@@ -615,7 +612,7 @@
     {
       "type": "select",
       "id": "mobile_logo_position",
-      "options": [
+      "options": [ 
         {
           "value": "center",
           "label": "t:sections.header.settings.mobile_logo_position.options__1.label"
@@ -627,6 +624,10 @@
       ],
       "default": "center",
       "label": "t:sections.header.settings.mobile_logo_position.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.mobile_layout.content"
     },
     {
       "type": "header",
@@ -676,8 +677,34 @@
       "type": "text",
       "id": "color-transparent",
       "label": "Transparent Color"
-    }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separat",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
 
+      "type": "header",
+      "content": "Top-Header"
+
+    },
+    {
+        "type": "url",
+      "id": "link_tiktock",
+      "label": "tiktock Link"
+    },
+    {
+        "type": "url",
+      "id": "link-insta",
+      "label": "insta Link"
+    },
+    {
+    "type": "page",
+    "id": "page_linked",
+    "label": "Select a page to display in header"
+    }
   ],
   "blocks": [
     {

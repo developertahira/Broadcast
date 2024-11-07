@@ -1,0 +1,184 @@
+{{ 'product-slider.css' | asset_url | stylesheet_tag }}
+    
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <div class="collection-slider">
+      <!-- Buttons to select collection -->
+      <button id="ringsButton" onclick="showCollection('rings')">Rings</button>
+      <button id="earringsButton" onclick="showCollection('earrings')">Earrings</button>
+    
+      <!-- Rings Collection Slider -->
+      <div id="ringsCollection" class="collection-slider-content" style="display: none;">
+       
+        {% assign rings_collection = collections[section.settings.rings_collection] %}
+        {% if rings_collection and rings_collection.products.size > 0 %}
+          <div class="slider">
+            {% comment %}
+              <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.Ring_heading }}</h2>
+                <a href="{{ section.settings.ring_link }}" class="button">View All Products</a>
+              </div>
+            </div>
+            {% endcomment %}
+              
+        
+            
+            {% for product in rings_collection.products %}    
+              <div class="slide">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add" %}
+              <span class="quick-add-label">Quick Add</span>
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No products in Rings collection.</p>
+        {% endif %}
+      </div>
+    
+      <!-- Earrings Collection Slider -->
+      <div id="earringsCollection" class="collection-slider-content" style="display: none;">
+       
+        {% assign earrings_collection = collections[section.settings.earrings_collection] %}
+        {% if earrings_collection and earrings_collection.products.size > 0 %}
+          <div class="slider">
+      {% comment %}
+         <div class="Earings-card" style="background-image: url({{ section.settings.Earings_image | img_url: 'master' }});">
+              <div class="Earings-card-content">
+                <h2>{{ section.settings.earrings_heading }}</h2>
+                <a href="{{ section.settings.Earings_link }}" class="button">View All Products</a>
+              </div>
+            </div>
+      {% endcomment %}
+               
+            {% for product in earrings_collection.products %}
+              <div class="slide">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add" %}
+              <span class="quick-add-label">Quick Add</span>
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No products in Earrings collection.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <script>
+    function showCollection(collection) {
+      // Hide both collections
+      document.getElementById("ringsCollection").style.display = "none";
+      document.getElementById("earringsCollection").style.display = "none";
+    
+      // Show the selected collection
+      if (collection === 'rings') {
+        document.getElementById("ringsCollection").style.display = "block";
+      } else if (collection === 'earrings') {
+        document.getElementById("earringsCollection").style.display = "block";
+      }
+    }
+
+    </script>
+ <script>
+  /*
+$(document).ready(function(){
+    setTimeout(function(){
+        $('.slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    }, 500); // Delay initialization by 500ms
+}); */
+
+$(document).ready(function(){
+    $('.slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    }).slick('setPosition');
+});
+
+
+ </script>
+
+    {% schema %}
+        {
+          "name": "Collection Slider",
+          "settings": [
+            {
+            "type": "text",
+            "id": "Ring_heading",
+            "label": " Ring heading"
+          },
+            {
+              "type": "image_picker",
+              "id": "Ring_image",
+              "label": "Ring Image"
+            },
+            {
+              "type": "url",
+              "id": "ring_link",
+              "label": "Button Url"
+            },
+            {
+              "type": "collection",
+              "id": "rings_collection",
+              "label": "Rings Collection"
+            },
+            {
+              "type": "collection",
+              "id": "earrings_collection",
+              "label": "Earrings Collection"
+            },
+            {
+            "type": "text",
+            "id": "earrings_heading",
+            "label": " Earings heading"
+          },
+            {
+              "type": "image_picker",
+              "id": "Earings_image",
+              "label": "Earings Image"
+            },
+            {
+              "type": "url",
+              "id": "Earings_link",
+              "label": "Button Url"
+            }
+            
+          ],
+          "presets": [
+            {
+                "name": "collection slider"
+            }
+          ]
+        }
+        {% endschema %}

@@ -1,0 +1,55 @@
+<div class="content-contain">
+    <p>our Promise</p>
+    <h1>Ethical is Beautiful</h1>
+    <p>We ensure our products contribute to the well-being of people and planet, towards a brighter future.</p>
+</div>
+<div class="cards-cont">
+    <div class="Ring">
+        <img src="{{ section.settings.ring_img| img_url: 'master' }}" alt="Ring" />
+    </div>
+    <div class="Timeless">
+        <img src="{{ section.settings.timeless_img| img_url: 'master' }}" alt="TImeless" />
+    </div>
+</div>
+
+<style>
+    .cards-cont {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 80px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    .Ring {
+        background-image: url({{section.settings.ring_img}});
+    }
+    .Timeless {
+
+    }
+</style>
+
+
+{% schema %}
+{
+    "name": "Ethical Products",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "ring_img",
+            "label": "select ring image"
+        },
+        {
+            "type": "image_picker",
+            "id": "timeless_img",
+            "label": "select Timeless image"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Ethical Products"
+            }
+        ]
+}
+{% endschema %}

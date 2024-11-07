@@ -1,0 +1,96 @@
+{{ 'custom-overlay-card.css' | asset_url | stylesheet_tag }}
+    <div class="content">
+        <p>{{section.settings.caption}}</p>
+        <h1>{{section.settings.heading}}</h1>
+        <p>{{section.settings.Discription}}</p>
+    </div>
+    <div class="featured-cards">
+      <div class="featured-card" style="background-image: url({{ section.settings.image1 | img_url: 'master' }});">
+        <div class="card-content">
+          <h2>{{ section.settings.title1 }}</h2>
+          <p>{{ section.settings.description1 }}</p>
+          <a href="{{ section.settings.link1 }}" class="button">Shop Now</a>
+        </div>
+      </div>
+    
+      <div class="featured-card" style="background-image: url({{ section.settings.image2 | img_url: 'master' }});">
+        <div class="card-content">
+          <h2>{{ section.settings.title2 }}</h2>
+          <p>{{ section.settings.description2 }}</p>
+          <a href="{{ section.settings.link2 }}" class="button">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    {% schema %}
+        {
+          "name": "Custom Featured Cards",
+          "settings": [
+          {
+            "type": "text",
+            "id": "caption",
+            "label": "enter caption"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "Discription",
+            "label": "Add Discription"
+          },
+            {
+              "type": "image_picker",
+              "id": "image1",
+              "label": "Left Image"
+            },
+            {
+              "type": "text",
+              "id": "title1",
+              "label": "Left Title",
+              "default": "Duo Form Ring"
+            },
+            {
+              "type": "text",
+              "id": "description1",
+              "label": "Left Description",
+              "default": "Explore rings for your big moment, and all the little memories after."
+            },
+            {
+              "type": "url",
+              "id": "link1",
+              "label": "Left Link"
+            },
+            {
+              "type": "image_picker",
+              "id": "image2",
+              "label": "Right Image"
+            },
+            {
+              "type": "text",
+              "id": "title2",
+              "label": "Right Title",
+              "default": "Contemporary and Timeless"
+            },
+            {
+              "type": "text",
+              "id": "description2",
+              "label": "Right Description",
+              "default": "Accessorize with 14k recycled gold all day, everyday."
+            },
+            {
+              "type": "url",
+              "id": "link2",
+              "label": "Right Link"
+            }
+          ],
+          "presets": [
+            {
+              "name": "Custom Featured Cards",
+              "category": "Custom Sections"
+            }
+          ]
+        }
+        {% endschema %}

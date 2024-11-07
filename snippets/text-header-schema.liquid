@@ -2,7 +2,7 @@
 
 
   <div class="top-header">
-   fjdkslajfdls
+
    <div class="top-header-container {% if template == 'index' %}transparent-header{% endif %}" >
     
    <nav>
@@ -11,19 +11,29 @@
             <li><a href="/pages/theme-features">Theme Features</a></li>
             <li><a href="/blogs/news">Blog</a></li>
             <li><a href="/pages/faq">FAQ</a></li>
-            ghjgjhgjh
+   
          </ul>
       </nav>
-      <div class="top-header-icons">
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ 'icon-tiktock.svg' | asset_url }}" alt="TikTok">
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <img src="{{ 'icon-insta.svg' | asset_url }}" alt="Insta">
-        </a>
-         <a href="/pages/gift-card">Gift Card</a>
-         <span>CAD $</span>
 
-      </div>
+      <div class="top-header-icons">
+         {% if section.settings.link_tiktock %}
+           <a href="{{ section.settings.link_tiktock }}" target="_blank" rel="noopener noreferrer">
+             <img src="{{ 'icon-tiktock.svg' | asset_url }}" alt="tiktock">
+           </a>
+         {% endif %}
+         {% if section.settings.link-insta %}
+           <a href="{{ section.settings.link-insta}}" target="_blank" rel="noopener noreferrer">
+             <img src="{{ 'icon-insta.svg' | asset_url }}" alt="insta">
+           </a>
+         {% endif %}
+         {% if section.settings.page_linked != blank %}
+           {% assign page_linked = pages[section.settings.page_linked] %}
+           <div class="header-page-name">
+             {{ page_linked.title }}
+           </div>
+         {% endif %}
+         <span>CAD $</span>
+         </div>
+
    </div>
 </div>

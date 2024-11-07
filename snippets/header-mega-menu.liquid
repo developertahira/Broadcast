@@ -35,6 +35,10 @@
                   role="list"
                 >
                   {%- for childlink in link.links -%}
+                    
+                    {% if link.title == "shop " %}
+                      this text for shop tab
+                    {% endif %}
                     <li>
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
