@@ -198,6 +198,17 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "product_slider_crNKY3": {
+      "type": "product-slider",
+      "settings": {
+        "Ring_heading": "",
+        "ring_link": "",
+        "rings_collection": "rings",
+        "earrings_collection": "earings",
+        "earrings_heading": "",
+        "Earings_link": ""
+      }
     }
   },
   "order": [
@@ -205,6 +216,7 @@
     "image_within_text_m4qDfH",
     "multicolumn_yt8YYz",
     "marquee_news_bar_gLLPay",
-    "traditions_image_with_text_xAnd7A"
+    "traditions_image_with_text_xAnd7A",
+    "product_slider_crNKY3"
   ]
 }
