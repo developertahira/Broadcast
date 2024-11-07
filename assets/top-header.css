@@ -38,9 +38,12 @@
      color: white;
      text-decoration: none;
  }
+ .header-page-name {
+   color: white;
+ }
  /* Media Query */
- @media (min-width: 530px) {
+ @media (max-width: 631px) {
     .top-header-container {
-       flex-direction: column;
+       display: none;
    }
 }

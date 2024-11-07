@@ -1,0 +1,45 @@
+      /* Styles for press-quotes marquee effect */
+      .press-quotes {
+        background-color: #f7f4f0; /* Light background color */
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 20px 0;
+      }
+      
+      .marquee__content {
+        display: inline-flex;
+        align-items: center;
+        animation: marquee 33s linear infinite; /* Adjust speed with duration */
+      }
+      
+      .press-quote {
+        display: inline-flex;
+       /* flex-direction: column; */
+        align-items: center;
+        margin: 0 33px; /* Adjust spacing between quotes */
+        white-space: nowrap;
+      }
+      
+      .press-quote p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #333;
+        margin: 0;
+      }
+      
+      .press-logo img {
+        width: 80px;
+        height: auto;
+        margin-top: 5px;
+        opacity: 0.8;
+      }
+      
+      .press-logo img:hover {
+        opacity: 1;
+      }
+      
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
