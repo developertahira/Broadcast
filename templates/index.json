@@ -313,6 +313,63 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_MBk9zV": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_PLXRr9": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dm8wEV": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wJ379X": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_PLXRr9",
+        "column_dm8wEV",
+        "column_wJ379X"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "background_color": "#f5f2ec",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -325,6 +382,7 @@
     "ethical_products_rDbRY6",
     "shop_look_athzmA",
     "essentials_collection_wQip9t",
-    "multicolumn_gLmUED"
+    "multicolumn_gLmUED",
+    "multicolumn_MBk9zV"
   ]
 }
