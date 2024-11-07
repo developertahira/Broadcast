@@ -228,6 +228,19 @@
         ],
         "caption": "Shop the look"
       }
+    },
+    "essentials_collection_wQip9t": {
+      "type": "Essentials-collection",
+      "settings": {
+        "eimage": "shopify://shop_images/hanging-crystal-earrings-white-earrings-alohas-953415_3000x_photos_v2_x2_3850646c-6a78-4052-bb63-4547e598a95f-removebg-preview.png",
+        "featured_products": [
+          "adelaide-hoops-in-gold",
+          "best-seller",
+          "emeile-grande-ring-in-sterling-silver",
+          "gia-hoops-in-gold"
+        ],
+        "caption": ""
+      }
     }
   },
   "order": [
@@ -238,6 +251,7 @@
     "traditions_image_with_text_xAnd7A",
     "product_slider_crNKY3",
     "ethical_products_rDbRY6",
-    "shop_look_athzmA"
+    "shop_look_athzmA",
+    "essentials_collection_wQip9t"
   ]
 }
