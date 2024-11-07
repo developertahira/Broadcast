@@ -46,7 +46,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "middle-center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
@@ -60,7 +60,7 @@
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20,
-        "enable_transparent-header": false,
+        "enable_transparent-header": true,
         "color-transparent": "",
         "show_line_separat": true,
         "link_tiktock": "",
