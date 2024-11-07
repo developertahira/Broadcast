@@ -19,6 +19,13 @@
             "heading_size": "h0"
           }
         },
+        "text_UJipTL": {
+          "type": "text",
+          "settings": {
+            "text": "Beautiful pieces to pass down for generations",
+            "text_style": "body"
+          }
+        },
         "button": {
           "type": "buttons",
           "settings": {
@@ -33,6 +40,7 @@
       },
       "block_order": [
         "heading",
+        "text_UJipTL",
         "button"
       ],
       "settings": {
