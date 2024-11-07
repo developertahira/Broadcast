@@ -63,9 +63,9 @@
         "enable_transparent-header": true,
         "color-transparent": "",
         "show_line_separat": true,
-        "link_tiktock": "",
-        "link-insta": "",
-        "page_linked": ""
+        "link_tiktock": "https://tiktock.com",
+        "link-insta": "https://instagram.com",
+        "page_linked": "gift-card"
       }
     }
   },
