@@ -209,6 +209,13 @@
         "earrings_heading": "",
         "Earings_link": ""
       }
+    },
+    "ethical_products_rDbRY6": {
+      "type": "Ethical-products",
+      "settings": {
+        "ring_img": "shopify://shop_images/E-COM-5-740-removebg-preview.png",
+        "timeless_img": "shopify://shop_images/cocoa-pearl-gold-earrings-alohas-562722-removebg-preview.png"
+      }
     }
   },
   "order": [
@@ -217,6 +224,7 @@
     "multicolumn_yt8YYz",
     "marquee_news_bar_gLLPay",
     "traditions_image_with_text_xAnd7A",
-    "product_slider_crNKY3"
+    "product_slider_crNKY3",
+    "ethical_products_rDbRY6"
   ]
 }
