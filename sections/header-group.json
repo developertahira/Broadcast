@@ -17,40 +17,38 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "New arrivals are here! Take a Peek Now",
-            "link": ""
-          }
-        },
-        "announcement_irUXCn": {
-          "type": "announcement",
-          "settings": {
-            "text": "Free Shipping over $250",
+            "text": "Welcome to our store",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement_irUXCn"
+        "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-4",
-        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
         "change_slides_speed": 5,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    }, 
+    "top-header": {
+      "type": "head-navigation",
+      "settings": {
+
+      }
     },
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
-        "menu": "broadcast",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "none",
-        "show_line_separator": false,
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
@@ -59,18 +57,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20,
-        "enable_transparent-header": true,
-        "color-transparent": "",
-        "show_line_separat": true,
-        "link_tiktock": "https://tiktock.com",
-        "link-insta": "https://instagram.com",
-        "page_linked": "gift-card"
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "announcement-bar",
+    "top-header",
     "header"
   ]
 }
