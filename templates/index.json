@@ -298,7 +298,7 @@
       ],
       "settings": {
         "title": "@broadcastjewelry",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "background_color": "#ffffff",
         "image_width": "full",
         "image_ratio": "portrait",
