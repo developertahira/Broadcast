@@ -215,6 +215,15 @@
         "earrings_heading": "",
         "Earings_link": ""
       }
+    },
+    "essentials_collection_bQh8Tb": {
+      "type": "Essentials-collection",
+      "settings": {
+        "eimage": "shopify://shop_images/hanging-crystal-earrings-white-earrings-alohas-953415_3000x_photos_v2_x2_3850646c-6a78-4052-bb63-4547e598a95f-removebg-preview.png",
+        "featured_products": [],
+        "Es_heading": "The Essentials Collection",
+        "Discription": "Recycled gold, AAA-grade gemstones, and ethically sourced diamonds"
+      }
     }
   },
   "order": [
@@ -223,6 +232,7 @@
     "multicolumn_Dw4n9m",
     "marquee_news_bar_mRithk",
     "traditions_image_with_text_eNfAwm",
-    "product_slider_enBWWK"
+    "product_slider_enBWWK",
+    "essentials_collection_bQh8Tb"
   ]
 }
