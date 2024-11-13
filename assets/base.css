@@ -75,9 +75,13 @@
 }
 
 /* base */
-
-
-
+/*
+.page-width {
+  max-width: var(--page-width);
+  margin: 0 0;
+  padding: 0 1.5rem; 
+}
+*/
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
 }
