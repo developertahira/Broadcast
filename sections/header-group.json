@@ -54,6 +54,24 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_pcpbbF": {
+          "type": "menu",
+          "settings": {
+            "menu1": "rings",
+            "menu1_title": "Rings",
+            "menu2": "necklaces",
+            "menu2_title": "Necklaces",
+            "menu3": "earrings",
+            "menu3_title": "Earrings",
+            "overlay_image": "shopify://shop_images/E-COM-5-724_0873e9b1-7246-4e8f-86a6-0739e01c201f-removebg-preview.png",
+            "overlay_text": "Shop the Lookbook"
+          }
+        }
+      },
+      "block_order": [
+        "menu_pcpbbF"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "menu": "broadcast",
