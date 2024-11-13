@@ -17,9 +17,11 @@
       
       .text-with-images__image img {
         width: 100%;
-        height: 100%;
+        height: 70%;
         object-fit: cover;
         border-radius: 5px; /* Optional: for rounded corners */
+        position: relative;
+        top: 16%;
       }
       /* Zoom-in effect for images */
       .zoom-in-effect {
@@ -37,6 +39,6 @@
         transform: scale(1.1); /* Adjust scale factor for more or less zoom-in */
       }
       h2.moder-text {
-          font-size: calc(var(--font-heading-scale)* 5rem);
+          font-size: 6rem;
+          padding: 20px;
       }
-    

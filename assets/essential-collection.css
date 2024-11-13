@@ -1,0 +1,141 @@
+.Essential-collection {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: stretch; /* Ensures both columns have equal height */
+    margin: 50px 0px 50px 0px;
+  }
+  
+  .collect-contain, .main-img-contain {
+    width: 50%;
+    height: 100%; /* Ensures both columns occupy full container height */
+    box-sizing: border-box;
+  }
+  
+  .main-img-contain {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .main-img-contain img {
+    width: 100%;
+    height: 100%; /* Make the image occupy full height of container */
+    object-fit: cover; /* Crops the image to cover the area without stretching */
+  }
+  
+  .essen-overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .essen-overlay-text h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  
+  .featured-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between items */
+    height: 100%; /* Full container height */
+  }
+  
+  .product-item {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Full height to match container */
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: auto; /* Let the image height adjust naturally */
+    max-height: 150px; /* Limit max height to keep images uniform */
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .product-item h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    line-height: 1.2;
+  }
+  
+  .product-item p {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Responsive adjustments for tablets and small desktops */
+  @media (max-width: 1024px) {
+    .Essential-collection {
+      flex-direction: column;
+      height: auto; /* Allow height to adjust naturally */
+    }
+    
+    .collect-contain, .main-img-contain {
+      width: 100%; /* Full width on smaller screens */
+      height: auto; /* Allow height to adjust naturally */
+    }
+    
+    .featured-products {
+      grid-template-columns: 1fr 1fr; /* Two columns */
+      gap: 15px;
+    }
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .collect-contain {
+      padding: 5px;
+    }
+  
+    .featured-products {
+      grid-template-columns: 1fr; /* Single-column layout */
+      gap: 15px;
+    }
+  
+    .product-item {
+      max-height: 300px;
+    }
+  
+    .essen-overlay-text h1 {
+      font-size: 1.5rem; /* Smaller font size for heading */
+    }
+  
+    .essen-overlay-text p {
+      font-size: 0.9rem; /* Adjust description font size */
+    }
+  }
+  
+  /* Responsive adjustments for mobile devices */
+  @media (max-width: 480px) {
+    .product-item h3 {
+      font-size: 14px;
+    }
+  
+    .product-item p {
+      font-size: 12px;
+    }
+  
+    .essen-overlay-text h1 {
+      font-size: 1.2rem;
+    }
+  
+    .essen-overlay-text p {
+      font-size: 0.8rem;
+    }
+  }

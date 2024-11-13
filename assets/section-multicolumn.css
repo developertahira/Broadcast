@@ -1,9 +1,8 @@
-.multicolumn.color-scheme-1.gradient.background-none.no-heading {
-  background-color: #f5f2ec;
-}
+
 
 .multicolumn .title {
   margin: 0;
+  margin-left: 14px;
 }
 
 .multicolumn.no-heading .title {
@@ -228,6 +227,10 @@
 .multicolumn-card__info .icon-wrap {
   margin-left: 0.8rem;
   white-space: nowrap;
+}
+.column_caption {
+   margin-bottom: 1px;
+   margin-left: 14px;
 }
 
 @media screen and (min-width: 990px) {

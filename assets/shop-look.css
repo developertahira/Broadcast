@@ -1,0 +1,41 @@
+
+.shop-main-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .img-container {
+    flex: 1; /* 50% of the width */
+  }
+  
+  .img-container img {
+    width: 100%; /* Make the image take full width of the container */
+    height: auto;
+  }
+  
+  .collection-container {
+    flex: 1; /* 50% of the width */
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between product items */
+  }
+  
+  .shop-product-item {
+    width: 100%; /* Full width inside the flex container */
+    text-align: center;
+  }
+  
+  .shop-product-item img {
+    width: 100%;
+    height: auto;
+  }
+  .shop-featured-products {
+    margin: 50px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }

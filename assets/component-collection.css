@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
   .product-item {
     flex: 1 1 calc(33.333% - 20px); /* 3 items per row, minus gap */
  /*  max-width: calc(33.333% - 20px); */
@@ -39,11 +38,16 @@
   }
   
   a.p_title {
-    background-color: whitesmoke;
+    background-color: white;
     text-align: center;
     padding: 12 0px 14px 0px;
     display: block;
     margin: -9px auto;
     text-decoration: none;
     color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
   }
+.p_title:hover {
+  text-decoration: underline;
+}
