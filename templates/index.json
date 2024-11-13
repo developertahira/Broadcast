@@ -309,7 +309,7 @@
         "column_UfEwC6": {
           "type": "column",
           "settings": {
-            "custom_svg": "",
+            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-flare\" viewbox=\"0 0 24 24\" width=\"48\" set here>\n    height=\"48\" <!-- Set height here -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set stroke color -->\n>\n    <path d=\"M11.456 2.665a.6.6 0 0 1 1.088 0l2.864 6.137a.6.6 0 0 0 .29.29l6.137 2.864a.6.6 0 0 1 0 1.088l-6.137 2.864a.6.6 0 0 0-.29.29l-2.864 6.137a.6.6 0 0 1-1.088 0l-2.864-6.137a.6.6 0 0 0-.29-.29l-6.137-2.864a.6.6 0 0 1 0-1.088l6.137-2.864a.6.6 0 0 0 .29-.29l2.864-6.137z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
             "title": "Ethical Sourcing",
             "text": "<p>Fully traceable supply chain</p>",
             "link_label": "",
