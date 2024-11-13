@@ -26,13 +26,19 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
         "change_slides_speed": 5,
         "enable_country_selector": false,
         "enable_language_selector": false
+      }
+    }, 
+    "top-header": {
+      "type": "head-navigation",
+      "settings": {
+
       }
     },
     "header": {
@@ -51,18 +57,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20,
-        "enable_transparent-header": false,
-        "color-transparent": "",
-        "show_line_separat": true,
-        "link_tiktock": "",
-        "link-insta": "",
-        "page_linked": ""
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "announcement-bar",
+    "top-header",
     "header"
   ]
 }
