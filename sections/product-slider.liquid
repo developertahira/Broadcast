@@ -9,8 +9,11 @@
 
     <div class="collection-slider">
       <!-- Buttons to select collection -->
-      <button id="ringsButton" onclick="showCollection('rings')">Rings</button>
-      <button id="earringsButton" onclick="showCollection('earrings')">Earrings</button>
+      <h1>{{section.settings.ex_heading}}</h1>
+      <p>{{section.settings.descrip}}</p>
+      
+      <button id="ringsButton" class="rebutton" onclick="showCollection('rings')">Rings</button>
+      <button id="earringsButton" class="rebutton" onclick="showCollection('earrings')">Earrings</button>
     
       <!-- Rings Collection Slider -->
       <div id="ringsCollection" class="collection-slider-content" style="display: none;">
@@ -133,6 +136,16 @@ $(document).ready(function(){
         {
           "name": "Collection Slider",
           "settings": [
+            {
+              "type": "text",
+              "id": "ex_heading",
+              "label": "Heading"
+            },
+            {
+              "type": "text",
+              "id": "descrip",
+              "label": "Description"
+            },
             {
             "type": "text",
             "id": "Ring_heading",

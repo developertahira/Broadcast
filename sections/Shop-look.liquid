@@ -1,21 +1,29 @@
-<div class="shop-main-container">
-    
+{{ 'shop-look.css' | asset_url | stylesheet_tag }}
+
+<div class="shop-main-container"> 
     <div class="img-container">
         {% if section.settings.eimage %}
             <img src="{{ section.settings.eimage | image_url: width: 800 }}" alt="Section Image">
           {% endif %}
     </div>
     <div class="collection-container">
-        <p>{{section.settings.caption}}</p>
+        <p style="text-align: center;">{{section.settings.caption}}</p>
         {% if section.settings.featured_products %}
-            <div class="featured-products">
+            <div class="shop-featured-products">
               {% for product in section.settings.featured_products %}
-                <div class="product-item">
+                <div class="shop-product-item">
                   <a href="{{ product.url }}">
-                    <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
+                    <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}"></a>
+                    <div class="card-label">
+                      {% if  product.tags contains "Quick Add" %}
+                  <span class="quick-add-label">Quick Add</span>
+                {% elsif product.tags contains "Pre-order" %}
+                  <span class="pre-order-label">Pre-order</span>
+                {% endif %}
+                  </div>
                     <h3>{{ product.title }}</h3>
                     <p>{{ product.price | money }}</p>
-                  </a>
+                  
                 </div>
               {% endfor %}
             </div>
@@ -25,44 +33,6 @@
           
     </div>
 </div>
-<style>
-
-
-    .shop-main-container {
-  display: flex;
-  gap: 20px;
-}
-
-.img-container {
-  flex: 1; /* 50% of the width */
-}
-
-.img-container img {
-  width: 100%; /* Make the image take full width of the container */
-  height: auto;
-}
-
-.collection-container {
-  flex: 1; /* 50% of the width */
-}
-
-.products-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px; /* Space between product items */
-}
-
-.product-item {
-  width: 100%; /* Full width inside the flex container */
-  text-align: center;
-}
-
-.product-item img {
-  width: 100%;
-  height: auto;
-}
-
-</style>
 {% schema %}
 {
     "name": "Shop Look",
