@@ -229,6 +229,64 @@
         "Es_heading": "The Essentials Collection",
         "Discription": "Recycled gold, AAA-grade gemstones, and ethically sourced diamonds"
       }
+    },
+    "multicolumn_LWJWx7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_zU9rEY": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xj9yxy": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_d9bR9w": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_zU9rEY",
+        "column_xj9yxy",
+        "column_d9bR9w"
+      ],
+      "settings": {
+        "caption": "",
+        "title": "",
+        "heading_size": "h1",
+        "background_color": "#ffffff",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -238,6 +296,7 @@
     "marquee_news_bar_mRithk",
     "traditions_image_with_text_eNfAwm",
     "product_slider_enBWWK",
-    "essentials_collection_bQh8Tb"
+    "essentials_collection_bQh8Tb",
+    "multicolumn_LWJWx7"
   ]
 }
