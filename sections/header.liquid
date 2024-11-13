@@ -709,7 +709,108 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "menu",
+    "name": "Menu with image",
+    "settings": [
+    {
+      "type": "link_list",
+      "id": "menu1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "text",
+      "id": "menu1_title",
+      "label": "Menu 1 Title",
+      "default": "Rings"
+    },
+    {
+      "type": "link_list",
+      "id": "menu2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "text",
+      "id": "menu2_title",
+      "label": "Menu 2 Title",
+      "default": "Necklaces"
+    },
+    {
+      "type": "link_list",
+      "id": "menu3",
+      "label": "Menu 3"
+    },
+    {
+      "type": "text",
+      "id": "menu3_title",
+      "label": "Menu 3 Title",
+      "default": "Earrings"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay Image"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "Overlay Text",
+      "default": "Shop the Lookbook"
     }
+  ],
+},
+{
+  "type": "feautred_menu",
+  "name": "image-overlay-text",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "text1",
+        "label": "Overlay Text 1",
+        "default": "Shop the Lookbook"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "text2",
+        "label": "Overlay Text 2",
+        "default": "Shop Rings"
+      },
+      {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "text3",
+        "label": "Overlay Text 3",
+        "default": "Shop Necklaces"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image 4"
+      },
+      {
+        "type": "text",
+        "id": "text4",
+        "label": "Overlay Text 4",
+        "default": "Shop Earrings"
+      }
   ]
+}
+  ],
+
 }
 {% endschema %}

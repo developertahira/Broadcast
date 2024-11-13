@@ -4,7 +4,7 @@
   Usage:
   {% render 'header-mega-menu' %}
 {% endcomment %}
-
+{{ 'mega-menu.css' | asset_url | stylesheet_tag }}
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
@@ -37,7 +37,94 @@
                   {%- for childlink in link.links -%}
                     
                     {% if link.title == "shop " %}
-                      this text for shop tab
+                      <!-- custom-menus-image.liquid -->
+                      <div class="custom-menus-image-section">
+                        <div class="menus-container">
+                          {% for block in section.blocks %}
+                            {% if block.type == "menu" %}
+                              <div class="menu">
+                                <h3>{{ block.settings.menu1_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu1].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu2_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu2].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu3_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu3].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+
+                        <div class="image-container">
+                          {% for block in section.blocks %}
+                            {% if block.type == "menu" %}
+                              <div class="image-overlay">
+                                <img src="{{ block.settings.overlay_image | img_url: 'master' }}" alt="Overlay Image">
+                                <div class="overlay-text">{{ block.settings.overlay_text }}</div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+
+                    {% if link.title == "Featured " %}
+                      <div class="custom-menus-image-section">
+                        <div class="menus-container">
+
+                          {% for block in section.blocks %}
+                            {% if block.type == "feautred_menu" %}
+                          <!-- Image 1 -->
+
+                            <div class="image-overlay">
+                              <img src="{{ block.settings.image1 | img_url: 'master' }}" alt="Image 1">
+                              <div class="featured-overlay-text">{{ block.settings.text1 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 2 -->
+
+                            <div class="image-overlay">
+                              <img src="{{ block.settings.image2 | img_url: 'master' }}" alt="Image 2">
+                              <div class="featured-overlay-text">{{ block.settings.text2 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 3 -->
+
+                            <div class="image-overlay">
+                              <img src="{{ block.settings.image3 | img_url: 'master' }}" alt="Image 3">
+                              <div class="featured-overlay-text">{{ block.settings.text3 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 4 -->
+
+                            <div class="image-overlay">
+                              <img src="{{ block.settings.image4 | img_url: 'master' }}" alt="Image 4">
+                              <div class="featured-overlay-text">{{ block.settings.text4 }}</div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+
+                        </div>
+                      </div>
+                      
                     {% endif %}
                     <li>
                       <a
@@ -96,3 +183,97 @@
     {%- endfor -%}
   </ul>
 </nav>
+<style>
+  .custom-menus-image-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.menus-container {
+  display: flex;
+  gap: 75px;
+}
+.menu h3 {
+  font-weight: bold;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu li {
+  margin-bottom: 5px;
+}
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.mega-menu__list--condensed .mega-menu__link {
+  display: none;
+}
+
+.header__menu-item span:hover {
+  color: blue;
+  
+}
+/* Featured Mega Menu */
+.custom-menus-image-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  position: relative;
+  width: 25%; /* Adjust as needed */
+}
+
+.image-overlay img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.featured-overlay-text {
+  position: relative;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  opacity: 1;
+  
+}
+
+/* Optional: Transition effect */
+.image-overlay img {
+  transform: scale(1.1); /* Zoomed-in state */
+  transition: transform 0.5s ease; /* Smooth zoom-out transition */
+}
+
+.custom-menus-image-section.open .image-overlay img {
+  transform: scale(1); /* Normal size */
+}
+
+</style> 
