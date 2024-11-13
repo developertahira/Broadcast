@@ -76,11 +76,12 @@
         "column_tE7q7Q": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/two2-removebg-preview.png",
+            "custom_svg": "",
+            "title": "Modern Statement",
+            "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.</p>",
+            "link_label": "Shop Earrings",
+            "link": "#"
           }
         },
         "column_LRUABC": {
@@ -111,7 +112,7 @@
       ],
       "settings": {
         "caption": "",
-        "title": "Multicolumn",
+        "title": "",
         "heading_size": "h1",
         "background_color": "#ffffff",
         "image_width": "full",
