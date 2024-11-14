@@ -1,16 +1,23 @@
 {{ 'essential-collection.css' | asset_url | stylesheet_tag }}
 
 <div class="Essential-collection">
-  <div class="collect-contain">
+  <div class="E-collect-contain">
     {% if section.settings.featured_products %}
-      <div class="featured-products">
+      <div class="Esse-featured-products">
         {% for product in section.settings.featured_products %}
-          <div class="product-item">
-            <a href="{{ product.url }}">
+          <div class="Esse-product-item">
+            
               <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
+              <div class="card-label">
+                {% if  product.tags contains "Quick Add" %}
+            <span class="quick-add-label">Quick Add</span>
+          {% elsif product.tags contains "Pre-order" %}
+            <span class="pre-order-label">Pre-order</span>
+          {% endif %}
+            </div>
               <h3>{{ product.title }}</h3>
               <p>{{ product.price | money }}</p>
-            </a>
+            
           </div>
         {% endfor %}
       </div>

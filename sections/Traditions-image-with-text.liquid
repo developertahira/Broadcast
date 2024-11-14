@@ -77,7 +77,7 @@
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                    {{ block.shopify_attributes }}
+                    {{ block.shopify_attributes }} style="text-align: center;" 
                   >
                     {{ block.settings.caption | escape }}
                   </p>
@@ -89,43 +89,30 @@
                 
                   {%- when 'section' -%}                  
                   {% if block.settings.show_products %}
-                    {% if block.settings.featured_products != blank %}
-                      <div class="featured-products">
-                        {% for product in block.settings.featured_products %}
-                          <!-- Display each product -->
-                          <div class="product-item">
-                            <a href="{{ product.url }}">
-                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-                              <a href="{{ collection.url }}" class="p_title" id="ring_title">{{ product.title }}</a>
-                              
-                                <sup class="sup">97</sup>
-                              </h3>
-                              
-                            </a>
-                          </div>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
 
                     {% if block.settings.featured_collection %}
                       {% assign collection_handle = block.settings.featured_collection %}
                       {% assign collection = collections[collection_handle] %}
-                    
+                      
                       <div class="featured-products">
-                        {% for product in collection.products limit: 2 %}
-                          <!-- Display each product -->
-                          <div class="product-item">
-                            <a href="{{ product.url }}">
-                              <a href="{{ collection.url }}"></a>
-                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-                              <a href="{{ collection.url }}" class="p_title">{{ product.title }}</a>
-                            </a>
-                          </div>
-                        {% endfor %}
+                        {% if collection %}
+                          {% for product in collection.products limit: 2 %}
+                            <!-- Display each product -->
+                            <div class="product-item">
+                              <a href="{{ product.url }}">
+                                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                                <a href="{{ collection.url }}" class="p_title">
+                                  {{ product.title }}
+                                  <sup>{{ collection.products_count }}</sup> <!-- Superscript with total product count -->
+                                </a>
+                              </a>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
                       </div>
                     {% endif %}
-                    
                   {% endif %}
+                  
                   {%- when 'button' -%}
                     {%- if block.settings.button_label != blank -%}
                       <a
@@ -150,27 +137,11 @@
     </div>
   </div>
 </div>
+<style>
 
-<div class="card-main-container">
-    <div class="card-inner-container">
-        <div class="card1">
-        <img src="" alt="">
-        <span>
-            text hear
-            <sup class="sup">96</sup>
-        </span>
-        </div>
-        <div class="card2">
-            <img src="" alt="">
-        <span>
-            second text hear
-            <sup class="sup">96</sup>
-        </span>
-        </div>
-        </div>
-    </div>
-</div>
-</div>
+
+
+</style>
 {% schema %}
 {
   "name": "Traditions-image",
@@ -466,7 +437,7 @@
               "label": "t:sections.image-with-text.blocks.caption.settings.text_style.options__2.label"
             },
             {
-             "value": "text-aling",
+             "value": "text-align",
              "label": "center" 
             }
           ],

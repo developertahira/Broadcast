@@ -1,0 +1,102 @@
+
+<div class="traditional-main-container">
+    <div class="traditional-info-container">
+        <div class="traditional-image">
+            {% if section.settings.traditional_image %}
+                <img src="{{ section.settings.traditional_image | image_url: width: 800 }}" alt="Traditional Image">
+              {% endif %}
+        </div>
+        <div class="tradition-content-contain">
+            <p>{{section.settings.t_caption}}</p>
+            <h1>{{section.settings.t_heading}}</h1>
+            <p>{{section.settings.t_Discription}}</p>
+            <div class="traditional-collection-cards">
+            {% if section.settings.trad_featured_collection %}
+                {% assign collection_handle = section.settings.trad_featured_collection %}
+                {% assign collection = collections[collection_handle] %}
+                
+                <div class="featured-products">
+                  {% if collection %}
+                    {% for product in collection.products limit: 2 %}
+                      <!-- Display each product -->
+                      <div class="product-item">
+                        <a href="{{ product.url }}">
+                          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                          <a href="{{ collection.url }}" class="p_title">
+                            {{ product.title }}
+                            <sup>{{ collection.products_count }}</sup> <!-- Superscript with total product count -->
+                          </a>
+                        </a>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              {% endif %}
+        </div>
+    </div>
+</div>
+<style>
+    .traditional-main-container {
+        box-sizing: border-box;
+        background-color: antiquewhite;
+        padding: 30px 30px 30px 30px;
+    }
+    .traditional-info-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .traditional-image {
+        width: 50%;
+        height: 100%;
+    }
+    .tradition-content-contain {
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        margin: 30px 60px 30px 60px;
+
+    }
+    .traditional-image img {
+        width: 100%;
+    }
+
+</style>
+
+{% schema %}
+{
+    "name": "Traditional Wear Dreses",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "traditional_image",
+            "label": "Traditional Image"
+        },
+        {
+            "type": "text",
+            "id": "t_caption",
+            "label": " caption"
+        },
+        {
+            "type": "text",
+            "id": "t_heading",
+            "label": "T-Heading"
+        },
+        {
+            "type": "text",
+            "id": "t_Discription",
+            "label": "Discription"
+        },
+        {
+            "type": "collection",
+            "id": "trad_featured_collection",
+            "label": "Traditional Collection"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Traditional Wear Dresses"
+            }
+        ]
+}
+{% endschema %}

@@ -1,33 +1,105 @@
 <div class="content-contain">
-    <p>our Promise</p>
-    <h1>Ethical is Beautiful</h1>
-    <p>We ensure our products contribute to the well-being of people and planet, towards a brighter future.</p>
+    <p>{{section.settings.eth_caption}}</p>
+    <h1>{{section.settings.heading}}</h1>
+    <p>{{section.settings.description}}</p>
 </div>
-<div class="cards-cont">
-    <div class="Ring">
-        <img src="{{ section.settings.ring_img| img_url: 'master' }}" alt="Ring" />
-    </div>
-    <div class="Timeless">
+<div class="Ethical-cards-cont">
+   
+    <div class="eth-Timeless">
         <img src="{{ section.settings.timeless_img| img_url: 'master' }}" alt="TImeless" />
+        <div class="eth-overlay">
+            <h1>{{section.settings.eth_ring_heading}}</h1>
+            <p>{{section.settings.ring_description}}</p>
+            {% if section.settings.button_Text %}
+                <a href="#" class="eth-button">
+                  {{ section.settings.button_Text }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="eth-Ring">
+        <img src="{{ section.settings.ring_img| img_url: 'master' }}" alt="Ring" />
+        <div class="eth-overlay">
+            <h1>{{section.settings.eth_timeless_heading}}</h1>
+            <p>{{section.settings.Timeless_description}}</p>
+            {% if section.settings.button_timeless %}
+                <a href="#" class="eth-button">
+                  {{ section.settings.button_timeless }}
+                </a>
+              {% endif %}
+              
+        </div>
     </div>
 </div>
 
 <style>
-    .cards-cont {
+    .content-contain {
+      padding: 50px;
+    }
+    .Ethical-cards-cont {
         width: 100%;
+        box-sizing: border-box;
         display: flex;
-        justify-content: center;
         gap: 20px;
-        padding-bottom: 80px;
-        padding-right: 50px;
-        padding-left: 50px;
+        align-items: stretch;
+        padding: 0px 40px;
     }
-    .Ring {
-        background-image: url({{section.settings.ring_img}});
+    .eth-Ring {
+        width: 50%;
+        
     }
-    .Timeless {
+    .eth-Ring img {
+        max-height: 60% ;
+        width: 100%;
+        object-fit: cover;
 
     }
+    .eth-Timeless {
+        width: 50%;
+    }
+    .eth-Timeless img {
+        max-height: 60%;
+        width: 100%;
+        object-fit: cover;
+
+    }
+    .eth-Ring, .eth-Timeless {
+    position: relative;
+  }
+  
+  .eth-overlay {
+        position: absolute;
+        top: 320px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        color: #fff;
+        margin: 80px;
+    }
+    .eth-overlay h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: white;
+    }
+    .eth-overlay p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: white;
+    }
+    .eth-button {
+        padding: 10px 20px;
+        border: 2px solid #fff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        margin: ;
+    }
+@media (min-width: 1530px) {
+    
+}
 </style>
 
 
@@ -36,14 +108,59 @@
     "name": "Ethical Products",
     "settings": [
         {
+            "type": "text",
+            "id": "eth_caption",
+            "label": "Caption"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Ethical-heading"
+        },
+        {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+        },
+        {
             "type": "image_picker",
             "id": "ring_img",
             "label": "select ring image"
         },
         {
+            "type": "text",
+            "id": "eth_ring_heading",
+            "label": "Ring-Heading"
+        },
+        {
+            "type": "text",
+            "id": "ring_description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "button_Text",
+            "label": "ring-Button"
+        },
+        {
             "type": "image_picker",
             "id": "timeless_img",
             "label": "select Timeless image"
+        },
+        {
+            "type": "text",
+            "id": "eth_timeless_heading",
+            "label": "Timeless-Heading"
+        },
+        {
+            "type": "text",
+            "id": "Timeless_description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "button_timeless",
+            "label": "Timeless-Button"
         }
         ],
         "presets": [
