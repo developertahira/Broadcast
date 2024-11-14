@@ -15,24 +15,17 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Everyday Luxury",
+            "heading": "Browse our latest products",
             "heading_size": "h0"
-          }
-        },
-        "text_KWHPat": {
-          "type": "text",
-          "settings": {
-            "text": "Beautiful pieces to pass down for generations",
-            "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "SHOP ALL PRODUCTS",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "SHOP SALE",
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -40,337 +33,52 @@
       },
       "block_order": [
         "heading",
-        "text_KWHPat",
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/broadcast-hero-gradient-removebg-preview.png",
-        "overlay_color": "#000000",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-left",
+        "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-3",
         "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "image_within_text_RgNJmE": {
-      "type": "image-within-text",
+    "featured_collection": {
+      "type": "featured-collection",
       "settings": {
-        "text_1": "Shop our modern",
-        "image_1": "shopify://shop_images/image1.png",
-        "text_2": "heirlooms, bestselling fine jewelry",
-        "image_2": "shopify://shop_images/image2.png",
-        "text_3": "and thoughtfully",
-        "image_3": "shopify://shop_images/image3.png",
-        "text_4": "curated collections."
-      }
-    },
-    "multicolumn_Dw4n9m": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_tE7q7Q": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/two2-removebg-preview.png",
-            "custom_svg": "",
-            "title": "Modern Statement",
-            "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.</p>",
-            "link_label": "Shop Earrings",
-            "link": "#"
-          }
-        },
-        "column_LRUABC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/talisman-bracelet-gold-bracelets-alohas-727532_3000x_756a0a12-4cc1-4fd5-8d0c-9a26fd5cf1a0-removebg-preview.png",
-            "custom_svg": "",
-            "title": "The Essentials Collection",
-            "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. </p>",
-            "link_label": "SHOP CLASSICS",
-            "link": "#"
-          }
-        },
-        "column_f8gmeL": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/E-COM32_1080x_aa97a5ec-21bd-45c5-a188-5070a6eb3ed5-removebg-preview.png",
-            "custom_svg": "",
-            "title": "Made-To-Order Jewelery",
-            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
-            "link_label": "SHOP NOW",
-            "link": "#"
-          }
-        }
-      },
-      "block_order": [
-        "column_tE7q7Q",
-        "column_LRUABC",
-        "column_f8gmeL"
-      ],
-      "settings": {
-        "caption": "",
-        "title": "",
-        "heading_size": "h1",
-        "background_color": "#ffffff",
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "marquee_news_bar_mRithk": {
-      "type": "marquee-news-bar",
-      "settings": {
-        "marquee_text1": "\"Setting a new standard in chic, modern jewelry.\"",
-        "marquee_img1": "shopify://shop_images/allure.png",
-        "marquee_text2": "\"Impeccable design meets unmatched quality in every piece.\"",
-        "marquee_img2": "shopify://shop_images/marie.png",
-        "marquee_text3": "\"Exquisite craftsmanship meets sustainable luxury.”",
-        "marquee_img3": "shopify://shop_images/vogue.png"
-      }
-    },
-    "traditions_image_with_text_eNfAwm": {
-      "type": "Traditions-image-with-text",
-      "blocks": {
-        "caption_tyHFmp": {
-          "type": "caption",
-          "settings": {
-            "caption": "Trends & Tradition",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading_npeWHh": {
-          "type": "heading",
-          "settings": {
-            "heading": "For Everyday Wear",
-            "heading_size": "h1"
-          }
-        },
-        "text_qVdhJ6": {
-          "type": "text",
-          "settings": {
-            "text": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
-            "text_style": "body"
-          }
-        },
-        "section_akVaPd": {
-          "type": "section",
-          "settings": {
-            "show_products": true,
-            "featured_products": [
-              "gia-hoops-in-gold",
-              "lotti-hoops-in-gold"
-            ],
-            "featured_collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "caption_tyHFmp",
-        "heading_npeWHh",
-        "text_qVdhJ6",
-        "section_akVaPd"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
-        "height": "adapt",
-        "title": "Multicolumn",
-        "background_color": "#f5f2ec",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "product_slider_enBWWK": {
-      "type": "product-slider",
-      "settings": {
-        "ex_heading": "",
-        "descrip": "",
-        "Ring_heading": "",
-        "ring_link": "",
-        "rings_collection": "rings",
-        "earrings_collection": "earings",
-        "earrings_heading": "",
-        "Earings_link": ""
-      }
-    },
-    "essentials_collection_bQh8Tb": {
-      "type": "Essentials-collection",
-      "settings": {
-        "eimage": "shopify://shop_images/hanging-crystal-earrings-white-earrings-alohas-953415_3000x_photos_v2_x2_3850646c-6a78-4052-bb63-4547e598a95f-removebg-preview.png",
-        "featured_products": [
-          "emeile-grande-ring-in-sterling-silver",
-          "gia-hoops-in-gold",
-          "hepworth-hoops-in-gold",
-          "hepworth-hoops-in-sterling-silver"
-        ],
-        "Es_heading": "The Essentials Collection",
-        "Discription": "Recycled gold, AAA-grade gemstones, and ethically sourced diamonds"
-      }
-    },
-    "multicolumn_LWJWx7": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_zU9rEY": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/pexels-sunsetoned-6431174-removebg-preview.png",
-            "custom_svg": "",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_xj9yxy": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/broadcast-chelsea-3-removebg-preview.png",
-            "custom_svg": "",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_d9bR9w": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/jess-harper-sunday-bLkj9eNhW90-unsplash_2-removebg-preview.png",
-            "custom_svg": "",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_b6pzrD": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/broadcast-chelsea-10-removebg-preview.png",
-            "custom_svg": "",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_zU9rEY",
-        "column_xj9yxy",
-        "column_d9bR9w",
-        "column_b6pzrD"
-      ],
-      "settings": {
-        "caption": "Follow us",
-        "title": "@broadcastjewelry",
-        "heading_size": "h1",
-        "background_color": "#ffffff",
-        "image_width": "full",
-        "image_ratio": "portrait",
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
         "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_YP6jED": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_UfEwC6": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-flare\" viewbox=\"0 0 24 24\" width=\"48\" set here>\n    height=\"48\" <!-- Set height here -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set stroke color -->\n>\n    <path d=\"M11.456 2.665a.6.6 0 0 1 1.088 0l2.864 6.137a.6.6 0 0 0 .29.29l6.137 2.864a.6.6 0 0 1 0 1.088l-6.137 2.864a.6.6 0 0 0-.29.29l-2.864 6.137a.6.6 0 0 1-1.088 0l-2.864-6.137a.6.6 0 0 0-.29-.29l-6.137-2.864a.6.6 0 0 1 0-1.088l6.137-2.864a.6.6 0 0 0 .29-.29l2.864-6.137z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
-            "title": "Ethical Sourcing",
-            "text": "<p>Fully traceable supply chain</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_7HbzWf": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-donation\" viewbox=\"0 0 24 24\" width=\"48\" set the>\n    height=\"48\" <!-- Set the height -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set outline color -->\n>\n    <path d=\"M16 6.28a2.28 2.28 0 0 1-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 0 1-.822-.017l-2.918-2.94a2.281 2.281 0 0 1 0-3.214 2.277 2.277 0 0 1 3.232 0L12 4.78l.106-.107A2.276 2.276 0 0 1 16 6.28z\" stroke=\"#000\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 20 3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 16 .858-.858a.484.484 0 0 0 .142-.343v0a.485.485 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 16-.858-.858A.485.485 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
-            "title": "Giving Back",
-            "text": "<p>1% to orgs and communities</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_QGVTtY": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-chat\" viewbox=\"0 0 24 24\" width=\"48\" height=\"48\" fill=\"none\">\n    <path d=\"M7.5 22a5.5 5.5 0 1 0-4.764-2.75l-.461 2.475 2.475-.46A5.474 5.474 0 0 0 7.5 22z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n    <path d=\"M15.282 17.898A7.946 7.946 0 0 0 18 16.93l3.6.67-.67-3.6A8 8 0 1 0 6.083 8.849\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n</svg>",
-            "title": "On Demand Stylists",
-            "text": "<p>Available everyday</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_UfEwC6",
-        "column_7HbzWf",
-        "column_QGVTtY"
-      ],
-      "settings": {
-        "caption": "",
-        "title": "",
-        "heading_size": "h1",
-        "background_color": "#f5f2ec",
-        "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 44,
         "padding_bottom": 36
       }
     }
   },
   "order": [
     "image_banner",
-    "image_within_text_RgNJmE",
-    "multicolumn_Dw4n9m",
-    "marquee_news_bar_mRithk",
-    "traditions_image_with_text_eNfAwm",
-    "product_slider_enBWWK",
-    "essentials_collection_bQh8Tb",
-    "multicolumn_LWJWx7",
-    "multicolumn_YP6jED"
+    "featured_collection"
   ]
 }

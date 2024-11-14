@@ -2,6 +2,7 @@
 .featured-products {
     display: flex;
     gap: 20px; /* Space between items */
+    width: 80%;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -50,4 +51,25 @@
   }
 .p_title:hover {
   text-decoration: underline;
+}
+@media only screen and (min-width: 990px) and (max-width: 1399px) {
+  .featured-products {
+    width: 120%;
+      height: auto;
+      margin-left: 24px;
+  }
+}
+@media (min-width: 750px) and (max-width: 989px) {
+  .featured-products {
+    width: 120%;
+      height: auto;
+      margin-left: 24px;
+  }
+}  
+@media only screen and (max-width: 749px) {
+.image-with-text__text-item {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+  }
 }
