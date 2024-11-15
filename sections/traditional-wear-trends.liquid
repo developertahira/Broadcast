@@ -15,16 +15,19 @@
                 {% assign collection_handle = section.settings.trad_featured_collection %}
                 {% assign collection = collections[collection_handle] %}
                 
-                <div class="featured-products">
+                <div class="featured-products"> 
                   {% if collection %}
                     {% for product in collection.products limit: 2 %}
                       <!-- Display each product -->
                       <div class="product-item">
                         <a href="{{ product.url }}">
+
                           <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
                           <a href="{{ collection.url }}" class="p_title">
                             {{ product.title }}
+                         
                             <sup>{{ collection.products_count }}</sup> <!-- Superscript with total product count -->
+
                           </a>
                         </a>
                       </div>
@@ -36,6 +39,13 @@
     </div>
 </div>
 <style>
+    .product-sale {
+        color: red;
+    }
+    .product-tag {
+        color: blue;
+        background-color: brown;
+    }
     .traditional-main-container {
         box-sizing: border-box;
         background-color: antiquewhite;

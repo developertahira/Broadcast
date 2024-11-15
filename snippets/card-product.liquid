@@ -124,6 +124,7 @@
               </a>
             </h3>
           </div>
+          {%comment%}
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
               <span
@@ -141,6 +142,116 @@
               </span>
             {%- endif -%}
           </div>
+      {%endcomment%}
+
+      {%- assign positions = 'bottom left,bottom right,top left,top right' | split: ',' -%}
+      {%- for position in positions -%}
+        <div class="card__badge {{ position }}" style="display: block;">
+          {%- if settings.badge_display_order == 'normal' -%}
+            {%- if settings.badge_position == position -%}
+              {%- render 'custom-badge-product-card', 
+                 badge_type: "standard",
+                 product: card_product,
+                 section_id: section_id
+              -%}
+            {%- endif -%}
+            {%- if card_product.metafields.custom.custom_badge_1 == true and settings.custom_badge_1_position == position -%}
+              {%- if settings.custom_badge_1_enable == "product_cards" or settings.custom_badge_1_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_1_option, 
+                   custom_badge_color_scheme: settings.custom_badge_1_color_scheme, 
+                   custom_badge_text: settings.custom_badge_1_text, 
+                   custom_badge_image: settings.custom_badge_1_image, 
+                   custom_badge_image_width: settings.custom_badge_1_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if card_product.metafields.custom.custom_badge_2 == true and settings.custom_badge_2_position == position -%}
+              {%- if settings.custom_badge_2_enable == "product_cards" or settings.custom_badge_2_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_2_option, 
+                   custom_badge_color_scheme: settings.custom_badge_2_color_scheme, 
+                   custom_badge_text: settings.custom_badge_2_text, 
+                   custom_badge_image: settings.custom_badge_2_image, 
+                   custom_badge_image_width: settings.custom_badge_2_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if card_product.metafields.custom.custom_badge_3 == true and settings.custom_badge_3_position == position -%}
+              {%- if settings.custom_badge_3_enable == "product_cards" or settings.custom_badge_3_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_3_option, 
+                   custom_badge_color_scheme: settings.custom_badge_3_color_scheme, 
+                   custom_badge_text: settings.custom_badge_3_text, 
+                   custom_badge_image: settings.custom_badge_3_image, 
+                   custom_badge_image_width: settings.custom_badge_3_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- if card_product.metafields.custom.custom_badge_3 == true and settings.custom_badge_3_position == position -%}
+              {%- if settings.custom_badge_3_enable == "product_cards" or settings.custom_badge_3_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_3_option, 
+                   custom_badge_color_scheme: settings.custom_badge_3_color_scheme, 
+                   custom_badge_text: settings.custom_badge_3_text, 
+                   custom_badge_image: settings.custom_badge_3_image, 
+                   custom_badge_image_width: settings.custom_badge_3_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if card_product.metafields.custom.custom_badge_2 == true and settings.custom_badge_2_position == position -%}
+              {%- if settings.custom_badge_2_enable == "product_cards" or settings.custom_badge_2_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_2_option, 
+                   custom_badge_color_scheme: settings.custom_badge_2_color_scheme, 
+                   custom_badge_text: settings.custom_badge_2_text, 
+                   custom_badge_image: settings.custom_badge_2_image, 
+                   custom_badge_image_width: settings.custom_badge_2_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if card_product.metafields.custom.custom_badge_1 == true and settings.custom_badge_1_position == position -%}
+              {%- if settings.custom_badge_1_enable == "product_cards" or settings.custom_badge_1_enable == "both" -%}
+                {%- render 'custom-badge-product-card', 
+                   badge_type: "custom",
+                   product: card_product,
+                   section_id: section_id,
+                   custom_badge_option: settings.custom_badge_1_option, 
+                   custom_badge_color_scheme: settings.custom_badge_1_color_scheme, 
+                   custom_badge_text: settings.custom_badge_1_text, 
+                   custom_badge_image: settings.custom_badge_1_image, 
+                   custom_badge_image_width: settings.custom_badge_1_image_width 
+                -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if settings.badge_position == position -%}
+              {%- render 'custom-badge-product-card', 
+                 badge_type: "standard",
+                 product: card_product,
+                 section_id: section_id
+              -%}
+            {%- endif -%} 
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+      
+
         </div>
       </div>
       <div class="card-label">
@@ -213,6 +324,39 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+
+            
+            {% assign keys = "Color,color,Colour,colour" | split: ',' %}
+            {% for key in keys %}
+            {% if card_product.options contains key %}
+            <div class="product_tile_color_holder">
+              {% for color_option in card_product.options_by_name[key].values %}
+              {% for variant in card_product.variants  %}
+              {% if variant.options contains color_option %}
+              {% if variant.image %}
+              {% assign background_style = color_option %}
+              {% endif %}
+              {% if variant.metafields.color.values %}
+              {% assign background_style = variant.metafields.color.values %}
+              {% endif %}
+              {% if variant.metafields.image.values %}
+              {% assign background_style = "url(" | append: variant.metafields.image.swatch | append: ")" %}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+			  <!--- Coded by websensepro.com --->
+              <input
+                     type="radio"
+                     name="{{ card_product.id }}_card_color"
+                     id="{{ card_product.id }}_color_{{ forloop.index }}"
+                     style="background: {{ background_style }}; background-size: cover;">
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
                 {% liquid
@@ -573,6 +717,12 @@
             </span>
           {%- endif -%}
         </div>
+
+
+
+
+
+
       </div>
     </div>
   </div>

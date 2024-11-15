@@ -23,7 +23,11 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+{% comment %}
+   {{- 'icon-caret.svg' | inline_asset_content -}}
+{% endcomment %}
+         
+       
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
@@ -183,96 +187,27 @@
     {%- endfor -%}
   </ul>
 </nav>
-<style>
-  .custom-menus-image-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-.menus-container {
-  display: flex;
-  gap: 75px;
-}
-.menu h3 {
-  font-weight: bold;
-}
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-.menu li {
-  margin-bottom: 5px;
-}
-.menu a {
-  text-decoration: none;
-  color: inherit;
-}
-.image-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-}
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 
-}
+<script>
+  // JavaScript to adjust the image size on scroll
+  const image = document.getElementById('scrollImage');
 
-.overlay-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  padding: 5px;
-  font-size: 16px;
-}
+  window.addEventListener('scroll', () => {
+    // Get the current scroll position
+    const scrollPosition = window.scrollY;
 
-.mega-menu__list--condensed .mega-menu__link {
-  display: none;
-}
+    // Set a minimum and maximum size for the image
+    const maxWidth = 300; // Initial size
+    const minWidth = 150; // Smallest size
 
-.header__menu-item span:hover {
-  color: blue;
-}
-/* Featured Mega Menu */
-.custom-menus-image-section {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
+    // Calculate the new size based on the scroll position
+    let newWidth = maxWidth - scrollPosition / 5;
 
-.menu {
-  position: relative;
-  width: 25%; /* Adjust as needed */
-}
+    // Clamp the size between minWidth and maxWidth
+    if (newWidth < minWidth) newWidth = minWidth;
+    if (newWidth > maxWidth) newWidth = maxWidth;
 
-.image-overlay img {
-  width: 100%;
-  transition: transform 0.5s ease;
-}
-
-.featured-overlay-text {
-  position: relative;
-  bottom: 10%;
-  left: 10%;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
-  opacity: 1;
-  
-}
-
-/* Optional: Transition effect */
-.image-overlay img {
-  transform: scale(1.1); /* Zoomed-in state */
-  transition: transform 0.5s ease; /* Smooth zoom-out transition */
-}
-
-.custom-menus-image-section.open .image-overlay img {
-  transform: scale(1); /* Normal size */
-}
-
-</style> 
+    // Apply the new width to the image
+    image.style.width = `${newWidth}px`;
+  });
+</script>

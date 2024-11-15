@@ -253,7 +253,7 @@
           </localization-form>
         {%- endif -%}
       </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+     
 
       {%- if shop.customer_accounts_enabled -%}
         <a
@@ -283,7 +283,7 @@
           </span>
         </a>
       {%- endif -%}
-
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
@@ -310,6 +310,42 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+
+  <script>
+    let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+  let dropdownItems = document.querySelector(".header__submenu");
+  items.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      item.setAttribute("open", true);
+      let ulElement = item.querySelector("ul");
+      if (ulElement !== null) {
+        ulElement.addEventListener("mouseleave", () => {
+          item.removeAttribute("open");
+        });
+      }
+    });
+    item.addEventListener("focus", () => {
+      item.setAttribute("open", true);
+    });
+    item.addEventListener("blur", () => {
+      item.removeAttribute("open");
+    });
+    item.addEventListener("mouseenter", () => {
+        item.setAttribute("open", "");
+      });
+      item.addEventListener("mouseleave", () => {
+        item.removeAttribute("open");
+      });
+  });
+  if (dropdownItems !== null) {
+    dropdownItems.addEventListener("mouseleave", () => {
+      items.forEach(item => {
+        item.removeAttribute("open");
+      });
+    });
+  }
+  </script>
+
 
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
@@ -709,7 +745,22 @@
   "blocks": [
     {
       "type": "@app"
-    },
+    }, 
+{
+  "type": "topmenu",
+  "name": "TOp-Menu",
+  "settings": [
+
+      {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    }
+  
+  ]
+},
+    
     {
       "type": "menu",
     "name": "Menu with image",
