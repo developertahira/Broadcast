@@ -73,7 +73,13 @@
   /*  margin: 10px 0 5px; */
     line-height: 1.2;
   }
-  
+  .card-label {
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+  }
+  .card-label span {
+    color: black;
+  }
   .Esse-product-item p {
     font-size: 2rem;
     margin: 5px 0;

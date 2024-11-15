@@ -2,16 +2,13 @@
 .top-header {
     padding: 0px 0;
     border-bottom: 1px solid #dbd7d7;
-    border-opacity: 0.2;
  }
  
  .top-header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 56px 0px 14px;
     flex-wrap: wrap;
  }
 
@@ -48,4 +45,11 @@
     .top-header-container {
        display: none;
    }
+}
+.social-header-icons {
+   width: 20px;
+   height: 20px;
+   vertical-align: middle;
+   stroke: currentColor;
+   stroke-width: 1px;
 }
