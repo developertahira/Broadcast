@@ -1,0 +1,130 @@
+
+<div class="product-img-main-container">
+        <div class="Featured-Prod-contan-slid">
+            {% if section.settings.slid_featured_prod %}
+              <div class="Inner-prod-cond">
+                {% for product in section.settings.slid_featured_prod %}
+                  <div class="Specific-product-item">
+                    
+                      <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
+                      <div class="prod-card-label">
+                        {% if  product.tags contains "Quick Add" %}
+                    <span class="quick-add-label">Quick Add</span>
+                  {% elsif product.tags contains "Pre-order" %}
+                    <span class="pre-order-label">Pre-order</span>
+                  {% endif %}
+                    </div>
+                      <h3>{{ product.title }}</h3>
+                      <p>{{ product.price | money }}</p>
+                    
+                  </div>
+                {% endfor %}
+              </div>
+            {% else %}
+              <p>No featured products selected.</p>
+            {% endif %}
+          </div>
+
+    <div class="img-slider-container"  >
+        <div class="image-slider">
+            {% if section.settings.slider_img1 %}
+              <img src="{{ section.settings.slider_img1 | img_url: 'master' }}" alt="Slider Image 1" >
+            {% endif %}
+            {% if section.settings.slider_img2 %}
+              <img src="{{ section.settings.slider_img2 | img_url: 'master' }} " alt="Slider Image 2">
+            {% endif %}
+          </div>
+    </div>
+</div>
+<style>
+    .product-img-main-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Featured-Prod-contan-slid {
+        width: 50%;
+        background-color: #f5f2ec;
+    }
+    .img-slider-container {
+        position: relative;
+        width: 50%;
+        background-image: url('{{ section.settings.bg_img | img_url: 'master' }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        
+    }
+        .image-slider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 80px 0px 80px 0px;
+    }
+
+        .image-slider img {
+        width: 50%;
+        object-fit: cover;
+    }
+        @keyframes scroll-up {
+        0% {
+            transform: translateY(0);
+     }
+        100% {
+            transform: translateY(-100%);
+    }
+    }
+    .Inner-prod-cond {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .Specific-product-item {
+        text-align: center;
+        background-color: white;
+        color: black;
+    }
+    .prod-card-label {
+        background-color: rgb(248 244 244 / 52%);
+        margin-top: -10px;
+        padding: 10px;
+    }
+    .prod-card-label span {
+        color: black;
+        text-transform: uppercase;
+    }
+</style>
+{% schema %}
+{
+    "name": "Product-img-slider",
+    "settings": [
+        {
+         "type":  "image_picker",
+         "id": "bg_img",
+         "label": "bg-img"  
+        },
+        {
+            "type": "image_picker",
+            "id": "slider_img1",
+            "label": "First Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "slider_img2",
+            "label": "Second Image"
+        },
+        {
+            "type": "product_list",
+            "id": "slid_featured_prod",
+            "label": "Select Featured Products"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Product-img-slider"
+            }
+        ]
+}
+{% endschema %}
