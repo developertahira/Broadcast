@@ -57,9 +57,22 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
+    },
+    "image_within_text_LcCaUP": {
+      "type": "image-within-text",
+      "settings": {
+        "text_1": "Shop our modern",
+        "image_1": "shopify://shop_images/image1.png",
+        "text_2": "heirlooms, bestselling fine jewelry",
+        "image_2": "shopify://shop_images/image2.png",
+        "text_3": "and thoughtfully",
+        "image_3": "shopify://shop_images/image3.png",
+        "text_4": "curated collections."
+      }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "image_within_text_LcCaUP"
   ]
 }
