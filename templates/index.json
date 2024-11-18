@@ -232,6 +232,8 @@
       "type": "product-img-slider",
       "settings": {
         "bg_img": "shopify://shop_images/pexels-margarita-13368880-removebg-preview.png",
+        "slider_img1": "shopify://shop_images/E-LOTTI-G_082cf13e-1dc8-47ce-a4bd-c5c80c675524_2018-12-05_02-17-39_18C7Qf4y5I-removebg-preview.png",
+        "slider_img2": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST-removebg-preview.png",
         "slid_featured_prod": [
           "adelaide-hoops-in-gold"
         ]
