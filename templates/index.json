@@ -160,33 +160,42 @@
     "traditions_image_with_text_RBmgqj": {
       "type": "Traditions-image-with-text",
       "blocks": {
+        "caption_KjxYh6": {
+          "type": "caption",
+          "settings": {
+            "caption": "Trends & Tradition",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "heading_xAJzQG": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "For Everyday Wear",
             "heading_size": "h1"
           }
         },
         "text_mLNgpa": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
             "text_style": "body"
           }
         },
-        "button_V9PbVn": {
-          "type": "button",
+        "section_WKeDhx": {
+          "type": "section",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "show_products": true,
+            "featured_products": [],
+            "featured_collection": "earings"
           }
         }
       },
       "block_order": [
+        "caption_KjxYh6",
         "heading_xAJzQG",
         "text_mLNgpa",
-        "button_V9PbVn"
+        "section_WKeDhx"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
