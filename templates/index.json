@@ -227,6 +227,15 @@
         "earrings_heading": "",
         "Earings_link": ""
       }
+    },
+    "product_img_slider_9tnxhh": {
+      "type": "product-img-slider",
+      "settings": {
+        "bg_img": "shopify://shop_images/pexels-margarita-13368880-removebg-preview.png",
+        "slid_featured_prod": [
+          "adelaide-hoops-in-gold"
+        ]
+      }
     }
   },
   "order": [
@@ -236,6 +245,7 @@
     "marquee_news_bar_4XtgDY",
     "countdown_timer_TE43dY",
     "traditions_image_with_text_RBmgqj",
-    "product_slider_Jqyrj4"
+    "product_slider_Jqyrj4",
+    "product_img_slider_9tnxhh"
   ]
 }
