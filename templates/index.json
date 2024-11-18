@@ -76,6 +76,7 @@
         "column_a9HtD7": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/two2-removebg-preview.png",
             "custom_svg": "",
             "title": "Modern Statement",
             "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.</p>",
@@ -86,6 +87,7 @@
         "column_HBpEDB": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/talisman-bracelet-gold-bracelets-alohas-727532_3000x_756a0a12-4cc1-4fd5-8d0c-9a26fd5cf1a0-removebg-preview.png",
             "custom_svg": "",
             "title": "The Essentials Collection",
             "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. </p>",
@@ -96,6 +98,7 @@
         "column_LXmdNi": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/E-COM32_1080x_aa97a5ec-21bd-45c5-a188-5070a6eb3ed5-removebg-preview.png",
             "custom_svg": "",
             "title": "Made-To-Order Jewelery",
             "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
