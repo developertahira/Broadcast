@@ -18,14 +18,14 @@
           "type": "announcement",
           "settings": {
             "text": "Free Shipping over $250",
-            "link": ""
+            "link": "#"
           }
         },
         "announcement_7iUEHE": {
           "type": "announcement",
           "settings": {
             "text": "New arrivals are here! Take a Peek Now",
-            "link": ""
+            "link": "#"
           }
         }
       },
