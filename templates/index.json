@@ -372,8 +372,8 @@
           "type": "column",
           "settings": {
             "custom_svg": "",
-            "title": "Giving Back",
-            "text": "<p>1% to orgs and communities</p>",
+            "title": "Ethical Sourcing",
+            "text": "<p>Fully traceable supply chain</p>",
             "link_label": "",
             "link": ""
           }
@@ -381,9 +381,9 @@
         "column_LbDC3d": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "custom_svg": "",
+            "title": "Giving Back",
+            "text": "<p>1% to orgs and communities</p>",
             "link_label": "",
             "link": ""
           }
@@ -392,8 +392,8 @@
           "type": "column",
           "settings": {
             "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "On Demand Stylists",
+            "text": "<p>Available everyday</p>",
             "link_label": "",
             "link": ""
           }
