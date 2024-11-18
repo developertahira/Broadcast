@@ -51,10 +51,33 @@
           "settings": {
             "menu": "top-header-menu"
           }
+        },
+        "menu_kzwEfa": {
+          "type": "menu",
+          "settings": {
+            "menu1": "",
+            "menu1_title": "Rings",
+            "menu2": "",
+            "menu2_title": "Necklaces",
+            "menu3": "",
+            "menu3_title": "Earrings",
+            "overlay_text": "Shop the Lookbook"
+          }
+        },
+        "feautred_menu_nfnhRz": {
+          "type": "feautred_menu",
+          "settings": {
+            "text1": "Shop the Lookbook",
+            "text2": "Shop Rings",
+            "text3": "Shop Necklaces",
+            "text4": "Shop Earrings"
+          }
         }
       },
       "block_order": [
-        "topmenu_aXqNJq"
+        "topmenu_aXqNJq",
+        "menu_kzwEfa",
+        "feautred_menu_nfnhRz"
       ],
       "settings": {
         "logo_position": "middle-center",
