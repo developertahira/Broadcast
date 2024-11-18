@@ -282,7 +282,12 @@
       "type": "Essentials-collection",
       "settings": {
         "eimage": "shopify://shop_images/hanging-crystal-earrings-white-earrings-alohas-953415_3000x_photos_v2_x2_3850646c-6a78-4052-bb63-4547e598a95f-removebg-preview.png",
-        "featured_products": [],
+        "featured_products": [
+          "adelaide-hoops-in-gold",
+          "gia-hoops-in-gold",
+          "hepworth-hoops-in-sterling-silver",
+          "ilona-signet-ring-in-gold"
+        ],
         "Es_heading": "The Essentials Collection",
         "Discription": "Recycled gold, AAA-grade gemstones, and ethically sourced diamonds"
       }
