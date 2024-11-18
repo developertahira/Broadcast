@@ -17,13 +17,21 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Free Shipping over $250",
+            "link": ""
+          }
+        },
+        "announcement_7iUEHE": {
+          "type": "announcement",
+          "settings": {
+            "text": "New arrivals are here! Take a Peek Now",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_7iUEHE"
       ],
       "settings": {
         "color_scheme": "scheme-3",
@@ -47,8 +55,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
+        "logo_position": "middle-center",
+        "menu": "broadcast",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
