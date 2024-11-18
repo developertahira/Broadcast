@@ -17,24 +17,16 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free Shipping over $250",
-            "link": ""
-          }
-        },
-        "announcement_6MQhKe": {
-          "type": "announcement",
-          "settings": {
-            "text": "New arrivals are here! Take a Peek Now",
+            "text": "Welcome to our store",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement_6MQhKe"
+        "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -42,54 +34,21 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    }, 
+    "top-header": {
+      "type": "head-navigation",
+      "settings": {
+
+      }
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "topmenu_aXqNJq": {
-          "type": "topmenu",
-          "settings": {
-            "menu": "top-header-menu"
-          }
-        },
-        "menu_kzwEfa": {
-          "type": "menu",
-          "settings": {
-            "menu1": "rings",
-            "menu1_title": "Rings",
-            "menu2": "necklaces",
-            "menu2_title": "Necklaces",
-            "menu3": "earrings",
-            "menu3_title": "Earrings",
-            "overlay_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
-            "overlay_text": "Shop the Lookbook"
-          }
-        },
-        "feautred_menu_nfnhRz": {
-          "type": "feautred_menu",
-          "settings": {
-            "image1": "shopify://shop_images/E-COM-5-731_3000x_53ba0b93-b795-42d8-bb46-111882c0661c-removebg-preview_1.png",
-            "text1": "Sounder RIngs",
-            "image2": "shopify://shop_images/E-COM44_900x_33fa300d-a9a6-40f9-97e2-430e5c0d907e-removebg-preview_1.png",
-            "text2": "Shasha Necklace",
-            "image3": "shopify://shop_images/ahull-gold-earrings-alohas-926746_3000x_4b4c9c2c-1465-4a46-b8d3-e1eb3d23d5ff-removebg-preview_1.png",
-            "text3": "Haile Earrings",
-            "image4": "shopify://shop_images/E-COM-5-744_3000x_cf1fbb2b-4984-4859-b7f6-6a6b80f40cd6-removebg-preview_1.png",
-            "text4": "Gia Hoops"
-          }
-        }
-      },
-      "block_order": [
-        "topmenu_aXqNJq",
-        "menu_kzwEfa",
-        "feautred_menu_nfnhRz"
-      ],
       "settings": {
-        "logo_position": "middle-center",
-        "menu": "broadcast",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "none",
-        "show_line_separator": false,
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
@@ -98,18 +57,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20,
-        "enable_transparent-header": true,
-        "color-transparent": "",
-        "show_line_separat": true,
-        "link_tiktock": "",
-        "link-insta": "",
-        "page_linked": ""
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "announcement-bar",
+    "top-header",
     "header"
   ]
 }
