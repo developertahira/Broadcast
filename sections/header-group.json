@@ -55,12 +55,13 @@
         "menu_kzwEfa": {
           "type": "menu",
           "settings": {
-            "menu1": "",
+            "menu1": "rings",
             "menu1_title": "Rings",
-            "menu2": "",
+            "menu2": "necklaces",
             "menu2_title": "Necklaces",
-            "menu3": "",
+            "menu3": "earrings",
             "menu3_title": "Earrings",
+            "overlay_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
             "overlay_text": "Shop the Lookbook"
           }
         },
