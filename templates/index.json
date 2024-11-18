@@ -254,6 +254,18 @@
         "Timeless_description": "Accessorize with 14k recycled gold all day, everyday.",
         "button_timeless": "SHOP NOW"
       }
+    },
+    "trending_product_title_awKRPL": {
+      "type": "Trending-product-title",
+      "settings": {
+        "selected_Trending_collections": [
+          "bracelets",
+          "earings",
+          "necklaces",
+          "rings",
+          "best-sellers"
+        ]
+      }
     }
   },
   "order": [
@@ -265,6 +277,7 @@
     "traditions_image_with_text_RBmgqj",
     "product_slider_Jqyrj4",
     "product_img_slider_9tnxhh",
-    "ethical_products_zifHcY"
+    "ethical_products_zifHcY",
+    "trending_product_title_awKRPL"
   ]
 }
