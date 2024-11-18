@@ -266,6 +266,17 @@
           "best-sellers"
         ]
       }
+    },
+    "shop_look_bMmjPb": {
+      "type": "Shop-look",
+      "settings": {
+        "eimage": "shopify://shop_images/shop.webp",
+        "featured_products": [
+          "ilona-signet-ring-in-gold",
+          "adelaide-hoops-in-gold"
+        ],
+        "caption": "Shop the Look"
+      }
     }
   },
   "order": [
@@ -278,6 +289,7 @@
     "product_slider_Jqyrj4",
     "product_img_slider_9tnxhh",
     "ethical_products_zifHcY",
-    "trending_product_title_awKRPL"
+    "trending_product_title_awKRPL",
+    "shop_look_bMmjPb"
   ]
 }
