@@ -54,10 +54,44 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "topmenu_JL8GKd": {
+          "type": "topmenu",
+          "settings": {
+            "menu": "main-menu"
+          }
+        },
+        "menu_zba3g4": {
+          "type": "menu",
+          "settings": {
+            "menu1": "",
+            "menu1_title": "Rings",
+            "menu2": "",
+            "menu2_title": "Necklaces",
+            "menu3": "",
+            "menu3_title": "Earrings",
+            "overlay_text": "Shop the Lookbook"
+          }
+        },
+        "feautred_menu_8KaUgH": {
+          "type": "feautred_menu",
+          "settings": {
+            "text1": "Shop the Lookbook",
+            "text2": "Shop Rings",
+            "text3": "Shop Necklaces",
+            "text4": "Shop Earrings"
+          }
+        }
+      },
+      "block_order": [
+        "topmenu_JL8GKd",
+        "menu_zba3g4",
+        "feautred_menu_8KaUgH"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "menu": "broadcast",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "none",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
@@ -69,7 +103,7 @@
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20,
-        "enable_transparent-header": false,
+        "enable_transparent-header": true,
         "color-transparent": "",
         "show_line_separat": true,
         "link_tiktock": "https://ticktock.com",
