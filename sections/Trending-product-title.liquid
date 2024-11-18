@@ -1,0 +1,41 @@
+<div class="Collection-List-Hover-Container">
+     <div class="collection-hover-inner-frame-container">
+           {% comment %}
+            select list of products and display it's title only with Superscript value
+           {% endcomment %}
+           <div class="collection-selector">
+            {% for collection in section.settings.selected_Trending_collections %}
+              <div class="collection-item">
+                <a href="{{ collection.url }}">
+                    <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
+                </a>
+              </div>
+            {% endfor %}
+
+          </div>
+     </div>
+</div>
+<style>
+    .collection-selector {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+</style>
+{% schema %}
+{
+    "name": "Trending Collection Title",
+    "settings": [
+         {
+      "type": "collection_list",
+      "id": "selected_Trending_collections",
+      "label": "Select Collections"
+    }
+        ],
+        "presets": [
+            {
+                "name": "Trending Collection"
+            }
+        ]
+}
+{% endschema %}"
