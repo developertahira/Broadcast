@@ -141,12 +141,28 @@
         "marquee_text3": "\"Exquisite craftsmanship meets sustainable luxury.”",
         "marquee_img3": "shopify://shop_images/marie.png"
       }
+    },
+    "countdown_timer_TE43dY": {
+      "type": "Countdown-timer",
+      "settings": {
+        "bg_img": "shopify://shop_images/DTS_MISC_4__Chris_Abatzis__Chris_Abatzis_5329-2-removebg-preview.png",
+        "Scaptopn": "Last chance",
+        "Sheading": "Get 20% off all sale items",
+        "button_text": "SHOP 20% OFF",
+        "link_button": "",
+        "countdown_date": "",
+        "Days": "",
+        "Hours": "",
+        "minutes": "",
+        "seconds": ""
+      }
     }
   },
   "order": [
     "image_banner",
     "image_within_text_LcCaUP",
     "multicolumn_dhEiXd",
-    "marquee_news_bar_4XtgDY"
+    "marquee_news_bar_4XtgDY",
+    "countdown_timer_TE43dY"
   ]
 }
