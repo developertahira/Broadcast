@@ -77,9 +77,13 @@
         "feautred_menu_8KaUgH": {
           "type": "feautred_menu",
           "settings": {
+            "image1": "shopify://shop_images/E-COM-5-731_3000x_53ba0b93-b795-42d8-bb46-111882c0661c-removebg-preview_1.png",
             "text1": "Shop the Lookbook",
+            "image2": "shopify://shop_images/E-COM44_900x_33fa300d-a9a6-40f9-97e2-430e5c0d907e-removebg-preview_1.png",
             "text2": "Shop Rings",
+            "image3": "shopify://shop_images/ahull-gold-earrings-alohas-926746_3000x_4b4c9c2c-1465-4a46-b8d3-e1eb3d23d5ff-removebg-preview_1.png",
             "text3": "Shop Necklaces",
+            "image4": "shopify://shop_images/E-COM-5-744_3000x_cf1fbb2b-4984-4859-b7f6-6a6b80f40cd6-removebg-preview_1.png",
             "text4": "Shop Earrings"
           }
         }
