@@ -45,6 +45,17 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "topmenu_aXqNJq": {
+          "type": "topmenu",
+          "settings": {
+            "menu": "top-header-menu"
+          }
+        }
+      },
+      "block_order": [
+        "topmenu_aXqNJq"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
