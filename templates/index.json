@@ -15,8 +15,15 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Everyday Luxury",
             "heading_size": "h0"
+          }
+        },
+        "text_kb3rMQ": {
+          "type": "text",
+          "settings": {
+            "text": "Beautiful pieces to pass down for generations",
+            "text_style": "body"
           }
         },
         "button": {
@@ -33,6 +40,7 @@
       },
       "block_order": [
         "heading",
+        "text_kb3rMQ",
         "button"
       ],
       "settings": {
