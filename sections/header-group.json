@@ -20,10 +20,18 @@
             "text": "Free Shipping over $250",
             "link": ""
           }
+        },
+        "announcement_6MQhKe": {
+          "type": "announcement",
+          "settings": {
+            "text": "New arrivals are here! Take a Peek Now",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_6MQhKe"
       ],
       "settings": {
         "color_scheme": "scheme-3",
@@ -33,15 +41,6 @@
         "change_slides_speed": 5,
         "enable_country_selector": false,
         "enable_language_selector": false
-      }
-    },
-    "top-header": {
-      "type": "head-navigation",
-      "settings": {
-        "custom_menu": "",
-        "tiktock_link": "",
-        "insta_link": "",
-        "linked_page": ""
       }
     },
     "header": {
@@ -72,7 +71,6 @@
   },
   "order": [
     "announcement-bar",
-    "top-header",
     "header"
   ]
 }
