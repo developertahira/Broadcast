@@ -96,10 +96,10 @@
         "column_LXmdNi": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
+            "custom_svg": "",
+            "title": "Made-To-Order Jewelery",
+            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
+            "link_label": "SHOP NOW",
             "link": ""
           }
         }
