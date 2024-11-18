@@ -238,6 +238,20 @@
           "adelaide-hoops-in-gold"
         ]
       }
+    },
+    "ethical_products_zifHcY": {
+      "type": "Ethical-products",
+      "settings": {
+        "eth_caption": "Our Promise",
+        "heading": "Ethical is Beautiful",
+        "description": "We ensure our products contribute to the well-being of people and planet, towards a brighter future.",
+        "eth_ring_heading": "",
+        "ring_description": "",
+        "button_Text": "",
+        "eth_timeless_heading": "",
+        "Timeless_description": "",
+        "button_timeless": ""
+      }
     }
   },
   "order": [
@@ -248,6 +262,7 @@
     "countdown_timer_TE43dY",
     "traditions_image_with_text_RBmgqj",
     "product_slider_Jqyrj4",
-    "product_img_slider_9tnxhh"
+    "product_img_slider_9tnxhh",
+    "ethical_products_zifHcY"
   ]
 }
