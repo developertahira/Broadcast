@@ -34,15 +34,36 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
-    }, 
+    },
     "top-header": {
       "type": "head-navigation",
       "settings": {
-
+        "custom_menu": "",
+        "tiktock_link": "",
+        "insta_link": "",
+        "linked_page": ""
       }
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_w7FPjT": {
+          "type": "menu",
+          "settings": {
+            "menu1": "rings",
+            "menu1_title": "Rings",
+            "menu2": "necklaces",
+            "menu2_title": "Necklaces",
+            "menu3": "earrings",
+            "menu3_title": "Earrings",
+            "overlay_image": "shopify://shop_images/E-COM-5-724_0873e9b1-7246-4e8f-86a6-0739e01c201f-removebg-preview.png",
+            "overlay_text": "Shop the Lookbook"
+          }
+        }
+      },
+      "block_order": [
+        "menu_w7FPjT"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
@@ -57,7 +78,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "enable_transparent-header": false,
+        "color-transparent": "",
+        "show_line_separat": true,
+        "link_tiktock": "",
+        "link-insta": "",
+        "page_linked": ""
       }
     }
   },
