@@ -1,4 +1,4 @@
-<div class="Collection-List-Hover-Container">
+<div class="Collection-List-Hover-Container" style="background-image: url('{{ section.settings.bg_best_img | img_url: 'master' }}'); height: 300px; width: 100%">
      <div class="collection-hover-inner-frame-container">
            {% comment %}
             select list of products and display it's title only with Superscript value
@@ -21,11 +21,20 @@
         gap: 20px;
         justify-content: center;
     }
+    .Collection-List-Hover-Container {
+        width: 100%;
+        background-repeat: no-repeat;
+    }
 </style>
 {% schema %}
 {
     "name": "Trending Collection Title",
     "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_best_img",
+            "label": "Select img"
+        },
          {
       "type": "collection_list",
       "id": "selected_Trending_collections",
