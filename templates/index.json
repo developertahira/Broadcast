@@ -97,10 +97,10 @@
           "settings": {
             "image": "shopify://shop_images/two2-removebg-preview.png",
             "custom_svg": "",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "Modern Statement",
+            "text": "<p>Timeless and wearable earrings with a modern twist that add a touch of style to any outfit.</p>",
+            "link_label": "SHOP EARRINGS",
+            "link": "#"
           }
         },
         "column_xbKBXE": {
