@@ -153,9 +153,12 @@
     "marquee_news_bar_TqXJaM": {
       "type": "marquee-news-bar",
       "settings": {
-        "marquee_text1": "",
-        "marquee_text2": "",
-        "marquee_text3": "",
+        "marquee_text1": "\"Exquisite craftsmanship meets sustainable luxury.”",
+        "marquee_img1": "shopify://shop_images/allure.png",
+        "marquee_text2": "\"Setting a new standard in chic, modern jewelry.\"",
+        "marquee_img2": "shopify://shop_images/vogue.png",
+        "marquee_text3": "\"Impeccable design meets unmatched quality in every piece.\"",
+        "marquee_img3": "shopify://shop_images/marie.png",
         "news_bg_Color": ""
       }
     }
