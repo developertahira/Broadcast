@@ -1,8 +1,8 @@
-<div class="sale-counter-main-container" style="background-image: url('{{ section.settings.bg_img | img_url: 'master' }}'); height: 300px;">
+<div class="sale-counter-main-container" style="background-image: url('{{ section.settings.bg_img | img_url: 'master' }}'); ">
     <div class="innercontainer">
         <div class="counter-content">
-            <p>{{ section.settings.Scaptopn }}</p>
-            <h1>{{ section.settings.Sheading }}</h1>
+            <p class="sale_Description">{{ section.settings.Scaptopn }}</p>
+            <h1 class="sale_heading">{{ section.settings.Sheading }}</h1>
             {% if section.settings.button_text and section.settings.link_button %}
             <a href="{{ section.settings.link_button }}" class="custom-button">
                 {{ section.settings.button_text }}
@@ -35,9 +35,9 @@
 
 <style>
     .sale-counter-main-container {
+        height: auto;
         position: relative;
         width: 100%;
-        height: auto;
         box-sizing: border-box;
         background-size: cover;
         background-position: center;
@@ -45,23 +45,32 @@
         object-position: 37.4927% 34.5699%;
     }
     .counter-content {
-        width: 50%;
+        width: 100%;
     }
     .counter-content p, h1 {
         color: white;
     }
+    .counter-content .sale_heading {
+        margin: 0px 0px 30px 0px;
+    }
+    .counter-content .sale_Description {
+        margin: 10px 0px 10px 0px;
+
+    }
     .counters-container {
         width: 50%;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 12px;
+        color: white;
+
     }
     .innercontainer {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
         margin: 0px 72px;
-     padding: 50px 0px 50px 0px;
+        padding: 30px 0px 30px 0px;
     }
     .custom-button {
         display: inline-block;
@@ -69,25 +78,66 @@
         color: white;
         text-decoration: none;
         font-size: 16px;
+        border: 1px solid white;
     }
+
     .counter {
         text-align: center;
     }
     .counter span {
         display: block;
-        font-size: 3rem;
-        font-weight: bold;
-        padding: 20px;
+        font-size: 7rem;
+        padding: 10px 10px 0px 10px;
     }
     .counter p {
-        font-size: 0.9rem;
+        font-size: 2.2rem;
         color: white;
+        margin: 0;
+
     }
-    @media (max-width: 750px) {
-        .sale-counter-main-container {
-            flex-direction: column;
-        }
+    .innercontainer{
+        flex: 1;
     }
+
+    @media (max-width: 790px) {
+    .innercontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 20px; /* Adjust the margins to your preference */
+        padding: 0px;
+        height: auto; /* Ensure the container can grow with content */
+        overflow: hidden;
+    }
+
+
+    .counter-content {
+        order: 1; /* This ensures that the content is displayed first (at the top) */
+        text-align: center; /* Center the text */
+        margin-bottom: 20px;
+    }
+
+    .counters-container {
+        order: 2; /* This ensures that the counter is displayed second (at the bottom) */
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .counter {
+        text-align: center;
+        flex: 1;
+    }
+
+    .counter span {
+        font-size: 4rem; /* Adjust the font size for better visibility on smaller screens */
+    }
+}
+@media (max-width: 430px) {
+    .counters-container {
+        padding: 0px 10px 30px 10px;
+    }
+}
 </style>
 
 <script>

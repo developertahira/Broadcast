@@ -1,0 +1,113 @@
+<div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 400px;">
+  <div class="inner-fp-container">
+    <div class="fb-content">
+      <h2>{{ section.settings.fp_heading }}</h2>
+      <p>{{ section.settings.fp_Discription }}</p>
+      <a href="{{ section.settings.fp_button_link }}" class="fp-button">
+        {{ section.settings.fp_button_text }}
+      </a>
+    </div>
+    <div class="fp-prodcut-container">
+      {% if section.settings.fp_selected_product %}
+        {% assign product = all_products[section.settings.fp_selected_product] %}
+        {% if product %}
+          <div class="fp-product-card">
+            <div class="product-fp-image">
+                 <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                </a>
+            </div>
+         <div class="fp-product-info">
+             <h2>{{ product.title }}</h2>
+           <div class="f-product-pricing">
+             <span class="current-price">{{ product.price | money }}</span>
+                {% if product.compare_at_price > product.price %}
+                  <span class="original-price">{{ product.compare_at_price | money }}</span>
+                {% endif %}
+           </div>
+           <p class="product-description">{{ product.description | truncate: 100 }}</p>
+         </div>
+          
+          </div>
+        {% else %}
+          <p>Product not found.</p>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<style>
+  .favourit-product-main-container {
+    width: 100%
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+  }
+  .fb-content {
+    width: 50%;
+    padding: 50px;
+  }
+  .fp-prodcut-container {
+    width: 50%;
+    padding: 50px;
+  }
+  .inner-fp-container {
+    display: flex;
+  }
+  .fp-product-card {
+    display: flex;
+  }
+.product-fp-image img {
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate3d(0px, -15px, 0px);
+}
+  
+</style>
+{% schema %}
+  {
+    "name": "Favourite Product",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "fp_bg_img",
+        "label": "Select image"
+      },
+      {
+        "type": "text",
+        "id": "fp_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "fp_Discription",
+        "label": " Descrition"
+      },
+      {
+        "type": "url",
+        "id": "fp_button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "fp_button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "product",
+        "id": "fp_selected_product",
+      "label": "Select a Product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Favorit products"
+      }
+    ]
+  }
+{% endschema %}

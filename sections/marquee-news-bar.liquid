@@ -1,8 +1,8 @@
 
 {{ 'marque-style.css' | asset_url | stylesheet_tag }}
 <!-- Sections/press-quotes.liquid -->
-<section class="press-quotes marquee">
-  <div class="marquee__content">
+<section class="press-quotes marquee" style="background-color: {{ section.settings.news_bg_Color }};">
+  <div class="marquee__content" >
 
     <div class="press-quote">
       <p>{{section.settings.marquee_text1}} </p>
@@ -80,6 +80,11 @@
             "type": "image_picker",
             "id": "marquee_img3",
             "label": "Third Logo"
+          },
+          {
+            "type": "color",
+            "id": "news_bg_Color",
+            "label": "Select Background Color"
           }
             ],
             "presets": [

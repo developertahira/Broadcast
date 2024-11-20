@@ -7,23 +7,25 @@
     <h2 class="moder-text">
       {{section.settings.text_1}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image with Zoom Effect">
+        <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image with Zoom Effect" >
       </span>
       {{section.settings.text_2}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ section.settings.image_2 | img_url: 'master' }}" alt="Image with Zoom Effect">
+        <img src="{{ section.settings.image_2 | img_url: 'master' }}" alt="Image with Zoom Effect" >
 
       </span>
       {{section.settings.text_3}}
       <span class="text-with-images__image zoom-in-effect" >
-        <img src="{{ section.settings.image_3 | img_url: 'master' | default: 'vogue.png' }}" alt="Image with Zoom Effect">      
+        <img src="{{ section.settings.image_3 | img_url: 'master' | default: 'vogue.png' }}" alt="Image with Zoom Effect" >      
       </span>
       {{section.settings.text_4}}
       
     </h2>
   </div>
 </section>
+<style>
 
+</style>
 {% schema %}
 {
     "name": "Image-within-text",
