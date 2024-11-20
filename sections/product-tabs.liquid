@@ -1,0 +1,38 @@
+<div class="product-tabs-main-container">
+    <div class="product-heading-content">
+        <h2 class="Excep-heading">{{section.settings.ex_heading}}</h2>
+        <p class="Excep-Descrip">{{Section.settings.Ex_Description}}</p>
+    </div>
+    <div class="product-tabs-menu-contain">
+        <ul class="tabs-menu">
+            <li class="tab-item" data-tab="rings">Rings</li>
+            <li class="tab-item active" data-tab="earrings">Earrings</li>
+        </ul>
+    </div>
+</div>
+<style>
+
+
+</style>
+{% schema %}
+{
+    "name": "Product Tabs",
+    "settings": [
+        {
+            "type": "text",
+            "id": "ex_heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "Ex_Description",
+            "label": "Description"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Product Tabs"
+            }
+        ]
+}
+{% endschema %}

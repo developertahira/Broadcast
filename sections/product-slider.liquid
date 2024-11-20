@@ -7,39 +7,44 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
-    <div class="collection-slider">
+   <div class="collection-slider">
+      <div class="heading-content">
+        <h1 >{{section.settings.ex_heading}}</h1>
+        <p>{{section.settings.descrip}}</p>
+      </div>
       <!-- Buttons to select collection -->
-      <h1>{{section.settings.ex_heading}}</h1>
-      <p>{{section.settings.descrip}}</p>
       
-      <button id="ringsButton" class="rebutton" onclick="showCollection('rings')">Rings</button>
-      <button id="earringsButton" class="rebutton" onclick="showCollection('earrings')">Earrings</button>
-    
+<div class="product-tabs-slide-menu">
+      <button id="ringsButton" class="rebutton" onclick="showCollection('rings')">{{section.settings.first_menu_name}}</button>
+      <button id="earringsButton" class="rebutton" onclick="showCollection('earrings')">{{section.settings.second_menu_name}}</button>
+ 
       <!-- Rings Collection Slider -->
       <div id="ringsCollection" class="collection-slider-content" style="display: none;">
        
         {% assign rings_collection = collections[section.settings.rings_collection] %}
+        
         {% if rings_collection and rings_collection.products.size > 0 %}
+
+      
           <div class="slider">
-            {% comment %}
-              <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+
+            <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
               <div class="Ring-card-content">
                 <h2>{{ section.settings.Ring_heading }}</h2>
                 <a href="{{ section.settings.ring_link }}" class="button">View All Products</a>
               </div>
             </div>
-            {% endcomment %}
-              
-        
-            
+    
             {% for product in rings_collection.products %}    
+            
               <div class="slide">
+                
                 <a href="{{ product.url }}">
                   <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
                 </a>
                 <div class="card-label">
-                  {% if  product.tags contains "Quick Add" %}
-              <span class="quick-add-label">Quick Add</span>
+                  {% if  product.tags contains "Quick Add"%}
+              <span class="quick-add-label">Quick Add</span">
             {% elsif product.tags contains "Pre-order" %}
               <span class="pre-order-label">Pre-order</span>
             {% endif %}
@@ -53,21 +58,21 @@
           <p>No products in Rings collection.</p>
         {% endif %}
       </div>
-    
+
       <!-- Earrings Collection Slider -->
       <div id="earringsCollection" class="collection-slider-content" style="display: none;">
        
         {% assign earrings_collection = collections[section.settings.earrings_collection] %}
         {% if earrings_collection and earrings_collection.products.size > 0 %}
           <div class="slider">
-      {% comment %}
+
          <div class="Earings-card" style="background-image: url({{ section.settings.Earings_image | img_url: 'master' }});">
               <div class="Earings-card-content">
                 <h2>{{ section.settings.earrings_heading }}</h2>
                 <a href="{{ section.settings.Earings_link }}" class="button">View All Products</a>
               </div>
             </div>
-      {% endcomment %}
+
                
             {% for product in earrings_collection.products %}
               <div class="slide">
@@ -90,8 +95,35 @@
           <p>No products in Earrings collection.</p>
         {% endif %}
       </div>
+      </div>
     </div>
+  </div>
 
+<style>
+  .collection-slider {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+  .product-tabs-slide-menu {
+    margin-top: 25px;
+    width: 50%;
+}
+.heading-content h1, p {
+  margin: 0px;
+  
+}
+.heading-content {
+  width:50%;
+
+}
+.ringsCollection .earringsCollection {
+  background-color: ;
+  width: 100%;
+}
+
+</style>
     <script>
     function showCollection(collection) {
       // Hide both collections
@@ -105,22 +137,8 @@
         document.getElementById("earringsCollection").style.display = "block";
       }
     }
-
-    </script>
- <script>
-  /*
-$(document).ready(function(){
-    setTimeout(function(){
-        $('.slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
-    }, 500); // Delay initialization by 500ms
-}); */
-
-$(document).ready(function(){
+    //slider
+    $(document).ready(function(){
     $('.slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -129,8 +147,8 @@ $(document).ready(function(){
     }).slick('setPosition');
 });
 
+    </script>
 
- </script>
 
     {% schema %}
         {
@@ -146,6 +164,7 @@ $(document).ready(function(){
               "id": "descrip",
               "label": "Description"
             },
+        
             {
             "type": "text",
             "id": "Ring_heading",
@@ -162,9 +181,20 @@ $(document).ready(function(){
               "label": "Button Url"
             },
             {
+              "type": "text",
+              "id": "first_menu_name",
+              "label": "First Tab Name"
+            },
+            {
               "type": "collection",
               "id": "rings_collection",
               "label": "Rings Collection"
+            },
+            
+            {
+              "type": "text",
+              "id": "second_menu_name",
+              "label": "Second Tab Name"
             },
             {
               "type": "collection",
