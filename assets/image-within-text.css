@@ -10,18 +10,17 @@
       .text-with-images__image {
         display: inline-block;
         vertical-align: middle;
-        width: 120px; /* Adjust image size */
-        height: 120px;
+        width: 118px; /* Adjust image size */
+        height: 76px;
         margin: 0 4px;
       }
       
       .text-with-images__image img {
         width: 100%;
-        height: 70%;
+        height: 85%;
         object-fit: cover;
-        border-radius: 5px; /* Optional: for rounded corners */
-        position: relative;
-        top: 16%;
+        transform: scale(1); /* Start at the normal scale */
+        transition: transform 0.1s ease-out; /* Smooth scale changes */
       }
       /* Zoom-in effect for images */
       .zoom-in-effect {

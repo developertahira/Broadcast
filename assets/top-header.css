@@ -28,12 +28,12 @@
     font-weight: 500;
  }
  
- .top-header-icons {
+ .top-header-custom-icons {
     display: flex;
     align-items: center;
     gap: 15px;
  } 
- .top-header-icons a, span {
+ .top-header-custom-icons a, .Currency {
      color: white;
      text-decoration: none;
  }
