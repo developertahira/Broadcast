@@ -161,6 +161,21 @@
         "marquee_img3": "shopify://shop_images/marie.png",
         "news_bg_Color": ""
       }
+    },
+    "countdown_timer_qG6ym6": {
+      "type": "Countdown-timer",
+      "settings": {
+        "bg_img": "shopify://shop_images/DTS_MISC_4__Chris_Abatzis__Chris_Abatzis_5329-2-removebg-preview.png",
+        "Scaptopn": "",
+        "Sheading": "",
+        "button_text": "",
+        "link_button": "",
+        "countdown_date": "",
+        "Days": "",
+        "Hours": "",
+        "minutes": "",
+        "seconds": ""
+      }
     }
   },
   "order": [
@@ -168,6 +183,7 @@
     "featured_collection",
     "image_within_text_GgqkRQ",
     "multicolumn_r6m4H8",
-    "marquee_news_bar_TqXJaM"
+    "marquee_news_bar_TqXJaM",
+    "countdown_timer_qG6ym6"
   ]
 }
