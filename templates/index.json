@@ -76,10 +76,18 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "product_tabs_tf3FhC": {
+      "type": "product-tabs",
+      "settings": {
+        "ex_heading": "Exceptional Pieces",
+        "Ex_Description": "Soon-to-be staples in your rotation"
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "product_tabs_tf3FhC"
   ]
 }
