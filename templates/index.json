@@ -171,10 +171,10 @@
         "button_text": "SHOP 20% OFF Now",
         "link_button": "#",
         "countdown_date": "2024-12-31T23:59:59",
-        "Days": "",
-        "Hours": "",
-        "minutes": "",
-        "seconds": ""
+        "Days": "Days",
+        "Hours": "Hours",
+        "minutes": "MInutes",
+        "seconds": "Seconds"
       }
     }
   },
