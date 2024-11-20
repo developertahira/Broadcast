@@ -108,10 +108,10 @@
           "settings": {
             "image": "shopify://shop_images/talisman-bracelet-gold-bracelets-alohas-727532_3000x_756a0a12-4cc1-4fd5-8d0c-9a26fd5cf1a0-removebg-preview.png",
             "custom_svg": "",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "title": "The Essentials Collection",
+            "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. </p>",
+            "link_label": "SHOP CLASSICS",
+            "link": "#"
           }
         },
         "column_xgxMTh": {
