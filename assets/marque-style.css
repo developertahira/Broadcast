@@ -1,6 +1,5 @@
       /* Styles for press-quotes marquee effect */
       .press-quotes {
-        background-color: #f7f4f0; /* Light background color */
         overflow: hidden;
         white-space: nowrap;
         padding: 30px 0;
