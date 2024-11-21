@@ -87,11 +87,24 @@
         "Ring_heading": "Ring Heading",
         "ring_link": "#"
       }
+    },
+    "trending_product_title_QUMH3r": {
+      "type": "Trending-product-title",
+      "settings": {
+        "bg_best_img": "shopify://shop_images/ALOHAS--72_copia-2-removebg-preview.png",
+        "selected_Trending_collections": [
+          "bracelets",
+          "earings",
+          "frontpage",
+          "necklaces"
+        ]
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "product_tabs_LEFA4m"
+    "product_tabs_LEFA4m",
+    "trending_product_title_QUMH3r"
   ]
 }
