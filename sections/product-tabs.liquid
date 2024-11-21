@@ -29,7 +29,30 @@
       // Dynamically insert collection content (testing placeholders here)
       if (collection === 'rings') {
         document.getElementById('collection-display').innerHTML = `
-        hjgjgjhgj
+             {% assign rings_collection = collections[section.settings.rings_collection] %}
+        {% if rings_collection and rings_collection.products.size > 0 %}
+          {% for product in rings_collection.products %}    
+              <div class="slide">
+                
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add"%}
+              <span class="quick-add-label">Quick Add</span">
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No products in Rings collection.</p>
+        {% endif %}
+        
           <div class="collection-content">
             <h3>Rings Collection</h3>
             <p>This is the content for the Rings collection, displayed at full width.</p>
