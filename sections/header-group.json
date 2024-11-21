@@ -43,22 +43,24 @@
         "enable_language_selector": false
       }
     },
-    "top-header": {
-      "type": "head-navigation",
-      "settings": {
-        "custom_menu": "",
-        "tiktock_link": "",
-        "insta_link": "",
-        "linked_page": ""
-      }
-    },
     "header": {
       "type": "header",
+      "blocks": {
+        "topmenu_XqcKNB": {
+          "type": "topmenu",
+          "settings": {
+            "menu": "top-header-menu"
+          }
+        }
+      },
+      "block_order": [
+        "topmenu_XqcKNB"
+      ],
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "logo_position": "middle-center",
+        "menu": "broadcast",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "none",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
@@ -69,18 +71,17 @@
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20,
-        "enable_transparent-header": false,
+        "enable_transparent-header": true,
         "color-transparent": "",
         "show_line_separat": true,
-        "link_tiktock": "",
-        "link-insta": "",
-        "page_linked": ""
+        "link_tiktock": "https://ticktock.com",
+        "link-insta": "https://instagram.com",
+        "page_linked": "gift-card"
       }
     }
   },
   "order": [
     "announcement-bar",
-    "top-header",
     "header"
   ]
 }
