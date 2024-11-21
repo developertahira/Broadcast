@@ -32,7 +32,49 @@
           <div class="collection-content">
             <h3>Rings Collection</h3>
             <p>This is the content for the Rings collection, displayed at full width.</p>
-          </div>`;
+          </div>`
+               <div id="ringsCollection" class="collection-slider-content" style="display: none;">
+       
+        {% assign rings_collection = collections[section.settings.rings_collection] %}
+        
+        {% if rings_collection and rings_collection.products.size > 0 %}
+
+      
+          <div class="slider">
+
+            <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.Ring_heading }}</h2>
+                <a href="{{ section.settings.ring_link }}" class="button">View All Products</a>
+              </div>
+            </div>
+    
+            {% for product in rings_collection.products %}    
+            
+              <div class="slide">
+                
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add"%}
+              <span class="quick-add-label">Quick Add</span">
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>No products in Rings collection.</p>
+        {% endif %}
+      </div>
+          
+          
+          ;
       } else if (collection === 'earrings') {
         document.getElementById('collection-display').innerHTML = `
           <div class="collection-content">
