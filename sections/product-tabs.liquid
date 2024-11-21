@@ -31,14 +31,15 @@
         document.getElementById('collection-display').innerHTML = `
              {% assign rings_collection = collections[section.settings.rings_collection] %}
         {% if rings_collection and rings_collection.products.size > 0 %}
-          {% for product in rings_collection.products %}   
-            
-              <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+                <div class="Ring-card" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
               <div class="Ring-card-content">
                 <h2>{{ section.settings.Ring_heading }}</h2>
                 <a href="{{ section.settings.ring_link }}" class="button">View All Products</a>
               </div>
             </div>
+          {% for product in rings_collection.products %}   
+            
+        
             
               <div class="slide">
                 
