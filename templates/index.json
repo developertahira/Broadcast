@@ -81,7 +81,8 @@
       "type": "product-tabs",
       "settings": {
         "ex_heading": "Exceptional Pieces",
-        "descrip": "Soon-to-be staples in your rotation"
+        "descrip": "Soon-to-be staples in your rotation",
+        "rings_collection": "best-sellers"
       }
     }
   },
