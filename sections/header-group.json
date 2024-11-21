@@ -51,10 +51,34 @@
           "settings": {
             "menu": "top-header-menu"
           }
+        },
+        "menu_amHXNx": {
+          "type": "menu",
+          "settings": {
+            "menu1": "rings",
+            "menu1_title": "Rings",
+            "menu2": "necklaces",
+            "menu2_title": "Necklaces",
+            "menu3": "earrings",
+            "menu3_title": "Earrings",
+            "overlay_image": "shopify://shop_images/pexels-jasmin-chew-5411883-removebg-preview.png",
+            "overlay_text": "Shop the Lookbook"
+          }
+        },
+        "feautred_menu_HXAJdk": {
+          "type": "feautred_menu",
+          "settings": {
+            "text1": "Shop the Lookbook",
+            "text2": "Shop Rings",
+            "text3": "Shop Necklaces",
+            "text4": "Shop Earrings"
+          }
         }
       },
       "block_order": [
-        "topmenu_XqcKNB"
+        "topmenu_XqcKNB",
+        "menu_amHXNx",
+        "feautred_menu_HXAJdk"
       ],
       "settings": {
         "logo_position": "middle-center",
