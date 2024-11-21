@@ -82,7 +82,9 @@
       "settings": {
         "ex_heading": "Exceptional Pieces",
         "descrip": "Soon-to-be staples in your rotation",
-        "rings_collection": "best-sellers"
+        "rings_collection": "best-sellers",
+        "Ring_heading": "Ring Heading",
+        "ring_link": "#"
       }
     }
   },
