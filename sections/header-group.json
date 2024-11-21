@@ -17,16 +17,24 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Shipping over $250",
+            "link": "#"
+          }
+        },
+        "announcement_wMPQQz": {
+          "type": "announcement",
+          "settings": {
+            "text": "New arrivals are here! Take a Peek Now",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_wMPQQz"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -34,11 +42,14 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
-    }, 
+    },
     "top-header": {
       "type": "head-navigation",
       "settings": {
-
+        "custom_menu": "",
+        "tiktock_link": "",
+        "insta_link": "",
+        "linked_page": ""
       }
     },
     "header": {
@@ -57,7 +68,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "enable_transparent-header": false,
+        "color-transparent": "",
+        "show_line_separat": true,
+        "link_tiktock": "",
+        "link-insta": "",
+        "page_linked": ""
       }
     }
   },
