@@ -1,30 +1,53 @@
 <div class="Collection-List-Hover-Container" style="background-image: url('{{ section.settings.bg_best_img | img_url: 'master' }}'); height: 300px; width: 100%">
-     <div class="collection-hover-inner-frame-container">
-           {% comment %}
-            select list of products and display it's title only with Superscript value
-           {% endcomment %}
-           <div class="collection-selector">
-            {% for collection in section.settings.selected_Trending_collections %}
-              <div class="collection-item">
-                <a href="{{ collection.url }}">
-                    <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
-                </a>
-              </div>
-            {% endfor %}
-
-          </div>
-     </div>
+  <div class="collection-hover-inner-frame-container">
+    <div class="collection-selector">
+      {% for collection in section.settings.selected_Trending_collections %}
+        <div class="collection-item">
+          <a href="{{ collection.url }}" class="collection-link" data-bg="{{ collection.image | img_url: 'master' }}">
+            <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
+
 <style>
-    .collection-selector {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-    .Collection-List-Hover-Container {
-        width: 100%;
-        background-repeat: no-repeat;
-    }
+   .collection-item {
+  position: relative;
+  display: inline-block;
+}
+
+.collection-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  text-decoration: none;
+}
+
+.collection-link h2 {
+  position: relative;
+  z-index: 2;
+}
+
+.Collection-List-Hover-Container {
+  position: relative;
+  transition: background-image 0.3s ease;
+}
+
+/* Hover Effect */
+.collection-item:hover .collection-link {
+  z-index: 3; /* Make sure the text is above the background */
+}
+
+.collection-item:hover {
+  background-image: url(attr(data-bg url));
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease;
+}
+
 </style>
 {% schema %}
 {
