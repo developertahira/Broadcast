@@ -96,7 +96,7 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "enable_transparent-header": true,
-        "color-transparent": "",
+        "color-transparent": "white",
         "show_line_separat": true,
         "link_tiktock": "https://ticktock.com",
         "link-insta": "https://instagram.com",
