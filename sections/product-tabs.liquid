@@ -115,20 +115,22 @@
 /* Slider Container */
 .ring-slider {
   display: flex;
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;  /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory;  /* Enables snapping to each product */
   padding: 20px 0;
 }
 
 .slider-container {
   display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.5s ease;
+  flex-wrap: nowrap;  /* Ensures products do not wrap */
+  gap: 20px;  /* Adds spacing between items */
+  width: max-content;  /* Ensures the total width fits the content */
 }
 
 .slide {
-  margin-right: 20px;
+  flex: 0 0 auto;  /* Ensures each slide does not shrink or grow */
   text-align: center;
+  scroll-snap-align: center;  /* Snaps each product in view */
 }
 
 .card-label {
@@ -152,6 +154,12 @@
 .product-price {
   font-size: 16px;
   color: #555;
+}
+
+/* Smooth Scroll Styling */
+.ring-slider {
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on mobile */
+  scroll-behavior: smooth;  /* Smooth scrolling on other devices */
 }
 
 .collection-display {
