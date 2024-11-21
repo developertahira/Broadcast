@@ -349,7 +349,15 @@
     });
   }
 
-  
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+  tab.addEventListener('mouseenter', () => {
+    document.querySelector('.header').style.backgroundColor = '#your-desired-color'; // Replace with your color
+  });
+
+  tab.addEventListener('mouseleave', () => {
+    document.querySelector('.header').style.backgroundColor = ''; // Reset to default
+  });
+});
   </script>
 
 
