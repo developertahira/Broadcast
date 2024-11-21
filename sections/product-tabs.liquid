@@ -1,44 +1,122 @@
-<div class="product-tabs-main-container">
-    <div class="product-heading-content">
-        <h2 class="Excep-heading">{{section.settings.ex_heading}}</h2>
-        <p class="Excep-Descrip">{{Section.settings.Ex_Description}}</p>
-    </div>
-    <div class="product-tabs-menu-contain">
-        <ul class="tabs-menu">
+<div class="split-container">
+  <!-- Left Content Area -->
+  <div class="content-container">
+    <h2>Exceptional Pieces</h2>
+    <p>Soon-to-be staples in your rotation</p>
+  </div>
 
-            <li class="tab-item" data-tab="rings">Rings</li>
-            <li class="tab-item active" data-tab="earrings">Earrings</li>
-        </ul>
-    
-    </div>
+  <!-- Right Button Area -->
+  <div class="button-container">
+    <button class="collection-button" data-collection="rings">Rings</button>
+    <button class="collection-button" data-collection="earrings">Earrings</button>
+  </div>
 </div>
+
+<!-- Display Area for Collection -->
+<div class="collection-display" id="collection-display">
+  <p class="placeholder-text">Select a collection to display content here in full width.</p>
+</div>
+
+<!-- JavaScript to Handle Button Clicks -->
+<script>
+  document.querySelectorAll('.collection-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const collection = button.getAttribute('data-collection');
+      
+      // Clear the placeholder text
+      document.getElementById('collection-display').innerHTML = '';
+
+      // Dynamically insert collection content (testing placeholders here)
+      if (collection === 'rings') {
+        document.getElementById('collection-display').innerHTML = `
+          <div class="collection-content">
+            <h3>Rings Collection</h3>
+            <p>This is the content for the Rings collection, displayed at full width.</p>
+          </div>`;
+      } else if (collection === 'earrings') {
+        document.getElementById('collection-display').innerHTML = `
+          <div class="collection-content">
+            <h3>Earrings Collection</h3>
+            <p>This is the content for the Earrings collection, displayed at full width.</p>
+          </div>`;
+      }
+    });
+  });
+</script>
 <style>
-    .product-tabs-menu-contain {
-    margin-top: 20px;
-}
-.tabs-menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.tab-item {
-    margin-right: 20px;
-    cursor: pointer;
-    font-weight: 500;
-    position: relative;
-}
-.tab-item.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-.tabs-content .tab-content {
-    display: none;
-}
-.tabs-content .tab-content.active {
-    display: block;
+/* Main Container */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
 }
 
+/* Left Content Area */
+.content-container {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.content-container h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.content-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Right Button Area */
+.button-container {
+  width: 50%;
+  text-align: right;
+}
+
+.button-container .collection-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #000;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-container .collection-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Collection Display Area */
+.collection-display {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.placeholder-text {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+}
+
+.collection-content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.collection-content h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.collection-content p {
+  font-size: 18px;
+  color: #555;
+}
 </style>
 {% schema %}
 {
