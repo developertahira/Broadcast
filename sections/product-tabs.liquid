@@ -26,21 +26,20 @@
       // Clear the placeholder text
       document.getElementById('collection-display').innerHTML = '';
 
-      // Dynamically insert collection content
+      // Dynamically insert collection content (testing placeholders here)
       if (collection === 'rings') {
         document.getElementById('collection-display').innerHTML = `
-          <div class="slider-container">
-            <button class="prev-slide" onclick="moveSlide('prev')">Prev</button>
-            <div class="slide-track">
-              {% assign rings_collection = collections[section.settings.rings_collection] %}
-              {% if rings_collection and rings_collection.products.size > 0 %}
+          {% assign rings_collection = collections[section.settings.rings_collection] %}
+          {% if rings_collection and rings_collection.products.size > 0 %}
+            <div class="ring-slider">
+              <div class="slider-container">
                 {% for product in rings_collection.products %}
                   <div class="slide">
                     <a href="{{ product.url }}">
-                      <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                      <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
                     </a>
                     <div class="card-label">
-                      {% if product.tags contains "Quick Add" %}
+                      {% if  product.tags contains "Quick Add" %}
                         <span class="quick-add-label">Quick Add</span>
                       {% elsif product.tags contains "Pre-order" %}
                         <span class="pre-order-label">Pre-order</span>
@@ -50,38 +49,21 @@
                     <p class="product-price">From {{ product.price | money }}</p>
                   </div>
                 {% endfor %}
-              {% else %}
-                <p>No products in Rings collection.</p>
-              {% endif %}
+              </div>
             </div>
-            <button class="next-slide" onclick="moveSlide('next')">Next</button>
-          </div>
+          {% else %}
+            <p>No products in Rings collection.</p>
+          {% endif %}
         `;
       } else if (collection === 'earrings') {
         document.getElementById('collection-display').innerHTML = `
-          <div class="slider-container">
-            <button class="prev-slide" onclick="moveSlide('prev')">Prev</button>
-            <div class="slide-track">
-              <p>Earrings collection content goes here.</p>
-            </div>
-            <button class="next-slide" onclick="moveSlide('next')">Next</button>
-          </div>
-        `;
+          <div class="collection-content">
+            <h3>Earrings Collection</h3>
+            <p>This is the content for the Earrings collection, displayed at full width.</p>
+          </div>`;
       }
     });
   });
-
-  function moveSlide(direction) {
-    const track = document.querySelector('.slide-track');
-    const slides = document.querySelectorAll('.slide');
-    const slideWidth = slides[0].offsetWidth;  // Width of one slide
-    const currentPosition = track.scrollLeft;
-    const newPosition = direction === 'next' ? currentPosition + slideWidth : currentPosition - slideWidth;
-    track.scrollTo({
-      left: newPosition,
-      behavior: 'smooth'
-    });
-  }
 </script>
 
 <style>
@@ -99,7 +81,7 @@
   padding-right: 20px;
 }
 
-.content-container h2 {
+.content-container h1 {
   font-size: 36px;
   margin-bottom: 10px;
 }
@@ -130,7 +112,56 @@
   color: #fff;
 }
 
-/* Collection Display Area */
+/* Slider Container */
+.ring-slider {
+  display: flex;
+  overflow-x: auto;  /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory;  /* Enables snapping to each product */
+  padding: 20px 0;
+}
+
+.slider-container {
+  display: flex;
+  flex-wrap: nowrap;  /* Ensures products do not wrap */
+  gap: 20px;  /* Adds spacing between items */
+  width: max-content;  /* Ensures the total width fits the content */
+}
+
+.slide {
+  flex: 0 0 auto;  /* Ensures each slide does not shrink or grow */
+  text-align: center;
+  scroll-snap-align: center;  /* Snaps each product in view */
+}
+
+.card-label {
+  margin-top: 10px;
+}
+
+.quick-add-label,
+.pre-order-label {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #ff9900;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.product-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Smooth Scroll Styling */
+.ring-slider {
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on mobile */
+  scroll-behavior: smooth;  /* Smooth scrolling on other devices */
+}
+
 .collection-display {
   width: 100%;
   margin-top: 20px;
@@ -139,47 +170,19 @@
   justify-content: center;
 }
 
-.slider-container {
-  display: flex;
-  align-items: center;
-}
-
-.slide-track {
-  display: flex;
-  overflow: hidden;
-  width: 80%;
-}
-
-.slide {
-  margin: 0 15px;
+.collection-content {
   text-align: center;
-  flex-shrink: 0;
+  padding: 50px 20px;
 }
 
-.product-title, .product-price {
-  font-size: 14px;
-  color: #333;
+.collection-content h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.placeholder-text {
-  text-align: center;
-  font-size: 16px;
-  color: #999;
-}
-
-/* Navigation Buttons */
-.prev-slide, .next-slide {
-  background-color: #000;
-  color: #fff;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.prev-slide:hover, .next-slide:hover {
-  background-color: #333;
+.collection-content p {
+  font-size: 18px;
+  color: #555;
 }
 </style>
 
