@@ -316,49 +316,46 @@
 
 
 <script>
-    let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-  let dropdownItems = document.querySelector(".header__submenu");
-  items.forEach(item => {
+  // Select menu items and header
+  let menuItems = document.querySelectorAll(".header__inline-menu details");
+  let header = document.querySelector(".header");
+
+  // Add event listeners to each menu item
+  menuItems.forEach(item => {
     item.addEventListener("mouseenter", () => {
+      // Open the dropdown
       item.setAttribute("open", true);
-      let ulElement = item.querySelector("ul");
-      if (ulElement !== null) {
-        ulElement.addEventListener("mouseleave", () => {
-          item.removeAttribute("open");
-        });
+
+      // Change header background color to match dropdown
+      let dropdown = item.querySelector(".header__submenu");
+      if (dropdown) {
+        let dropdownBgColor = window.getComputedStyle(dropdown).backgroundColor;
+        header.style.backgroundColor = dropdownBgColor;
       }
     });
-    item.addEventListener("focus", () => {
-      item.setAttribute("open", true);
-    });
-    item.addEventListener("blur", () => {
+
+    item.addEventListener("mouseleave", () => {
+      // Close the dropdown
       item.removeAttribute("open");
-    });
-    item.addEventListener("mouseenter", () => {
-        item.setAttribute("open", "");
-      });
-      item.addEventListener("mouseleave", () => {
-        item.removeAttribute("open");
-      });
-  });
-  if (dropdownItems !== null) {
-    dropdownItems.addEventListener("mouseleave", () => {
-      items.forEach(item => {
-        item.removeAttribute("open");
-      });
-    });
-  }
 
-  document.querySelectorAll('.menu-tab').forEach(tab => {
-  tab.addEventListener('mouseenter', () => {
-    document.querySelector('.header').style.backgroundColor = '#your-desired-color'; // Replace with your color
+      // Reset header background color
+      header.style.backgroundColor = ""; // Reset to default
+    });
   });
 
-  tab.addEventListener('mouseleave', () => {
-    document.querySelector('.header').style.backgroundColor = ''; // Reset to default
+  // Handle dropdown mouseleave separately if needed
+  document.querySelectorAll(".header__submenu").forEach(dropdown => {
+    dropdown.addEventListener("mouseleave", () => {
+      menuItems.forEach(item => {
+        item.removeAttribute("open");
+      });
+
+      // Reset header background color
+      header.style.backgroundColor = ""; // Reset to default
+    });
   });
-});
-  </script>
+</script>
+
 
 
 {%- if settings.cart_type == "notification" -%}
