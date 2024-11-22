@@ -46,6 +46,17 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "topmenu_F4CtH8": {
+          "type": "topmenu",
+          "settings": {
+            "menu": "top-header-menu"
+          }
+        }
+      },
+      "block_order": [
+        "topmenu_F4CtH8"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "broadcast",
