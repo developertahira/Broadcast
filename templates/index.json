@@ -141,9 +141,10 @@
         "column_Mtb3qG": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/pexels-sunsetoned-6431174-removebg-preview.png",
+            "custom_svg": "",
+            "title": "",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -151,9 +152,10 @@
         "column_xhAiXD": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/broadcast-chelsea-3-removebg-preview.png",
+            "custom_svg": "",
+            "title": "",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -161,9 +163,21 @@
         "column_Pzw4WK": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/jess-harper-sunday-bLkj9eNhW90-unsplash_2-removebg-preview.png",
+            "custom_svg": "",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KXW9QH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/broadcast-chelsea-10-removebg-preview.png",
+            "custom_svg": "",
+            "title": "",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -172,7 +186,8 @@
       "block_order": [
         "column_Mtb3qG",
         "column_xhAiXD",
-        "column_Pzw4WK"
+        "column_Pzw4WK",
+        "column_KXW9QH"
       ],
       "settings": {
         "caption": "Follow us",
