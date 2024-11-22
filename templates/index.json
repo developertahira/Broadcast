@@ -445,6 +445,15 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_within_text_JLnNtf": {
+      "type": "image-within-text",
+      "settings": {
+        "text_1": "Shop our modern",
+        "text_2": "heirlooms, bestselling fine jewelry",
+        "text_3": "and thoughtfully",
+        "text_4": "curated collections."
+      }
     }
   },
   "order": [
@@ -464,6 +473,7 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt"
+    "multicolumn_mNGAyt",
+    "image_within_text_JLnNtf"
   ]
 }
