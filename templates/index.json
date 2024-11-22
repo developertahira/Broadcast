@@ -15,17 +15,24 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Everyday Luxury",
             "heading_size": "h0"
+          }
+        },
+        "text_8NCMmC": {
+          "type": "text",
+          "settings": {
+            "text": "Beautiful pieces to pass down for generations",
+            "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "SHOP ALL PRODUCTS",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
-            "button_label_2": "",
+            "button_label_2": "SHOP SALE",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -33,6 +40,7 @@
       },
       "block_order": [
         "heading",
+        "text_8NCMmC",
         "button"
       ],
       "settings": {
