@@ -353,12 +353,12 @@
             "text_style": "body"
           }
         },
-        "button_kTR6M3": {
-          "type": "button",
+        "section_RRLDbp": {
+          "type": "section",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "show_products": true,
+            "featured_products": [],
+            "featured_collection": "rings"
           }
         }
       },
@@ -366,7 +366,7 @@
         "caption_b46Xei",
         "heading_LBUnfN",
         "text_UH3gL3",
-        "button_kTR6M3"
+        "section_RRLDbp"
       ],
       "settings": {
         "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
