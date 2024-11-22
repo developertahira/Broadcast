@@ -62,9 +62,9 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "enable_transparent-header": true,
-        "color-transparent": "",
+        "color-transparent": "White",
         "show_line_separat": true,
-        "link_tiktock": "",
+        "link_tiktock": "https://Tiktock.com",
         "link-insta": "",
         "page_linked": ""
       }
