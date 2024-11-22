@@ -49,6 +49,24 @@
         "show_text_below": false
       }
     },
+    "product_tabs_NBKPQg": {
+      "type": "product-tabs",
+      "settings": {
+        "ex_heading": "Exceptional Pieces",
+        "descrip": "Soon-to-be staples in your rotation",
+        "first_menu_name": "RINGS",
+        "rings_collection": "rings",
+        "Ring_image": "shopify://shop_images/R-MIRO-S_2_2018-12-05_01-46-40_7tBwMRB9mG-removebg-preview.png",
+        "Ring_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
+        "button_text": "SHOP NOW",
+        "ring_link": "#",
+        "second_menu_name": "EARRINGS",
+        "earrings_collection": "earings",
+        "earrings_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
+        "Earings_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
+        "Earings_link": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -300,29 +318,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "product_tabs_NBKPQg": {
-      "type": "product-tabs",
-      "settings": {
-        "ex_heading": "Exceptional Pieces",
-        "descrip": "Soon-to-be staples in your rotation",
-        "first_menu_name": "RINGS",
-        "rings_collection": "rings",
-        "Ring_image": "shopify://shop_images/R-MIRO-S_2_2018-12-05_01-46-40_7tBwMRB9mG-removebg-preview.png",
-        "Ring_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
-        "button_text": "SHOP NOW",
-        "ring_link": "#",
-        "second_menu_name": "EARRINGS",
-        "earrings_collection": "earings",
-        "earrings_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
-        "Earings_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
-        "Earings_link": ""
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
+    "product_tabs_NBKPQg",
     "product_img_slider_y4Amtx",
     "ethical_products_8mL7PR",
     "trending_product_title_bK7md7",
@@ -332,7 +333,6 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "product_tabs_NBKPQg"
+    "multicolumn_mNGAyt"
   ]
 }
