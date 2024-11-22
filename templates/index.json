@@ -194,7 +194,7 @@
         "title": "@broadcastjewelry",
         "heading_size": "h1",
         "background_color": "#ffffff",
-        "image_width": "third",
+        "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 4,
         "column_alignment": "center",
