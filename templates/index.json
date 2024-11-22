@@ -419,7 +419,8 @@
         "column_44JDrV": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
+            "image": "shopify://shop_images/two2-removebg-preview.png",
+            "custom_svg": "",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
