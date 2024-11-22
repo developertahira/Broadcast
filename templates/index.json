@@ -134,11 +134,70 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_Mm8xic": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dC63WJ": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aPd4ie": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Wmf7eR": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg></svg>",
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dC63WJ",
+        "column_aPd4ie",
+        "column_Wmf7eR"
+      ],
+      "settings": {
+        "caption": "Follow us",
+        "title": "@broadcastjewelry",
+        "heading_size": "h1",
+        "background_color": "#ffffff",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "multicolumn_mNGAyt"
+    "multicolumn_mNGAyt",
+    "multicolumn_Mm8xic"
   ]
 }
