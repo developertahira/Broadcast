@@ -77,6 +77,14 @@
         "padding_bottom": 36
       }
     },
+    "commitment_content_F3Qkic": {
+      "type": "commitment-content",
+      "settings": {
+        "top_para": "Our commitment",
+        "middle_para": "\"We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.\"",
+        "bottom_Description": "— Founders"
+      }
+    },
     "multicolumn_Mm8xic": {
       "type": "multicolumn",
       "blocks": {
@@ -212,6 +220,7 @@
   "order": [
     "image_banner",
     "featured_collection",
+    "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
     "multicolumn_mNGAyt"
   ]
