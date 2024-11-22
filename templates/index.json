@@ -77,6 +77,19 @@
         "padding_bottom": 36
       }
     },
+    "trending_product_title_bK7md7": {
+      "type": "Trending-product-title",
+      "settings": {
+        "bg_best_img": "shopify://shop_images/ALOHAS--72_copia-2-removebg-preview.png",
+        "selected_Trending_collections": [
+          "best-sellers",
+          "bracelets",
+          "earings",
+          "necklaces",
+          "rings"
+        ]
+      }
+    },
     "list_marque_bar_qVKVRW": {
       "type": "list-marque-bar",
       "settings": {
@@ -260,31 +273,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "trending_product_title_bK7md7": {
-      "type": "Trending-product-title",
-      "settings": {
-        "bg_best_img": "shopify://shop_images/ALOHAS--72_copia-2-removebg-preview.png",
-        "selected_Trending_collections": [
-          "best-sellers",
-          "bracelets",
-          "earings",
-          "necklaces",
-          "rings"
-        ]
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
+    "trending_product_title_bK7md7",
     "list_marque_bar_qVKVRW",
     "shop_look_9CiRxM",
     "essentials_collection_pLnGJk",
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "trending_product_title_bK7md7"
+    "multicolumn_mNGAyt"
   ]
 }
