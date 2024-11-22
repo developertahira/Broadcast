@@ -394,11 +394,11 @@
         "Sheading": "Get 20% off all sale items",
         "button_text": "SHOP 20% OFF NOW",
         "link_button": "#",
-        "countdown_date": "",
-        "Days": "",
-        "Hours": "",
-        "minutes": "",
-        "seconds": ""
+        "countdown_date": "2024-11-17T10:30:45",
+        "Days": "Days",
+        "Hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds"
       }
     }
   },
