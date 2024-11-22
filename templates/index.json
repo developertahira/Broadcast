@@ -327,6 +327,64 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "traditions_image_with_text_HkPUJA": {
+      "type": "Traditions-image-with-text",
+      "blocks": {
+        "caption_b46Xei": {
+          "type": "caption",
+          "settings": {
+            "caption": "Trends & Tradition",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_LBUnfN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_UH3gL3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_kTR6M3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_b46Xei",
+        "heading_LBUnfN",
+        "text_UH3gL3",
+        "button_kTR6M3"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
+        "height": "adapt",
+        "title": "Multicolumn",
+        "background_color": "#ffffff",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -343,6 +401,7 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt"
+    "multicolumn_mNGAyt",
+    "traditions_image_with_text_HkPUJA"
   ]
 }
