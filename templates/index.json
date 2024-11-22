@@ -77,6 +77,17 @@
         "padding_bottom": 36
       }
     },
+    "shop_look_9CiRxM": {
+      "type": "Shop-look",
+      "settings": {
+        "eimage": "shopify://shop_images/shop.webp",
+        "featured_products": [
+          "ilona-signet-ring-in-gold",
+          "gia-hoops-in-gold"
+        ],
+        "caption": "Shop the look"
+      }
+    },
     "essentials_collection_pLnGJk": {
       "type": "Essentials-collection",
       "settings": {
@@ -245,6 +256,7 @@
   "order": [
     "image_banner",
     "featured_collection",
+    "shop_look_9CiRxM",
     "essentials_collection_pLnGJk",
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
