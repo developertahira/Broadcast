@@ -260,6 +260,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "trending_product_title_bK7md7": {
+      "type": "Trending-product-title",
+      "settings": {
+        "selected_Trending_collections": [
+          "best-sellers",
+          "bracelets",
+          "earings",
+          "necklaces",
+          "rings"
+        ]
+      }
     }
   },
   "order": [
@@ -271,6 +283,7 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt"
+    "multicolumn_mNGAyt",
+    "trending_product_title_bK7md7"
   ]
 }
