@@ -7,14 +7,14 @@
 
   <!-- Right Button Area -->
   <div class="button-container">
-    <button class="collection-button" data-collection="rings">Rings</button>
-    <button class="collection-button" data-collection="earrings">Earrings</button>
+    <button class="collection-button" data-collection="rings">{{section.settings.first_menu_name}}</button>
+    <button class="collection-button" data-collection="earrings">{{section.settings.second_menu_name}}</button>
   </div>
 </div>
 
 <!-- Display Area for Collection -->
 <div class="collection-display" id="collection-display">
-  <p class="placeholder-text">Select a collection to display content here in full width.</p>
+  <p class="placeholder-text"></p>
 </div>
 
 <!-- JavaScript to Handle Button Clicks -->
@@ -30,9 +30,17 @@
       if (collection === 'rings') {
         document.getElementById('collection-display').innerHTML = `
           {% assign rings_collection = collections[section.settings.rings_collection] %}
+
           {% if rings_collection and rings_collection.products.size > 0 %}
             <div class="ring-slider">
               <div class="slider-container">
+            <div class="Ring-card slide" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.Ring_heading }}</h2>
+                <a href="{{ section.settings.ring_link }}" class="button">{{section.settings.button_text}}</a>
+              </div>
+            </div>
+
                 {% for product in rings_collection.products %}
                   <div class="slide">
                     <a href="{{ product.url }}">
@@ -57,16 +65,50 @@
         `;
       } else if (collection === 'earrings') {
         document.getElementById('collection-display').innerHTML = `
-          <div class="collection-content">
-            <h3>Earrings Collection</h3>
-            <p>This is the content for the Earrings collection, displayed at full width.</p>
-          </div>`;
+
+        {% assign earrings_collection = collections[section.settings.earrings_collection] %}
+
+          {% if earrings_collection and earrings_collection.products.size > 0 %}
+
+            <div class="ring-slider">
+              <div class="slider-container">
+           <div class="Ring-card slide" style="background-image: url({{ section.settings.Earings_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.earrings_heading }}</h2>
+                <a href="{{ section.settings.Earings_link }}" class="button">{{section.settings.button_text}}</a>
+              </div>
+            </div>
+
+             {% for product in earrings_collection.products %}
+              <div class="slide">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add" %}
+              <span class="quick-add-label">Quick Add</span>
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <p>No products in Earrings collection.</p>
+          {% endif %}`;
       }
     });
   });
 </script>
 
 <style>
+    .Ring-card {
+       background-repeat: no-repeat;
+    }
 /* Main Container */
 .split-container {
   display: flex;
@@ -101,15 +143,14 @@
   margin: 0 10px;
   padding: 10px 20px;
   font-size: 16px;
-  border: 1px solid #000;
+  border: none;
   background: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .button-container .collection-button:hover {
-  background-color: #000;
-  color: #fff;
+
 }
 
 /* Slider Container */
@@ -134,16 +175,16 @@
 }
 
 .card-label {
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 .quick-add-label,
 .pre-order-label {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #ff9900;
-  color: #fff;
-  border-radius: 5px;
+  background-color: whitesmoke;
+  color: black;
+  width: 100%;
 }
 
 .product-title {
@@ -184,6 +225,18 @@
   font-size: 18px;
   color: #555;
 }
+.Ring-card-content {
+    color: white;
+    width: 347px;
+    text-align: center;
+    position: relative;
+    top: 263px;
+    left: 0;
+}
+.Ring-card-content h2 {
+    color: white;
+}
+
 </style>
 
 {% schema %}
@@ -201,6 +254,11 @@
       "label": "Description"
     },
     {
+       "type": "text",
+        "id": "first_menu_name",
+       "label": "First Tab Name"
+  },
+    {
       "type": "collection",
       "id": "rings_collection",
       "label": "Rings Collection"
@@ -216,10 +274,41 @@
       "label": "Ring Heading"
     },
     {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button-Name"
+    },
+    {
       "type": "url",
       "id": "ring_link",
       "label": "Button URL"
+    },
+    {
+       "type": "text",
+       "id": "second_menu_name",
+       "label": "Second Tab Name"
+    },
+    {
+        "type": "collection",
+        "id": "earrings_collection",
+        "label": "Earrings Collection"
+    },
+    {
+         "type": "text",
+         "id": "earrings_heading",
+         "label": " Earings heading"
+     },
+     {
+        "type": "image_picker",
+        "id": "Earings_image",
+        "label": "Earings Image"
+    },
+    {
+        "type": "url",
+        "id": "Earings_link",
+        "label": "Button Url"
     }
+
   ],
   "presets": [
     {

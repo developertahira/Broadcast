@@ -1,54 +1,72 @@
 <div class="Collection-List-Hover-Container" style="background-image: url('{{ section.settings.bg_best_img | img_url: 'master' }}'); height: 300px; width: 100%">
-  <div class="collection-hover-inner-frame-container">
-    <div class="collection-selector">
-      {% for collection in section.settings.selected_Trending_collections %}
-        <div class="collection-item">
-          <a href="{{ collection.url }}" class="collection-link" data-bg="{{ collection.image | img_url: 'master' }}">
-            <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+     <div class="collection-hover-inner-frame-container">
+           {% comment %} 
+            select list of products and display its title only with Superscript value 
+           {% endcomment %}
+           <div class="collection-selector">
+            {% for collection in section.settings.selected_Trending_collections %}
+              <div class="collection-item">
+                <a href="{{ collection.url }}" class="collection-link" data-bg-image="{{ collection.image | img_url: 'master' }};">
+                    <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+     </div>
 </div>
 
 <style>
-   .collection-item {
-  position: relative;
-  display: inline-block;
-}
+   .collection-selector {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 
-.collection-link {
-  display: block;
-  position: relative;
-  z-index: 1;
-  color: inherit;
-  text-decoration: none;
-}
-
-.collection-link h2 {
-  position: relative;
-  z-index: 2;
+    flex-wrap: wrap;
 }
 
 .Collection-List-Hover-Container {
-  position: relative;
-  transition: background-image 0.3s ease;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out; /* Smooth transition */
+    height: 650px !important;
 }
 
-/* Hover Effect */
-.collection-item:hover .collection-link {
-  z-index: 3; /* Make sure the text is above the background */
+.collection-item a h2 {
+    transition: color 0.3s ease;
+    color: white; /* Default color */
+    opacity: 0.5;
+    font-size: 9rem;
+    margin-left: 37px;
+
 }
 
-.collection-item:hover {
-  background-image: url(attr(data-bg url));
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.3s ease;
+.collection-item a:hover h2 {
+    color: white; /* Hover color */
+    opacity: 3;
+}
+
+.collection-item a {
+    display: inline-block;
+    text-decoration: none;
 }
 
 </style>
+<script>
+    document.querySelectorAll('.collection-item a').forEach(item => {
+    item.addEventListener('mouseenter', function () {
+        var newBgImage = this.getAttribute('data-bg-image');  // Get the featured image URL
+        document.querySelector('.Collection-List-Hover-Container').style.backgroundImage = `url(${newBgImage})`;
+    });
+
+    item.addEventListener('mouseleave', function () {
+        var defaultBgImage = '{{ section.settings.bg_best_img | img_url: "master" }}';  // Default background image
+        document.querySelector('.Collection-List-Hover-Container').style.backgroundImage = `url(${defaultBgImage})`;
+    });
+});
+
+</script>
 {% schema %}
 {
     "name": "Trending Collection Title",
