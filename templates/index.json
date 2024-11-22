@@ -77,6 +77,22 @@
         "padding_bottom": 36
       }
     },
+    "ethical_products_8mL7PR": {
+      "type": "Ethical-products",
+      "settings": {
+        "eth_caption": "Our Promise",
+        "heading": "Ethical is Beautiful",
+        "description": "We ensure our products contribute to the well-being of people and planet, towards a brighter future",
+        "ring_img": "shopify://shop_images/cocoa-pearl-gold-earrings-alohas-562722-removebg-preview.png",
+        "eth_ring_heading": "Duo Form Ring",
+        "ring_description": "Explore rings for your big moment, and all the little memories after.",
+        "button_Text": "SHOP NOW",
+        "timeless_img": "shopify://shop_images/E-COM-5-740-removebg-preview.png",
+        "eth_timeless_heading": "Contemporary and Timeless",
+        "Timeless_description": "Accessorize with 14k recycled gold all day, everyday.",
+        "button_timeless": "SHOP NOW"
+      }
+    },
     "trending_product_title_bK7md7": {
       "type": "Trending-product-title",
       "settings": {
@@ -278,6 +294,7 @@
   "order": [
     "image_banner",
     "featured_collection",
+    "ethical_products_8mL7PR",
     "trending_product_title_bK7md7",
     "list_marque_bar_qVKVRW",
     "shop_look_9CiRxM",
