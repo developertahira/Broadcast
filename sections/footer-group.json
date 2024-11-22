@@ -13,41 +13,6 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "link_list_Jkpere": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
-          }
-        },
-        "brand_information_BE8EcU": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
-        },
-        "text_ge4LxJ": {
-          "type": "text",
-          "settings": {
-            "heading": "Heading",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
-          }
-        },
-        "image_amwafC": {
-          "type": "image",
-          "settings": {
-            "image_width": 100,
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "link_list_Jkpere",
-        "brand_information_BE8EcU",
-        "text_ge4LxJ",
-        "image_amwafC"
-      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
