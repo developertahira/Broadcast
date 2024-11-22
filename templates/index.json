@@ -77,64 +77,6 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_mNGAyt": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_zwht8F": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-flare\" viewbox=\"0 0 24 24\" width=\"48\" set here>\n    height=\"48\" <!-- Set height here -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set stroke color -->\n>\n    <path d=\"M11.456 2.665a.6.6 0 0 1 1.088 0l2.864 6.137a.6.6 0 0 0 .29.29l6.137 2.864a.6.6 0 0 1 0 1.088l-6.137 2.864a.6.6 0 0 0-.29.29l-2.864 6.137a.6.6 0 0 1-1.088 0l-2.864-6.137a.6.6 0 0 0-.29-.29l-6.137-2.864a.6.6 0 0 1 0-1.088l6.137-2.864a.6.6 0 0 0 .29-.29l2.864-6.137z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
-            "title": "Ethical Sourcing",
-            "text": "<p>Fully traceable supply chain</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_6f9Aa7": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-donation\" viewbox=\"0 0 24 24\" width=\"48\" set the>\n    height=\"48\" <!-- Set the height -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set outline color -->\n>\n    <path d=\"M16 6.28a2.28 2.28 0 0 1-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 0 1-.822-.017l-2.918-2.94a2.281 2.281 0 0 1 0-3.214 2.277 2.277 0 0 1 3.232 0L12 4.78l.106-.107A2.276 2.276 0 0 1 16 6.28z\" stroke=\"#000\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 20 3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 16 .858-.858a.484.484 0 0 0 .142-.343v0a.485.485 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 16-.858-.858A.485.485 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
-            "title": "Giving Back",
-            "text": "<p>1% to orgs and communities</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_W7PJkT": {
-          "type": "column",
-          "settings": {
-            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-chat\" viewbox=\"0 0 24 24\" width=\"48\" height=\"48\" fill=\"none\">\n    <path d=\"M7.5 22a5.5 5.5 0 1 0-4.764-2.75l-.461 2.475 2.475-.46A5.474 5.474 0 0 0 7.5 22z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n    <path d=\"M15.282 17.898A7.946 7.946 0 0 0 18 16.93l3.6.67-.67-3.6A8 8 0 1 0 6.083 8.849\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n</svg>",
-            "title": "On Demand Stylists",
-            "text": "<p>Available everyday</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_zwht8F",
-        "column_6f9Aa7",
-        "column_W7PJkT"
-      ],
-      "settings": {
-        "caption": "",
-        "title": "",
-        "heading_size": "h1",
-        "background_color": "#f5f2ec",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "multicolumn_Mm8xic": {
       "type": "multicolumn",
       "blocks": {
@@ -207,12 +149,70 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_mNGAyt": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_zwht8F": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-flare\" viewbox=\"0 0 24 24\" width=\"48\" set here>\n    height=\"48\" <!-- Set height here -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set stroke color -->\n>\n    <path d=\"M11.456 2.665a.6.6 0 0 1 1.088 0l2.864 6.137a.6.6 0 0 0 .29.29l6.137 2.864a.6.6 0 0 1 0 1.088l-6.137 2.864a.6.6 0 0 0-.29.29l-2.864 6.137a.6.6 0 0 1-1.088 0l-2.864-6.137a.6.6 0 0 0-.29-.29l-6.137-2.864a.6.6 0 0 1 0-1.088l6.137-2.864a.6.6 0 0 0 .29-.29l2.864-6.137z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
+            "title": "Ethical Sourcing",
+            "text": "<p>Fully traceable supply chain</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6f9Aa7": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-donation\" viewbox=\"0 0 24 24\" width=\"48\" set the>\n    height=\"48\" <!-- Set the height -->\n    fill=\"none\" <!-- Remove fill -->\n    stroke=\"#000\" <!-- Set outline color -->\n>\n    <path d=\"M16 6.28a2.28 2.28 0 0 1-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 0 1-.822-.017l-2.918-2.94a2.281 2.281 0 0 1 0-3.214 2.277 2.277 0 0 1 3.232 0L12 4.78l.106-.107A2.276 2.276 0 0 1 16 6.28z\" stroke=\"#000\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 20 3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m18 16 .858-.858a.484.484 0 0 0 .142-.343v0a.485.485 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n    <path d=\"m6 16-.858-.858A.485.485 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\"></path>\n</svg>",
+            "title": "Giving Back",
+            "text": "<p>1% to orgs and communities</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_W7PJkT": {
+          "type": "column",
+          "settings": {
+            "custom_svg": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-chat\" viewbox=\"0 0 24 24\" width=\"48\" height=\"48\" fill=\"none\">\n    <path d=\"M7.5 22a5.5 5.5 0 1 0-4.764-2.75l-.461 2.475 2.475-.46A5.474 5.474 0 0 0 7.5 22z\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n    <path d=\"M15.282 17.898A7.946 7.946 0 0 0 18 16.93l3.6.67-.67-3.6A8 8 0 1 0 6.083 8.849\" stroke=\"#000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"fill: none;\" force fill to none here>\n    ></path>\n</svg>",
+            "title": "On Demand Stylists",
+            "text": "<p>Available everyday</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_zwht8F",
+        "column_6f9Aa7",
+        "column_W7PJkT"
+      ],
+      "settings": {
+        "caption": "",
+        "title": "",
+        "heading_size": "h1",
+        "background_color": "#f5f2ec",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "multicolumn_mNGAyt",
-    "multicolumn_Mm8xic"
+    "multicolumn_Mm8xic",
+    "multicolumn_mNGAyt"
   ]
 }
