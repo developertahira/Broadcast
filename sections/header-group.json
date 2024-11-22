@@ -26,22 +26,13 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
         "change_slides_speed": 5,
         "enable_country_selector": false,
         "enable_language_selector": false
-      }
-    },
-    "top-header": {
-      "type": "head-navigation",
-      "settings": {
-        "custom_menu": "",
-        "tiktock_link": "",
-        "insta_link": "",
-        "linked_page": ""
       }
     },
     "header": {
@@ -52,10 +43,33 @@
           "settings": {
             "menu": "top-header-menu"
           }
+        },
+        "menu_qAeREi": {
+          "type": "menu",
+          "settings": {
+            "menu1": "",
+            "menu1_title": "Rings",
+            "menu2": "",
+            "menu2_title": "Necklaces",
+            "menu3": "",
+            "menu3_title": "Earrings",
+            "overlay_text": "Shop the Lookbook"
+          }
+        },
+        "feautred_menu_yVf6qt": {
+          "type": "feautred_menu",
+          "settings": {
+            "text1": "Shop the Lookbook",
+            "text2": "Shop Rings",
+            "text3": "Shop Necklaces",
+            "text4": "Shop Earrings"
+          }
         }
       },
       "block_order": [
-        "topmenu_F4CtH8"
+        "topmenu_F4CtH8",
+        "menu_qAeREi",
+        "feautred_menu_yVf6qt"
       ],
       "settings": {
         "logo_position": "middle-left",
@@ -83,7 +97,6 @@
   },
   "order": [
     "announcement-bar",
-    "top-header",
     "header"
   ]
 }
