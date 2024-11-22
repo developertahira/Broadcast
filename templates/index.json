@@ -441,11 +441,12 @@
         "column_47aKxi": {
           "type": "column",
           "settings": {
-            "custom_svg": "<svg></svg>",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/E-COM32_1080x_aa97a5ec-21bd-45c5-a188-5070a6eb3ed5-removebg-preview.png",
+            "custom_svg": "",
+            "title": "Made-To-Order Jewelery",
+            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
+            "link_label": "SHOP NOW",
+            "link": "#"
           }
         }
       },
