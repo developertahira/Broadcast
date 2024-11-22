@@ -49,6 +49,18 @@
         "show_text_below": false
       }
     },
+    "marquee_news_bar_8red7F": {
+      "type": "marquee-news-bar",
+      "settings": {
+        "marquee_text1": "\"Settting a new standard in chic, modern jewelry.\"",
+        "marquee_img1": "shopify://shop_images/vogue.png",
+        "marquee_text2": "\"Exquisite craftsmanship meets sustainable luxury.”",
+        "marquee_img2": "shopify://shop_images/marie.png",
+        "marquee_text3": "\"Impeccable design meets unmatched quality in every piece.\"",
+        "marquee_img3": "shopify://shop_images/allure.png",
+        "news_bg_Color": "#f5f2ec"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -400,22 +412,11 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "marquee_news_bar_8red7F": {
-      "type": "marquee-news-bar",
-      "settings": {
-        "marquee_text1": "\"Settting a new standard in chic, modern jewelry.\"",
-        "marquee_img1": "shopify://shop_images/vogue.png",
-        "marquee_text2": "\"Exquisite craftsmanship meets sustainable luxury.”",
-        "marquee_img2": "shopify://shop_images/marie.png",
-        "marquee_text3": "\"Impeccable design meets unmatched quality in every piece.\"",
-        "marquee_img3": "shopify://shop_images/allure.png",
-        "news_bg_Color": ""
-      }
     }
   },
   "order": [
     "image_banner",
+    "marquee_news_bar_8red7F",
     "featured_collection",
     "countdown_timer_xFDDdA",
     "traditions_image_with_text_HkPUJA",
@@ -430,7 +431,6 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "marquee_news_bar_8red7F"
+    "multicolumn_mNGAyt"
   ]
 }
