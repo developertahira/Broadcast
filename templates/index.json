@@ -461,7 +461,7 @@
         "heading_size": "h1",
         "background_color": "#ffffff",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "none",
