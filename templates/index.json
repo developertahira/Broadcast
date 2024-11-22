@@ -77,6 +77,15 @@
         "padding_bottom": 36
       }
     },
+    "list_marque_bar_qVKVRW": {
+      "type": "list-marque-bar",
+      "settings": {
+        "bg_marq_Color": "#f5f2ec",
+        "m_text1": "Express yourself in your own way",
+        "m_text2": "Express yourself in your own way",
+        "m_text3": "Express yourself in your own wa"
+      }
+    },
     "shop_look_9CiRxM": {
       "type": "Shop-look",
       "settings": {
@@ -251,26 +260,17 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "list_marque_bar_qVKVRW": {
-      "type": "list-marque-bar",
-      "settings": {
-        "bg_marq_Color": "",
-        "m_text1": "Express yourself in your own way",
-        "m_text2": "Express yourself in your own way",
-        "m_text3": "Express yourself in your own wa"
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
+    "list_marque_bar_qVKVRW",
     "shop_look_9CiRxM",
     "essentials_collection_pLnGJk",
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "list_marque_bar_qVKVRW"
+    "multicolumn_mNGAyt"
   ]
 }
