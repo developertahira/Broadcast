@@ -77,6 +77,21 @@
         "padding_bottom": 36
       }
     },
+    "countdown_timer_xFDDdA": {
+      "type": "Countdown-timer",
+      "settings": {
+        "bg_img": "shopify://shop_images/DTS_MISC_4__Chris_Abatzis__Chris_Abatzis_5329-2-removebg-preview.png",
+        "Scaptopn": "Last chance",
+        "Sheading": "Get 20% off all sale items",
+        "button_text": "SHOP 20% OFF NOW",
+        "link_button": "#",
+        "countdown_date": "2024-11-24T10:30:45",
+        "Days": "Days",
+        "Hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds"
+      }
+    },
     "traditions_image_with_text_HkPUJA": {
       "type": "Traditions-image-with-text",
       "blocks": {
@@ -385,26 +400,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "countdown_timer_xFDDdA": {
-      "type": "Countdown-timer",
-      "settings": {
-        "bg_img": "shopify://shop_images/DTS_MISC_4__Chris_Abatzis__Chris_Abatzis_5329-2-removebg-preview.png",
-        "Scaptopn": "Last chance",
-        "Sheading": "Get 20% off all sale items",
-        "button_text": "SHOP 20% OFF NOW",
-        "link_button": "#",
-        "countdown_date": "2024-11-24T10:30:45",
-        "Days": "Days",
-        "Hours": "Hours",
-        "minutes": "Minutes",
-        "seconds": "Seconds"
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
+    "countdown_timer_xFDDdA",
     "traditions_image_with_text_HkPUJA",
     "list_marque_bar_AnTzUB",
     "product_tabs_NBKPQg",
@@ -417,7 +418,6 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "countdown_timer_xFDDdA"
+    "multicolumn_mNGAyt"
   ]
 }
