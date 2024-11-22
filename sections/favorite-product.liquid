@@ -1,33 +1,32 @@
 <div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 400px;">
   <div class="inner-fp-container">
     <div class="fb-content">
-      <h2>{{ section.settings.fp_heading }}</h2>
-      <p>{{ section.settings.fp_Discription }}</p>
+      <h2 class="fp-head">{{ section.settings.fp_heading }}</h2>
+      <p class="fp-para">{{ section.settings.fp_Discription }}</p>
       <a href="{{ section.settings.fp_button_link }}" class="fp-button">
         {{ section.settings.fp_button_text }}
       </a>
     </div>
-    <div class="fp-prodcut-container">
+    <div class="fp-product-container">
       {% if section.settings.fp_selected_product %}
         {% assign product = all_products[section.settings.fp_selected_product] %}
         {% if product %}
           <div class="fp-product-card">
             <div class="product-fp-image">
-                 <a href="{{ product.url }}">
-                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-                </a>
+              <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+              </a>
             </div>
-         <div class="fp-product-info">
-             <h2>{{ product.title }}</h2>
-           <div class="f-product-pricing">
-             <span class="current-price">{{ product.price | money }}</span>
+            <div class="fp-product-info">
+              <a class="product-title">{{ product.title }}</a>
+              <div class="f-product-pricing">
+                <span class="current-price">{{ product.price | money }}</span>
                 {% if product.compare_at_price > product.price %}
                   <span class="original-price">{{ product.compare_at_price | money }}</span>
                 {% endif %}
-           </div>
-           <p class="product-description">{{ product.description | truncate: 100 }}</p>
-         </div>
-          
+              </div>
+              <p class="product-description">{{ product.description | truncate: 100 }}</p>
+            </div>
           </div>
         {% else %}
           <p>Product not found.</p>
@@ -36,37 +35,120 @@
     </div>
   </div>
 </div>
+
 <style>
   .favourit-product-main-container {
-    width: 100%
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    
-  }
-  .fb-content {
-    width: 50%;
-    padding: 50px;
-  }
-  .fp-prodcut-container {
-    width: 50%;
-    padding: 50px;
-  }
-  .inner-fp-container {
-    display: flex;
-  }
-  .fp-product-card {
-    display: flex;
-  }
-.product-fp-image img {
-  background-repeat: no-repeat;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-size: cover;
   background-position: center;
-  transform: translate3d(0px, -15px, 0px);
+  position: relative;
 }
+
+.inner-fp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  height: 100%;
+}
+
+.fb-content {
+  width: 50%;
+  color: white;
+  padding: 50px;
+  
+}
+
+.fp-head {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white;
+}
+
+.fp-para {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.fp-button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+
+}
+
+.fp-button:hover {
+  background-color: #444;
+}
+
+.fp-product-container {
+   padding: 20px;
+
+}
+
+
+.fp-product-card {
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 545px;
+  display: flex;
+
+}
+
+.product-fp-image {
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.product-fp-image img {
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+.fp-product-info {
+  text-align: left;
+  padding: 21px;
+  background-color: #f5f2ec;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.f-product-pricing {
+  margin-bottom: 10px;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.original-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
   
 </style>
 {% schema %}
