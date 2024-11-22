@@ -77,6 +77,64 @@
         "padding_bottom": 36
       }
     },
+    "traditions_image_with_text_HkPUJA": {
+      "type": "Traditions-image-with-text",
+      "blocks": {
+        "caption_b46Xei": {
+          "type": "caption",
+          "settings": {
+            "caption": "Trends & Tradition",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_LBUnfN": {
+          "type": "heading",
+          "settings": {
+            "heading": "For Everyday Wear",
+            "heading_size": "h1"
+          }
+        },
+        "text_UH3gL3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
+            "text_style": "body"
+          }
+        },
+        "section_RRLDbp": {
+          "type": "section",
+          "settings": {
+            "show_products": true,
+            "featured_products": [],
+            "featured_collection": "rings"
+          }
+        }
+      },
+      "block_order": [
+        "caption_b46Xei",
+        "heading_LBUnfN",
+        "text_UH3gL3",
+        "section_RRLDbp"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
+        "height": "adapt",
+        "title": "Multicolumn",
+        "background_color": "#f5f2ec",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "list_marque_bar_AnTzUB": {
       "type": "list-marque-bar",
       "settings": {
@@ -327,69 +385,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "traditions_image_with_text_HkPUJA": {
-      "type": "Traditions-image-with-text",
-      "blocks": {
-        "caption_b46Xei": {
-          "type": "caption",
-          "settings": {
-            "caption": "Trends & Tradition",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading_LBUnfN": {
-          "type": "heading",
-          "settings": {
-            "heading": "For Everyday Wear",
-            "heading_size": "h1"
-          }
-        },
-        "text_UH3gL3": {
-          "type": "text",
-          "settings": {
-            "text": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
-            "text_style": "body"
-          }
-        },
-        "section_RRLDbp": {
-          "type": "section",
-          "settings": {
-            "show_products": true,
-            "featured_products": [],
-            "featured_collection": "rings"
-          }
-        }
-      },
-      "block_order": [
-        "caption_b46Xei",
-        "heading_LBUnfN",
-        "text_UH3gL3",
-        "section_RRLDbp"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
-        "height": "adapt",
-        "title": "Multicolumn",
-        "background_color": "#f5f2ec",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
+    "traditions_image_with_text_HkPUJA",
     "list_marque_bar_AnTzUB",
     "product_tabs_NBKPQg",
     "product_img_slider_y4Amtx",
@@ -401,7 +402,6 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "traditions_image_with_text_HkPUJA"
+    "multicolumn_mNGAyt"
   ]
 }
