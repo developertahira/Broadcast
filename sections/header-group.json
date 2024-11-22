@@ -17,24 +17,16 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Shipping over $250",
-            "link": "#"
-          }
-        },
-        "announcement_wMPQQz": {
-          "type": "announcement",
-          "settings": {
-            "text": "New arrivals are here! Take a Peek Now",
-            "link": "#"
+            "text": "Welcome to our store",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement_wMPQQz"
+        "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -42,49 +34,20 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    }, 
+    "top-header": {
+      "type": "head-navigation",
+      "settings": {
+
+      }
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "topmenu_XqcKNB": {
-          "type": "topmenu",
-          "settings": {
-            "menu": "top-header-menu"
-          }
-        },
-        "menu_amHXNx": {
-          "type": "menu",
-          "settings": {
-            "menu1": "rings",
-            "menu1_title": "Rings",
-            "menu2": "necklaces",
-            "menu2_title": "Necklaces",
-            "menu3": "earrings",
-            "menu3_title": "Earrings",
-            "overlay_image": "shopify://shop_images/pexels-jasmin-chew-5411883-removebg-preview.png",
-            "overlay_text": "Shop the Lookbook"
-          }
-        },
-        "feautred_menu_HXAJdk": {
-          "type": "feautred_menu",
-          "settings": {
-            "text1": "Shop the Lookbook",
-            "text2": "Shop Rings",
-            "text3": "Shop Necklaces",
-            "text4": "Shop Earrings"
-          }
-        }
-      },
-      "block_order": [
-        "topmenu_XqcKNB",
-        "menu_amHXNx",
-        "feautred_menu_HXAJdk"
-      ],
       "settings": {
-        "logo_position": "middle-center",
-        "menu": "broadcast",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "none",
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
@@ -94,18 +57,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20,
-        "enable_transparent-header": true,
-        "color-transparent": "white",
-        "show_line_separat": true,
-        "link_tiktock": "https://ticktock.com",
-        "link-insta": "https://instagram.com",
-        "page_linked": "gift-card"
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "announcement-bar",
+    "top-header",
     "header"
   ]
 }
