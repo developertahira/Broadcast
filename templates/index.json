@@ -77,6 +77,17 @@
         "padding_bottom": 36
       }
     },
+    "product_img_slider_y4Amtx": {
+      "type": "product-img-slider",
+      "settings": {
+        "bg_img": "shopify://shop_images/pexels-margarita-13368880-removebg-preview.png",
+        "slider_img1": "shopify://shop_images/E-LOTTI-G_082cf13e-1dc8-47ce-a4bd-c5c80c675524_2018-12-05_02-17-39_18C7Qf4y5I-removebg-preview.png",
+        "slider_img2": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST-removebg-preview.png",
+        "slid_featured_prod": [
+          "adelaide-hoops-in-gold"
+        ]
+      }
+    },
     "ethical_products_8mL7PR": {
       "type": "Ethical-products",
       "settings": {
@@ -290,15 +301,20 @@
         "padding_bottom": 36
       }
     },
-    "product_img_slider_y4Amtx": {
-      "type": "product-img-slider",
+    "product_tabs_NBKPQg": {
+      "type": "product-tabs",
       "settings": {
-        "bg_img": "shopify://shop_images/pexels-margarita-13368880-removebg-preview.png",
-        "slider_img1": "shopify://shop_images/E-LOTTI-G_082cf13e-1dc8-47ce-a4bd-c5c80c675524_2018-12-05_02-17-39_18C7Qf4y5I-removebg-preview.png",
-        "slider_img2": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST-removebg-preview.png",
-        "slid_featured_prod": [
-          "adelaide-hoops-in-gold"
-        ]
+        "ex_heading": "Exceptional Pieces",
+        "descrip": "Soon-to-be staples in your rotation",
+        "first_menu_name": "RINGS",
+        "rings_collection": "rings",
+        "Ring_heading": "",
+        "button_text": "",
+        "ring_link": "",
+        "second_menu_name": "EARRINGS",
+        "earrings_collection": "",
+        "earrings_heading": "",
+        "Earings_link": ""
       }
     }
   },
@@ -314,6 +330,7 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt"
+    "multicolumn_mNGAyt",
+    "product_tabs_NBKPQg"
   ]
 }
