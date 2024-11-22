@@ -34,19 +34,22 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
-    }, 
+    },
     "top-header": {
       "type": "head-navigation",
       "settings": {
-
+        "custom_menu": "",
+        "tiktock_link": "",
+        "insta_link": "",
+        "linked_page": ""
       }
     },
     "header": {
       "type": "header",
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu": "broadcast",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
@@ -57,7 +60,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "enable_transparent-header": true,
+        "color-transparent": "",
+        "show_line_separat": true,
+        "link_tiktock": "",
+        "link-insta": "",
+        "page_linked": ""
       }
     }
   },
