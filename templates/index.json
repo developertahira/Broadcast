@@ -231,12 +231,12 @@
         "ex_heading": "klfs",
         "descrip": "sdasa",
         "first_menu_name": "Ring",
-        "rings_collection": "",
-        "Ring_heading": "",
+        "rings_collection": "rings",
+        "Ring_heading": "sda",
         "button_text": "",
         "ring_link": "",
         "second_menu_name": "Earings",
-        "earrings_collection": "",
+        "earrings_collection": "earings",
         "earrings_heading": "",
         "Earings_link": ""
       }
