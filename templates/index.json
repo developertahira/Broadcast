@@ -227,7 +227,19 @@
     },
     "product_tabs_NBKPQg": {
       "type": "product-tabs",
-      "settings": {}
+      "settings": {
+        "ex_heading": "klfs",
+        "descrip": "sdasa",
+        "first_menu_name": "Ring",
+        "rings_collection": "",
+        "Ring_heading": "",
+        "button_text": "",
+        "ring_link": "",
+        "second_menu_name": "Earings",
+        "earrings_collection": "",
+        "earrings_heading": "",
+        "Earings_link": ""
+      }
     },
     "product_img_slider_y4Amtx": {
       "type": "product-img-slider",
