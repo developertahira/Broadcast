@@ -1,0 +1,54 @@
+<div class="Commitment-main-contaienr">
+  <p>{{ section.settings.top_para}}</p>
+  <h3>{{ section.settings.middle_para }}</h3>
+  <p>{{ section.settings.bottom_Description}}</p>
+</div>
+<style>
+  .Commitment-main-contaienr {
+    width: 100%;
+    margin: 0px;
+    padding: 80px;
+    box-sizing: border-box;
+  }
+  .Commitment-main-contaienr p {
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.0em;
+  }
+ .Commitment-main-contaienr h3 {
+     margin-bottom: 16px;
+    margin-top: 0px;
+    font-size: 38px;
+    font-family: serif;
+    font-weight: 400;
+ }
+        
+</style>
+{% schema %}
+  {
+    "name": "Commitment",
+    "settings": [
+      {
+        "type": "text",
+        "id": "top_para",
+        "label": "Top-para"
+      },
+      {
+        "type": "text",
+        "id": "middle_para",
+        "label": "middle-para"
+      },
+      {
+        "type": "text",
+        "id": "bottom_Description",
+        "label": "Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Commitment"
+      }
+    ]
+  }
+{% endschema %}

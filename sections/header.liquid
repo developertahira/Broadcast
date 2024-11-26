@@ -13,7 +13,32 @@
 
 
 <style>
-  header-drawer {
+
+{% if template == 'index' and section.settings.enable_transparent-header %}
+    .header-wrapper{
+      background: transparent !important;
+    position: absolute !important;
+    width: 100% !important;
+    top: 0px;
+  }
+  {% endif %}
+
+  {% if section.settings.color-transparent and template == 'index' %}
+@media only screen and (min-width: 600px) {
+    .list-menu__item, details[open]>.header__submenu {
+  color: {{ section.settings.color-transparent }} !important;
+      background: transparent;
+    }
+  
+}
+  .header__icon.link,.header__active-menu-item,.disclosure__button,.header__heading-link .h2{
+  color: {{ section.settings.color-transparent }} !important;
+    }
+    {% endif %} 
+
+
+
+  .header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
   }
@@ -119,8 +144,14 @@
       assign localization_forms = true
     endif
   -%}
+{% comment  %} 
+      
+{% endcomment %}
+{% render 'text-header-schema' %} 
+
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {%- liquid
+ 
+  {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
       endif
@@ -132,6 +163,7 @@
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
+
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
@@ -224,7 +256,7 @@
           </localization-form>
         {%- endif -%}
       </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+     
 
       {%- if shop.customer_accounts_enabled -%}
         <a
@@ -254,7 +286,7 @@
           </span>
         </a>
       {%- endif -%}
-
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
@@ -281,6 +313,45 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+
+
+<script>
+    let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+  let dropdownItems = document.querySelector(".header__submenu");
+  items.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      item.setAttribute("open", true);
+      let ulElement = item.querySelector("ul");
+      if (ulElement !== null) {
+        ulElement.addEventListener("mouseleave", () => {
+          item.removeAttribute("open");
+        });
+      }
+    });
+    item.addEventListener("focus", () => {
+      item.setAttribute("open", true);
+    });
+    item.addEventListener("blur", () => {
+      item.removeAttribute("open");
+    });
+    item.addEventListener("mouseenter", () => {
+        item.setAttribute("open", "");
+      });
+      item.addEventListener("mouseleave", () => {
+        item.removeAttribute("open");
+      });
+  });
+  if (dropdownItems !== null) {
+    dropdownItems.addEventListener("mouseleave", () => {
+      items.forEach(item => {
+        item.removeAttribute("open");
+      });
+    });
+  }
+
+  
+  </script>
+
 
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
@@ -583,7 +654,7 @@
     {
       "type": "select",
       "id": "mobile_logo_position",
-      "options": [
+      "options": [ 
         {
           "value": "center",
           "label": "t:sections.header.settings.mobile_logo_position.options__1.label"
@@ -595,6 +666,10 @@
       ],
       "default": "center",
       "label": "t:sections.header.settings.mobile_logo_position.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.mobile_layout.content"
     },
     {
       "type": "header",
@@ -633,12 +708,166 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent-header",
+      "label": "Enable Transparent Header",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "color-transparent",
+      "label": "Transparent Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separat",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+
+      "type": "header",
+      "content": "Top-Header"
+
+    },
+    {
+        "type": "url",
+      "id": "link_tiktock",
+      "label": "tiktock Link"
+    },
+    {
+        "type": "url",
+      "id": "link-insta",
+      "label": "insta Link"
+    },
+    {
+    "type": "page",
+    "id": "page_linked",
+    "label": "Select a page to display in header"
     }
   ],
   "blocks": [
     {
       "type": "@app"
+    }, 
+{
+  "type": "topmenu",
+  "name": "TOp-Menu",
+  "settings": [
+
+      {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
     }
+  
   ]
+},
+    
+    {
+      "type": "menu",
+    "name": "Menu with image",
+    "settings": [
+    {
+      "type": "link_list",
+      "id": "menu1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "text",
+      "id": "menu1_title",
+      "label": "Menu 1 Title",
+      "default": "Rings"
+    },
+    {
+      "type": "link_list",
+      "id": "menu2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "text",
+      "id": "menu2_title",
+      "label": "Menu 2 Title",
+      "default": "Necklaces"
+    },
+    {
+      "type": "link_list",
+      "id": "menu3",
+      "label": "Menu 3"
+    },
+    {
+      "type": "text",
+      "id": "menu3_title",
+      "label": "Menu 3 Title",
+      "default": "Earrings"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay Image"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "Overlay Text",
+      "default": "Shop the Lookbook"
+    }
+  ],
+},
+{
+  "type": "feautred_menu",
+  "name": "image-overlay-text",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "text1",
+        "label": "Overlay Text 1",
+        "default": "Shop the Lookbook"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "text2",
+        "label": "Overlay Text 2",
+        "default": "Shop Rings"
+      },
+      {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "text3",
+        "label": "Overlay Text 3",
+        "default": "Shop Necklaces"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image 4"
+      },
+      {
+        "type": "text",
+        "id": "text4",
+        "label": "Overlay Text 4",
+        "default": "Shop Earrings"
+      }
+  ]
+}
+  ],
+
 }
 {% endschema %}

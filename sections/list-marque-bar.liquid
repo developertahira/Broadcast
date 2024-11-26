@@ -1,0 +1,91 @@
+<div class="Marquee-main-container" style="background-color: {{ section.settings.bg_marq_Color }};">
+    <div class="inner-container">
+        <ul class="list-marquee-inner-container">
+            <li>{{ section.settings.m_text1 }}</li>
+            <li>{{ section.settings.m_text2 }}</li>
+            <li>{{ section.settings.m_text3 }}</li>
+            <li class="duplicated">{{ section.settings.m_text1 }}</li> <!-- First item of duplicated list -->
+            <li>{{ section.settings.m_text2 }}</li>
+            <li>{{ section.settings.m_text3 }}</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+/* Main container styling */
+.Marquee-main-container {
+    width: 100%;
+    overflow: hidden; /* Prevent overflow for scrolling effect */
+}
+.Marquee-main-container {
+    margin: 30px 0px 30px 0px;
+}
+
+/* Inner container for marquee animation */
+.inner-container {
+    display: flex;
+    animation: marquee 14s linear infinite; /* Adjust speed with duration */
+}
+
+/* List styling */
+.list-marquee-inner-container {
+    display: flex; /* Align items in a row */
+    list-style-type: none; /* Remove default bullets */
+    padding: 16px;
+    margin: 0;
+    gap: 20px; /* Space between items */
+    color: #d8d2b3; /* Text color */
+    white-space: nowrap; /* Prevent wrapping */
+    font-family: "YourFont", sans-serif; /* Use your font */
+    font-size: 23px; /* Adjust text size */
+}
+
+/* Add custom bullet between list items */
+.list-marquee-inner-container li + li::before {
+    content: "•"; /* Add bullet symbol */
+    margin-right: 10px; /* Space between bullet and text */
+}
+
+/* Keyframes for marquee animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+</style>
+
+{% schema %}
+{
+    "name": "List Marquee",
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_marq_Color",
+            "label": "Background-Color"
+        },
+        {
+            "type": "text",
+            "id": "m_text1",
+            "label": "First text"
+        },
+        {
+            "type": "text",
+            "id": "m_text2",
+            "label": "Second text"
+        },
+        {
+            "type": "text",
+            "id": "m_text3",
+            "label": "Third text"
+        }
+    ],
+    "presets": [
+        {
+            "name": "List Marquee"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,104 @@
+.Essential-collection {
+    width: 100%;
+    height: auto; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: stretch; /* Ensures both columns have equal height */
+    margin: 50px 0px 50px 0px;
+  }
+  
+  .E-collect-contain, .main-img-contain {
+    width: 50%;
+    height: 100%; /* Ensures both columns occupy full container height */
+    box-sizing: border-box;
+  }
+  
+  .main-img-contain {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .main-img-contain img {
+    width: 100%;
+   /* height: 100%; /* Make the image occupy full height of container */ 
+    object-fit: cover; /* Crops the image to cover the area without stretching */
+  }
+  
+  .essen-overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .essen-overlay-text h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  
+  .Esse-featured-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between items */
+    height: 100%; /* Full container height */
+    margin: 0px 42px;
+  }
+  
+  .Esse-product-item {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Full height to match container */
+ 
+  }
+  
+  .Esse-product-item img {
+    width: 100%;
+    height: auto; /* Let the image height adjust naturally */
+    max-height: 400px; /* Limit max height to keep images uniform */
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
+  
+  .Esse-product-item h3 {
+    font-size: 2rem;
+  /*  margin: 10px 0 5px; */
+    line-height: 1.2;
+  }
+  .card-label {
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+  }
+  .card-label span {
+    color: black;
+  }
+  .Esse-product-item p {
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+  @media (max-width: 750px) {
+    .Essential-collection {
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .E-collect-contain {
+      width: 100%;
+    }
+    .main-img-contain {
+      width: 100%;
+    }
+  }
+  @media (max-width: 1770px) and (min-width: 750px) {
+    .Esse-product-item img {
+      max-height: 150px;
+    }
+  }

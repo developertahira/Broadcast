@@ -1,0 +1,43 @@
+    /* Styles for text-with-images section */
+    .text-with-images__container {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.5;
+        font-family: 'YourChosenFont', sans-serif; /* Update this with your preferred font */
+        padding: 4%;
+      }
+      
+      .text-with-images__image {
+        display: inline-block;
+        vertical-align: middle;
+        width: 118px; /* Adjust image size */
+        height: 76px;
+        margin: 0 4px;
+      }
+      
+      .text-with-images__image img {
+        width: 100%;
+        height: 85%;
+        object-fit: cover;
+        transform: scale(1); /* Start at the normal scale */
+        transition: transform 0.1s ease-out; /* Smooth scale changes */
+      }
+      /* Zoom-in effect for images */
+      .zoom-in-effect {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+      }
+      
+      .zoom-in-effect img {
+        transition: transform 0.5s ease; /* Adjust duration for smoother or faster effect */
+        transform: scale(1); /* Default scale */
+      }
+      
+      .zoom-in-effect:hover img {
+        transform: scale(1.1); /* Adjust scale factor for more or less zoom-in */
+      }
+      h2.moder-text {
+          font-size: 6rem;
+          padding: 20px;
+      }

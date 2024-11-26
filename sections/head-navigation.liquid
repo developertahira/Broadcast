@@ -1,0 +1,74 @@
+
+{{ 'custom-header.css' | asset_url | stylesheet_tag }}
+
+<div class="main-container">
+  <div class="inner-container">
+    <div class="menu">
+    {% if section.settings.custom_menu %}
+      <nav>
+        <ul>
+          {% for link in linklists[section.settings.custom_menu].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+    </div>
+    <div class="social-media-icons">
+  {% if section.settings.tiktock_link %}
+    <a href="{{ section.settings.tiktock_link }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ 'icon-tiktock.svg' | asset_url }}" alt="tiktock">
+    </a>
+  {% endif %}
+  {% if section.settings.insta_link %}
+    <a href="{{ section.settings.insta_link}}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ 'icon-insta.svg' | asset_url }}" alt="insta">
+    </a>
+  {% endif %}
+  {% if section.settings.linked_page != blank %}
+    {% assign linked_page = pages[section.settings.linked_page] %}
+    <div class="header-page-name">
+      {{ linked_page.title }}
+    </div>
+  {% endif %}
+  </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Header",
+  "settings": [
+    {
+        "type": "link_list",
+        "id": "custom_menu",
+        "label": "select a menu"
+    },
+    {
+        "type": "url",
+      "id": "tiktock_link",
+      "label": "tiktock Link"
+    },
+    {
+        "type": "url",
+      "id": "insta_link",
+      "label": "insta Link"
+    },
+    {
+    "type": "page",
+    "id": "linked_page",
+    "label": "Select a page to display in header"
+    }
+  ],
+  "presets": [
+    {
+      "name": "top-header",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}
+

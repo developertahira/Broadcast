@@ -1,0 +1,180 @@
+
+<div class="product-img-main-container">
+  <div class="Featured-Prod-contan-slid">
+    {% if section.settings.slid_featured_prod %}
+      <div class="Inner-prod-cond">
+        {% for product in section.settings.slid_featured_prod %}
+          <div class="Specific-product-item">
+            <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
+            <div class="prod-card-label">
+              {% if product.tags contains "Quick Add" %}
+                <span class="quick-add-label">Quick Add</span>
+              {% elsif product.tags contains "Pre-order" %}
+                <span class="pre-order-label">Pre-order</span>
+              {% endif %}
+            </div>
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No featured products selected.</p>
+    {% endif %}
+  </div>
+
+  <!-- Image Slider Section -->
+  <div class="img-slider-container">
+    <div class="image-slider">
+      {% if section.settings.slider_img1 %}
+        <img src="{{ section.settings.slider_img1 | img_url: 'master' }}" alt="Slider Image 1" class="slider-image">
+      {% endif %}
+      {% if section.settings.slider_img2 %}
+        <img src="{{ section.settings.slider_img2 | img_url: 'master' }}" alt="Slider Image 2" class="slider-image">
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+ .product-img-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.Featured-Prod-contan-slid {
+  width: 50%;
+  background-color: #f5f2ec;
+}
+
+.img-slider-container {
+  width: 50%; /* Adjust as needed */
+  height: 800px; /* Fixed height */
+  background-image: url('{{ section.settings.bg_img | img_url: "master" }}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; /* Prevent images from spilling outside the container */
+  display: flex; /* Flexbox for centering child elements */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Optional: Padding inside the container */
+}
+.image-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 40%;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+}
+
+.image-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Edge */
+}
+.image-slider img {
+  width: 80%; /* Adjust width as needed */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure images fit their container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.Inner-prod-cond {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.Specific-product-item {
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.prod-card-label {
+  background-color: rgb(248 244 244 / 52%);
+  margin-top: -10px;
+  padding: 10px;
+}
+
+.prod-card-label span {
+  color: black;
+  text-transform: uppercase;
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".image-slider");
+  let isDragging = false; // Track if dragging is active
+  let startY; // Store initial cursor Y position
+  let scrollTop; // Store initial scroll position
+
+  slider.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    startY = event.pageY - slider.offsetTop; // Get cursor position relative to the slider
+    scrollTop = slider.scrollTop; // Save the current scroll position
+    slider.style.cursor = "grabbing"; // Change cursor to grabbing
+    slider.style.userSelect = "none"; // Disable text selection while dragging
+  });
+
+  slider.addEventListener("mousemove", (event) => {
+    if (!isDragging) return; // Skip if dragging is not active
+    const y = event.pageY - slider.offsetTop; // Current cursor position
+    const walk = y - startY; // Calculate how much the cursor moved
+    slider.scrollTop = scrollTop - walk; // Scroll the content
+  });
+
+  slider.addEventListener("mouseup", () => {
+    isDragging = false; // Stop dragging
+    slider.style.cursor = "grab"; // Restore cursor style
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    isDragging = false; // Stop dragging if the cursor leaves the slider
+    slider.style.cursor = "grab";
+  });
+});
+
+</script>
+{% schema %}
+{
+    "name": "Product-img-slider",
+    "settings": [
+        {
+         "type":  "image_picker",
+         "id": "bg_img",
+         "label": "bg-img"  
+        },
+        {
+            "type": "image_picker",
+            "id": "slider_img1",
+            "label": "First Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "slider_img2",
+            "label": "Second Image"
+        },
+        {
+            "type": "product_list",
+            "id": "slid_featured_prod",
+            "label": "Select Featured Products"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Product-img-slider"
+            }
+        ]
+}
+{% endschema %}

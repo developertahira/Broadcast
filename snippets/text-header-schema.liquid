@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="{{ 'top-header.css' | asset_url }}">
+
+
+  <div class="top-header">
+
+   <div class="top-header-container {% if template == 'index' %}transparent-header{% endif %}" >
+    
+
+      {% for block in section.blocks %}
+        {% if block.type == 'topmenu' %}
+          <nav>
+            <ul class="top-header-menu">
+              {% for link in linklists[block.settings.menu].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
+      {% endfor %}
+      
+      <div class="top-header-custom-icons">
+
+          {% if section.settings.link-insta %}
+            <a href="{{ section.settings.link-insta}}" target="_blank" rel="noopener noreferrer" >
+              <img src="{{ 'icon-insta.svg' | asset_url }}" alt="insta" class="social-header-icons">
+            </a>
+          {% endif %}
+
+         {% if section.settings.link_tiktock %}
+           <a href="{{ section.settings.link_tiktock }}" target="_blank" rel="noopener noreferrer" >
+             <img src="{{ 'icon-tiktock.svg' | asset_url }}" alt="tiktock" class="social-header-icons">
+           </a>
+         {% endif %}
+
+         {% if section.settings.page_linked != blank %}
+           {% assign page_linked = pages[section.settings.page_linked] %}
+           <div class="header-page-name">
+            <a href="{{ page_linked.url }}" class="header-page-link">
+              {{ page_linked.title }}
+            </a>
+           </div>
+         {% endif %}
+         
+         <span class="Currency">CAD $</span>
+         </div>
+
+   </div>
+</div>

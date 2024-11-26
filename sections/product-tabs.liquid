@@ -1,0 +1,319 @@
+<div class="split-container">
+  <!-- Left Content Area -->
+  <div class="content-pt-container">
+    <h1 class="pt-heading">{{section.settings.ex_heading}}</h1>
+    <p class="pt-para">{{section.settings.descrip}}</p>
+  </div>
+
+  <!-- Right Button Area -->
+  <div class="button-container">
+    <button class="collection-button" data-collection="rings">{{section.settings.first_menu_name}}</button>
+    <button class="collection-button" data-collection="earrings">{{section.settings.second_menu_name}}</button>
+  </div>
+</div>
+
+<!-- Display Area for Collection -->
+<div class="collection-display" id="collection-display">
+  <p class="placeholder-text"></p>
+</div>
+
+<!-- JavaScript to Handle Button Clicks -->
+<script>
+  document.querySelectorAll('.collection-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const collection = button.getAttribute('data-collection');
+      
+      // Clear the placeholder text
+      document.getElementById('collection-display').innerHTML = '';
+
+      // Dynamically insert collection content (testing placeholders here)
+      if (collection === 'rings') {
+        document.getElementById('collection-display').innerHTML = `
+          {% assign rings_collection = collections[section.settings.rings_collection] %}
+
+          {% if rings_collection and rings_collection.products.size > 0 %}
+            <div class="ring-slider">
+              <div class="slider-container">
+            <div class="Ring-card slide" style="background-image: url({{ section.settings.Ring_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.Ring_heading }}</h2>
+                <a href="{{ section.settings.ring_link }}" class="button">{{section.settings.button_text}}</a>
+              </div>
+            </div>
+
+                {% for product in rings_collection.products %}
+                  <div class="slide">
+                    <a href="{{ product.url }}">
+                      <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+                    </a>
+                    <div class="card-label">
+                      {% if  product.tags contains "Quick Add" %}
+                        <span class="quick-add-label">Quick Add</span>
+                      {% elsif product.tags contains "Pre-order" %}
+                        <span class="pre-order-label">Pre-order</span>
+                      {% endif %}
+                    </div>
+                    <p class="product-title">{{ product.title }}</p>
+                    <p class="product-price">From {{ product.price | money }}</p>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <p>No products in Rings collection.</p>
+          {% endif %}
+        `;
+      } else if (collection === 'earrings') {
+        document.getElementById('collection-display').innerHTML = `
+
+        {% assign earrings_collection = collections[section.settings.earrings_collection] %}
+
+          {% if earrings_collection and earrings_collection.products.size > 0 %}
+
+            <div class="ring-slider">
+              <div class="slider-container">
+           <div class="Ring-card slide" style="background-image: url({{ section.settings.Earings_image | img_url: 'master' }});">
+              <div class="Ring-card-content">
+                <h2>{{ section.settings.earrings_heading }}</h2>
+                <a href="{{ section.settings.Earings_link }}" class="button">{{section.settings.button_text}}</a>
+              </div>
+            </div>
+
+             {% for product in earrings_collection.products %}
+              <div class="slide">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                </a>
+                <div class="card-label">
+                  {% if  product.tags contains "Quick Add" %}
+              <span class="quick-add-label">Quick Add</span>
+            {% elsif product.tags contains "Pre-order" %}
+              <span class="pre-order-label">Pre-order</span>
+            {% endif %}
+              </div>
+                <p class="product-title">{{ product.title }}</p>
+                <p class="product-price">From {{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <p>No products in Earrings collection.</p>
+          {% endif %}`;
+      }
+    });
+  });
+</script>
+
+<style>
+    .Ring-card {
+       background-repeat: no-repeat;
+    }
+/* Main Container */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Left Content Area */
+.content-pt-container {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.content-pt-container .pt-heading {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.content-pt-container .pt-para {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Right Button Area */
+.button-container {
+  width: 50%;
+  text-align: right;
+}
+
+.button-container .collection-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-container .collection-button:hover {
+
+}
+
+/* Slider Container */
+.ring-slider {
+  display: flex;
+  overflow-x: auto;  /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory;  /* Enables snapping to each product */
+  padding: 20px 0;
+}
+
+.slider-container {
+  display: flex;
+  flex-wrap: nowrap;  /* Ensures products do not wrap */
+  gap: 20px;  /* Adds spacing between items */
+  width: max-content;  /* Ensures the total width fits the content */
+}
+
+.slide {
+  flex: 0 0 auto;  /* Ensures each slide does not shrink or grow */
+  text-align: center;
+  scroll-snap-align: center;  /* Snaps each product in view */
+}
+
+.card-label {
+  margin-top: -10px;
+}
+
+.quick-add-label,
+.pre-order-label {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: whitesmoke;
+  color: black;
+  width: 100%;
+}
+
+.product-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Smooth Scroll Styling */
+.ring-slider {
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on mobile */
+  scroll-behavior: smooth;  /* Smooth scrolling on other devices */
+}
+
+.collection-display {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.collection-content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.collection-content h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.collection-content p {
+  font-size: 18px;
+  color: #555;
+}
+.Ring-card-content {
+    color: white;
+    width: 347px;
+    text-align: center;
+    position: relative;
+    top: 263px;
+    left: 0;
+}
+.Ring-card-content h2 {
+    color: white;
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Product Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ex_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "descrip",
+      "label": "Description"
+    },
+    {
+       "type": "text",
+        "id": "first_menu_name",
+       "label": "First Tab Name"
+  },
+    {
+      "type": "collection",
+      "id": "rings_collection",
+      "label": "Rings Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "Ring_image",
+      "label": "Ring Image"
+    },
+    {
+      "type": "text",
+      "id": "Ring_heading",
+      "label": "Ring Heading"
+    },
+    {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button-Name"
+    },
+    {
+      "type": "url",
+      "id": "ring_link",
+      "label": "Button URL"
+    },
+    {
+       "type": "text",
+       "id": "second_menu_name",
+       "label": "Second Tab Name"
+    },
+    {
+        "type": "collection",
+        "id": "earrings_collection",
+        "label": "Earrings Collection"
+    },
+    {
+         "type": "text",
+         "id": "earrings_heading",
+         "label": " Earings heading"
+     },
+     {
+        "type": "image_picker",
+        "id": "Earings_image",
+        "label": "Earings Image"
+    },
+    {
+        "type": "url",
+        "id": "Earings_link",
+        "label": "Button Url"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Product Tabs"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+
+{{ 'marque-style.css' | asset_url | stylesheet_tag }}
+<!-- Sections/press-quotes.liquid -->
+<section class="press-quotes marquee" style="background-color: {{ section.settings.news_bg_Color }};">
+  <div class="marquee__content" >
+
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text1}} </p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img1 | img_url: 'master' }}" alt="vogue">
+      </span>
+      
+    </div>
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text2}}</p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img2 | img_url: 'master' }}" alt="marie">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text3}}</p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img3 | img_url: 'master' }}" alt="allure">
+      </span>
+    </div>
+    <!-- Duplicate the content to create a seamless loop -->
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text1}} </p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img1 | img_url: 'master' }}" alt="vogue">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text2}}</p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img2 | img_url: 'master' }}" alt="marie">
+      </span>
+    </div>
+    <div class="press-quote">
+      <p>{{section.settings.marquee_text3}}</p>
+      <span class="press-logo">
+        <img src="{{ section.settings.marquee_img3 | img_url: 'master' }}" alt="allure">
+      </span>
+    </div>
+
+  </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Live update",
+        "settings": [
+          {
+            "type": "text",
+            "id": "marquee_text1",
+            "label": "first Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "marquee_img1",
+            "label": " first logo"
+          },
+          {
+            "type": "text",
+            "id": "marquee_text2",
+            "label": "Second Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "marquee_img2",
+            "label": "Second Logo"
+          },
+          {
+            "type": "text",
+            "id": "marquee_text3",                                                                                                                                                                                                                                                                                 
+            "label": "Third Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "marquee_img3",
+            "label": "Third Logo"
+          },
+          {
+            "type": "color",
+            "id": "news_bg_Color",
+            "label": "Select Background Color"
+          }
+            ],
+            "presets": [
+                {
+                    "name": "News-bar"
+                }
+            ]
+    }
+    {% endschema %}
+
+

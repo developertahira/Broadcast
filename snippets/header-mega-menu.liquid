@@ -4,7 +4,7 @@
   Usage:
   {% render 'header-mega-menu' %}
 {% endcomment %}
-
+{{ 'mega-menu.css' | asset_url | stylesheet_tag }}
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
@@ -23,7 +23,13 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+{% comment %}
+  {{- 'icon-caret.svg' | inline_asset_content -}}
+{% endcomment %}
+   
+
+         
+       
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
@@ -35,6 +41,99 @@
                   role="list"
                 >
                   {%- for childlink in link.links -%}
+                    
+                    {% if link.title == "shop " %}
+                      <!-- custom-menus-image.liquid -->
+                      <div class="custom-menus-image-section">
+                        <div class="menus-container">
+                          {% for block in section.blocks %}
+                            {% if block.type == "menu" %}
+                              <div class="menu">
+                                <h3>{{ block.settings.menu1_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu1].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu2_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu2].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu3_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu3].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              {% for block in section.blocks %}
+                                {% if block.type == "menu" %}
+                                  <div class="image-overlay">
+                                    <img src="{{ block.settings.overlay_image | img_url: 'master' }}" alt="Overlay Image">
+                                    <div class="overlay-text">{{ block.settings.overlay_text }}</div>
+                                  </div>
+                                {% endif %}
+                              {% endfor %}
+                            {% endif %}
+                          {% endfor %}
+
+                        </div>
+
+                        <div class="image-container">
+                          
+                        </div>
+                      </div>
+                    {% endif %}
+
+                    {% if link.title == "Featured " %}
+                      <div class="custom-menus-featured-image-section">
+                        <div class="menus-Featured-container">
+
+                          {% for block in section.blocks %}
+                            {% if block.type == "feautred_menu" %}
+                          <!-- Image 1 -->
+
+                            <div class="image-featured-overlay">
+                              <img src="{{ block.settings.image1 | img_url: 'master' }}" alt="Image 1">
+                              <div class="featured-overlay-text">{{ block.settings.text1 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 2 -->
+
+                            <div class="image-featured-overlay">
+                              <img src="{{ block.settings.image2 | img_url: 'master' }}" alt="Image 2">
+                              <div class="featured-overlay-text">{{ block.settings.text2 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 3 -->
+
+                            <div class="image-featured-overlay">
+                              <img src="{{ block.settings.image3 | img_url: 'master' }}" alt="Image 3">
+                              <div class="featured-overlay-text">{{ block.settings.text3 }}</div>
+                            </div>
+
+                      
+                          <!-- Image 4 -->
+
+                            <div class="image-featured-overlay">
+                              <img src="{{ block.settings.image4 | img_url: 'master' }}" alt="Image 4">
+                              <div class="featured-overlay-text">{{ block.settings.text4 }}</div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+
+                        </div>
+                      </div>
+                      
+                    {% endif %}
                     <li>
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
@@ -92,3 +191,27 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+<script>
+  // JavaScript to adjust the image size on scroll
+  const image = document.getElementById('scrollImage');
+
+  window.addEventListener('scroll', () => {
+    // Get the current scroll position
+    const scrollPosition = window.scrollY;
+
+    // Set a minimum and maximum size for the image
+    const maxWidth = 300; // Initial size
+    const minWidth = 150; // Smallest size
+
+    // Calculate the new size based on the scroll position
+    let newWidth = maxWidth - scrollPosition / 5;
+
+    // Clamp the size between minWidth and maxWidth
+    if (newWidth < minWidth) newWidth = minWidth;
+    if (newWidth > maxWidth) newWidth = maxWidth;
+
+    // Apply the new width to the image
+    image.style.width = `${newWidth}px`;
+  });
+</script>
