@@ -198,6 +198,7 @@
         "text_UH3gL3",
         "section_RRLDbp"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
         "height": "adapt",
@@ -227,6 +228,7 @@
     },
     "product_tabs_NBKPQg": {
       "type": "product-tabs",
+      "disabled": true,
       "settings": {
         "ex_heading": "Exceptional Pieces",
         "descrip": "Soon-to-be staples in your rotation",
