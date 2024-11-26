@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -8,16 +17,24 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "New arrivals are here! Take a Peek Now",
+            "link": ""
+          }
+        },
+        "announcement_KpAMWW": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Shipping over $250",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_KpAMWW"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -34,11 +51,45 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "topmenu_F4CtH8": {
+          "type": "topmenu",
+          "settings": {
+            "menu": "top-header-menu"
+          }
+        },
+        "menu_qAeREi": {
+          "type": "menu",
+          "settings": {
+            "menu1": "",
+            "menu1_title": "Rings",
+            "menu2": "",
+            "menu2_title": "Necklaces",
+            "menu3": "",
+            "menu3_title": "Earrings",
+            "overlay_text": "Shop the Lookbook"
+          }
+        },
+        "feautred_menu_yVf6qt": {
+          "type": "feautred_menu",
+          "settings": {
+            "text1": "Shop the Lookbook",
+            "text2": "Shop Rings",
+            "text3": "Shop Necklaces",
+            "text4": "Shop Earrings"
+          }
+        }
+      },
+      "block_order": [
+        "topmenu_F4CtH8",
+        "menu_qAeREi",
+        "feautred_menu_yVf6qt"
+      ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "menu": "broadcast",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "none",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
@@ -48,7 +99,13 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "enable_transparent-header": true,
+        "color-transparent": "White",
+        "show_line_separat": true,
+        "link_tiktock": "https://Tiktock.com",
+        "link-insta": "https://instagram.com",
+        "page_linked": "gift-card"
       }
     }
   },
