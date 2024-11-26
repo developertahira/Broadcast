@@ -151,7 +151,7 @@
         "Sheading": "Get 20% off all sale items",
         "button_text": "SHOP 20% OFF NOW",
         "link_button": "#",
-        "countdown_date": "2024-12-24T10:30:45",
+        "countdown_date": "2024-11-24T10:30:45",
         "Days": "Days",
         "Hours": "Hours",
         "minutes": "Minutes",
@@ -198,6 +198,7 @@
         "text_UH3gL3",
         "section_RRLDbp"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_8721_copy_1024x_52f96603-5b9d-4175-bd78-8e1864a26a37-removebg-preview.png",
         "height": "adapt",
@@ -228,16 +229,18 @@
     "product_tabs_NBKPQg": {
       "type": "product-tabs",
       "settings": {
-        "ex_heading": "klfs",
-        "descrip": "sdasa",
-        "first_menu_name": "Ring",
+        "ex_heading": "Exceptional Pieces",
+        "descrip": "Soon-to-be staples in your rotation",
+        "first_menu_name": "RINGS",
         "rings_collection": "rings",
-        "Ring_heading": "sda",
-        "button_text": "",
-        "ring_link": "",
-        "second_menu_name": "Earings",
+        "Ring_image": "shopify://shop_images/R-MIRO-S_2_2018-12-05_01-46-40_7tBwMRB9mG-removebg-preview.png",
+        "Ring_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
+        "button_text": "SHOP NOW",
+        "ring_link": "#",
+        "second_menu_name": "EARRINGS",
         "earrings_collection": "earings",
-        "earrings_heading": "",
+        "earrings_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
+        "Earings_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
         "Earings_link": ""
       }
     },
