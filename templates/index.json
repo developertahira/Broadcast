@@ -227,22 +227,7 @@
     },
     "product_tabs_NBKPQg": {
       "type": "product-tabs",
-      "disabled": true,
-      "settings": {
-        "ex_heading": "Exceptional Pieces",
-        "descrip": "Soon-to-be staples in your rotation",
-        "first_menu_name": "RINGS",
-        "rings_collection": "rings",
-        "Ring_image": "shopify://shop_images/R-MIRO-S_2_2018-12-05_01-46-40_7tBwMRB9mG-removebg-preview.png",
-        "Ring_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
-        "button_text": "SHOP NOW",
-        "ring_link": "#",
-        "second_menu_name": "EARRINGS",
-        "earrings_collection": "earings",
-        "earrings_heading": "14k solid gold essentials, sterling silver statement pieces and more.",
-        "Earings_image": "shopify://shop_images/chain-hoop-earrings-gold-earrings-alohas-439685-removebg-preview.png",
-        "Earings_link": ""
-      }
+      "settings": {}
     },
     "product_img_slider_y4Amtx": {
       "type": "product-img-slider",
