@@ -42,6 +42,12 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    }, 
+    "top-header": {
+      "type": "head-navigation",
+      "settings": {
+
+      }
     },
     "header": {
       "type": "header",
@@ -105,6 +111,7 @@
   },
   "order": [
     "announcement-bar",
+    "top-header",
     "header"
   ]
 }
