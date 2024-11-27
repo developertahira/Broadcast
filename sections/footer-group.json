@@ -37,6 +37,7 @@
         "image_BP4jWh": {
           "type": "image",
           "settings": {
+            "image1": "shopify://shop_images/broadcast-script-removebg-preview.png",
             "image_width": 100,
             "alignment": "center"
           }
