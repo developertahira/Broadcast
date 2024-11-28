@@ -25,6 +25,9 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .footer {
+    background-color: #eae6dd;
+  }
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
@@ -51,15 +54,15 @@
     {%- unless only_empty_brand -%}
       <div class="footer__content-top page-width">
         {%- if section.blocks.size > 0 -%}
-          {%- liquid
-            if section.blocks.size == 9
-              assign footer_grid_class = 'grid--3-col-tablet'
-            elsif section.blocks.size > 6
-              assign footer_grid_class = 'grid--4-col-desktop'
-            elsif section.blocks.size > 4
-              assign footer_grid_class = 'grid--3-col-tablet'
-            endif
-          -%}
+          {%- assign non_image_blocks_count = section.blocks | where: 'type', '!=', 'image' | size -%}
+          {%- if non_image_blocks_count == 9 -%}
+            assign footer_grid_class = 'grid--3-col-tablet'
+          {%- elsif non_image_blocks_count > 6 -%}
+            assign footer_grid_class = 'grid--4-col-desktop'
+          {%- elsif non_image_blocks_count > 4 -%}
+            assign footer_grid_class = 'grid--3-col-tablet'
+          {%- endif -%}
+          
           <div
             class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
@@ -86,14 +89,41 @@
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
                     </div>
+                    <form method="post" action="{{ routes.root_url }}/contact#newsletter" class="styled-form">
+                      <input type="hidden" name="form_type" value="customer">
+                      <input type="hidden" name="utf8" value="✓">
+
+                      <input 
+                        type="text" 
+                        name="contact[firstname]" 
+                        placeholder="Name" 
+                        class="form-input" 
+                        required 
+                        aria-label="Name"
+                      >
+
+                      <input 
+                        type="email" 
+                        name="contact[email]" 
+                        placeholder="Email" 
+                        class="form-input" 
+                        required 
+                        aria-label="Email"
+                      > 
+
+                      <button type="submit" class="form-button">
+                        Join
+                      </button>
+                    </form>
+
                   {%- when 'link_list' -%}
-                    {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
-                        {%- for link in block.settings.menu.links -%}
-                          <li>
+                    {%- if block.settings.footer_menu != blank -%}
+                      <ul class="footer-block__details-content list-unstyled footer-style">
+                        {%- for link in block.settings.footer_menu.links -%}
+                          <li >
                             <a
                               href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} custom_styling" 
                             >
                               {{ link.title | escape }}
                             </a>
@@ -132,32 +162,17 @@
                         {%- render 'social-icons', class: 'footer__list-social' -%}
                       {%- endif -%}
                     </div>
-                  {%- when 'image' -%}
-                    <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
-                      {%- if block.settings.image != blank -%}
-                        {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
-                        <div
-                          class="footer-block__image-wrapper"
-                          style="max-width: min(100%, {{ block.settings.image_width }}px);"
-                        >
-                          <img
-                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                            src="{{ block.settings.image | image_url: width: 760 }}"
-                            alt="{{ block.settings.image.alt | escape }}"
-                            loading="lazy"
-                            width="{{ block.settings.image.width }}"
-                            height="{{ block.settings.image.height }}"
-                          >
-                        </div>
-                      {%- else -%}
-                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                      {%- endif -%}
-                    </div>
                 {%- endcase -%}
               </div>
             {%- endfor -%}
           </div>
         {%- endif -%}
+
+{% for block in section.blocks %}
+  {% if block.settings.image1 %}
+    <img src="{{ block.settings.image1 | img_url: 'large' }}" alt="Block Image" width="100%">
+  {% endif %}
+{% endfor %}
 
         <div
           class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -318,12 +333,78 @@
         {%- endif -%}
       </div>
     </div>
+    <div class="currency-selector">
+      <form method="get" action="/currency" id="currency-selector-form">
+        <select name="currency" id="currency-selector">
+          {% for currency in shop.enabled_currencies %}
+            <option value="{{ currency }}" {% if currency == shop.currency %}selected{% endif %}>
+              {{ currency | upcase }}
+            </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+    
   </div>
 </footer>
+<style>
+  /* Styling for the newsletter form */
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between input fields and button */
+  max-width: 300px; /* Limit form width for cleaner design */
+}
 
+.styled-form .form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  border: 0;
+  border-bottom: 1px solid #212121;
+  border-radius: 0; /* Match the flat styling in the example */
+  background-color: transparent;
+}
+
+.styled-form .form-input::placeholder {
+  color: whitesmoke /* Placeholder text color */
+}
+
+.styled-form .form-input:focus {
+  outline: none;
+  border-color: #000; /* Change border color on focus */
+}
+
+.styled-form .form-button {
+  background-color: #000; /* Black button background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Slight letter spacing for style */
+  transition: background-color 0.3s ease;
+}
+
+.styled-form .form-button:hover {
+  background-color: #333; /* Darker hover effect */
+}
+
+/* Add a bit of space above the form if needed */
+.styled-form {
+  margin-top: 20px;
+}
+a.link.link--text.list-menu__item.list-menu__item--link.custom_styling {
+    color: black !important;
+}
+</style>
 {% schema %}
 {
-  "name": "t:sections.footer.name",
+  "name": "Footer",
   "blocks": [
     {
       "type": "@app"
@@ -340,7 +421,7 @@
         },
         {
           "type": "link_list",
-          "id": "menu",
+          "id": "footer_menu",
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label",
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
@@ -392,7 +473,7 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
+          "id": "image1",
           "label": "Image"
         },
         {
@@ -567,4 +648,5 @@
     ]
   }
 }
+
 {% endschema %}

@@ -1,16 +1,91 @@
-List with image slider 
-text slider and image slider combined
-hjasdhkljahdkjhk
-{% schema %}
-{
-    "name": "List Image Slider",
-    "settings": [
-        
-        ],
-        "presets": [
-            {
-                "name": "List Image Slider"
-            }
-        ]
+<div class="list-scroll-img-section">
+  <div class="list-content-img-container">
+    <div class="list-img-container">
+      {% for item in section.blocks %}
+      <div class="list-text-item" data-index="{{ forloop.index }}">
+        <h3>{{ item.settings.title }}</h3>
+        <p>{{ item.settings.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="list-image-container">
+      {% for item in section.blocks %}
+      <div class="image-list-item" data-index="{{ forloop.index }}">
+        <img src="{{ item.settings.image | img_url: '720x' }}" alt="{{ item.settings.title }}">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+.list-scroll-img-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  position: relative;
+  z-index: 1; /* Ensure it stays above other sections */
+  background: white; /* Add a background color to avoid transparency issues */
+  overflow: hidden; /* Prevent content overflow */
 }
-{% endschema %}
+
+.list-content-img-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap; /* Prevent wrapping of content */
+}
+
+.list-img-container {
+  width: 50%;
+  padding: 20px;
+  overflow: auto; /* Allow scrollable content if needed */
+}
+
+.list-image-container {
+  width: 50%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Restrict images to the container */
+}
+
+</style>              
+
+
+{% schema %}
+    {
+      "name": "Scroll Section",
+      "settings": [],
+      "blocks": [
+        {
+          "type": "list",
+          "name": "List Item",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "textarea",
+              "id": "description",
+              "label": "Description"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Scroll Section",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}
+    
