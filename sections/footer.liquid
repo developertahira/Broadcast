@@ -28,6 +28,7 @@
   .footer {
     background-color: #eae6dd;
   }
+
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
@@ -63,109 +64,116 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           {%- endif -%}
           
-          <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-            {% endif %}
+         
+<div
+class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+{% if settings.animations_reveal_on_scroll %}
+  data-cascade
+{% endif %}
+>
+{%- for block in section.blocks -%}
+  <div
+    class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {{ block.shopify_attributes }}
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+      style="--animation-order: {{ forloop.index }};"
+    {% endif %}
+  >
+    {%- if block.settings.heading != blank -%}
+      <h2 class="footer-block__heading inline-richtext">
+        {{- block.settings.heading -}}
+        {% if block.type == 'link_list' %}
+          <span class="icon">+</span>
+        {% endif %}
+      </h2>
+    {%- endif -%}
+
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        {% render block %}
+      {%- when 'text' -%}
+        <div class="footer-block__details-content rte">
+          {{ block.settings.subtext }}
+        </div>
+        <form method="post" action="{{ routes.root_url }}/contact#newsletter" class="styled-form">
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+
+          <input 
+            type="text" 
+            name="contact[firstname]" 
+            placeholder="Name" 
+            class="form-input" 
+            required 
+            aria-label="Name"
           >
-            {%- for block in section.blocks -%}
-              <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
-                {%- endif -%}
 
-                {%- case block.type -%}
-                  {%- when '@app' -%}
-                    {% render block %}
-                  {%- when 'text' -%}
-                    <div class="footer-block__details-content rte">
-                      {{ block.settings.subtext }}
-                    </div>
-                    <form method="post" action="{{ routes.root_url }}/contact#newsletter" class="styled-form">
-                      <input type="hidden" name="form_type" value="customer">
-                      <input type="hidden" name="utf8" value="✓">
+          <input 
+            type="email" 
+            name="contact[email]" 
+            placeholder="Email" 
+            class="form-input" 
+            required 
+            aria-label="Email"
+          > 
 
-                      <input 
-                        type="text" 
-                        name="contact[firstname]" 
-                        placeholder="Name" 
-                        class="form-input" 
-                        required 
-                        aria-label="Name"
-                      >
+          <button type="submit" class="form-button">
+            Join
+          </button>
+        </form>
 
-                      <input 
-                        type="email" 
-                        name="contact[email]" 
-                        placeholder="Email" 
-                        class="form-input" 
-                        required 
-                        aria-label="Email"
-                      > 
-
-                      <button type="submit" class="form-button">
-                        Join
-                      </button>
-                    </form>
-
-                  {%- when 'link_list' -%}
-                    {%- if block.settings.footer_menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled footer-style">
-                        {%- for link in block.settings.footer_menu.links -%}
-                          <li >
-                            <a
-                              href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} custom_styling" 
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    {%- endif -%}
-                  {%- when 'brand_information' -%}
-                    <div class="footer-block__brand-info">
-                      {%- if settings.brand_image != blank -%}
-                        {%- assign brand_image_height = settings.brand_image_width
-                          | divided_by: settings.brand_image.aspect_ratio
-                        -%}
-                        <div
-                          class="footer-block__image-wrapper"
-                          style="max-width: min(100%, {{ settings.brand_image_width }}px);"
-                        >
-                          {{
-                            settings.brand_image
-                            | image_url: width: 1100
-                            | image_tag:
-                              loading: 'lazy',
-                              widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                              height: brand_image_height,
-                              width: settings.brand_image_width
-                          }}
-                        </div>
-                      {%- endif -%}
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
-                      {%- endif -%}
-                      {%- if settings.brand_description != blank -%}
-                        <div class="rte">{{ settings.brand_description }}</div>
-                      {%- endif -%}
-                      {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons', class: 'footer__list-social' -%}
-                      {%- endif -%}
-                    </div>
-                {%- endcase -%}
-              </div>
+      {%- when 'link_list' -%}
+        {%- if block.settings.footer_menu != blank -%}
+          <ul class="footer-block__details-content list-unstyled footer-style">
+            {%- for link in block.settings.footer_menu.links -%}
+              <li>
+                <a
+                  href="{{ link.url }}"
+                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} custom_styling" 
+                >
+                  {{ link.title | escape }}
+                </a>
+              </li>
             {%- endfor -%}
-          </div>
+          </ul>
+        {%- endif -%}
+      {%- when 'brand_information' -%}
+        <div class="footer-block__brand-info">
+          {%- if settings.brand_image != blank -%}
+            {%- assign brand_image_height = settings.brand_image_width
+              | divided_by: settings.brand_image.aspect_ratio
+            -%}
+            <div
+              class="footer-block__image-wrapper"
+              style="max-width: min(100%, {{ settings.brand_image_width }}px);"
+            >
+              {{
+                settings.brand_image
+                | image_url: width: 1100
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
+                  height: brand_image_height,
+                  width: settings.brand_image_width
+              }}
+            </div>
+          {%- endif -%}
+          {%- if settings.brand_headline != blank -%}
+            <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
+          {%- endif -%}
+          {%- if settings.brand_description != blank -%}
+            <div class="rte">{{ settings.brand_description }}</div>
+          {%- endif -%}
+          {%- if block.settings.show_social and has_social_icons -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
+          {%- endif -%}
+        </div>
+    {%- endcase -%}
+  </div>
+{%- endfor -%}
+</div>
+
         {%- endif -%}
 
 {% for block in section.blocks %}
@@ -333,17 +341,7 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="currency-selector">
-      <form method="get" action="/currency" id="currency-selector-form">
-        <select name="currency" id="currency-selector">
-          {% for currency in shop.enabled_currencies %}
-            <option value="{{ currency }}" {% if currency == shop.currency %}selected{% endif %}>
-              {{ currency | upcase }}
-            </option>
-          {% endfor %}
-        </select>
-      </form>
-    </div>
+
     
   </div>
 </footer>
@@ -353,7 +351,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px; /* Space between input fields and button */
-  max-width: 300px; /* Limit form width for cleaner design */
+
 }
 
 .styled-form .form-input {
@@ -402,6 +400,19 @@ a.link.link--text.list-menu__item.list-menu__item--link.custom_styling {
     color: black !important;
 }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBlocks = document.querySelectorAll('.footer-block--menu');
+    menuBlocks.forEach(block => {
+      const heading = block.querySelector('.footer-block__heading');
+      if (heading) {
+        heading.addEventListener('click', () => {
+          block.classList.toggle('faq-open');
+        });
+      }
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Footer",

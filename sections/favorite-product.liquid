@@ -1,4 +1,4 @@
-<div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 400px;">
+<div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 60vh;">
   <div class="inner-fp-container">
     <div class="fb-content">
       <h2 class="fp-head">{{ section.settings.fp_heading }}</h2>
@@ -59,7 +59,8 @@
 .fb-content {
   width: 50%;
   color: white;
-  padding: 50px;
+  padding: 100px 50px 50px 50px;
+
   
 }
 
@@ -97,10 +98,11 @@
 
 
 .fp-product-card {
-  padding: 20px;
+  padding: 100px 20px 20px 20px;
   border-radius: 8px;
-  max-width: 545px;
+
   display: flex;
+  
 
 }
 
@@ -111,7 +113,7 @@
 
 .product-fp-image img {
   width: 100%;
-  border-radius: 5px;
+  height: 95%;
 
 }
 
@@ -148,7 +150,24 @@
   font-size: 0.9rem;
   color: #555;
 }
-
+@media (max-width: 990px) {
+  .favourit-product-main-container {
+    height: 85vh !important;
+}
+  .inner-fp-container {
+    display: block; 
+  }
+  .fp-product-card {
+    padding: 0px;
+    margin: 0px;
+  }
+  .product-fp-image img {
+    height: 96%;
+  }
+  .fb-content {
+    width: 100%;
+  }
+}
   
 </style>
 {% schema %}
