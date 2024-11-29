@@ -525,9 +525,7 @@ span.icon {
   .footer__blocks-wrapper {
     grid-template-columns: 1fr;
   }
-  span.icon {
-    display: block;
-  }
+
   .footer-block--menu ul {
     display: none;
     padding: 0;
@@ -549,4 +547,8 @@ span.icon {
     gap: 25px;
     max-width: 635px;
   }
+}
+.footer__blocks-wrapper {
+  padding-top: 75px;
+  padding-bottom: 65px;
 }

@@ -13,59 +13,15 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "brand_information_EUgX7w": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": true
-          }
-        },
-        "link_list_LLTc6V": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Customer Care",
-            "footer_menu": "customer-care"
-          }
-        },
-        "link_list_YhWnE6": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Resources",
-            "footer_menu": "resources"
-          }
-        },
-        "text_DiXFda": {
-          "type": "text",
-          "settings": {
-            "heading": "Stay in Touch",
-            "subtext": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
-          }
-        },
-        "image_KKKMG6": {
-          "type": "image",
-          "settings": {
-            "image1": "shopify://shop_images/broadcast-script-removebg-preview.png",
-            "image_width": 100,
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "brand_information_EUgX7w",
-        "link_list_LLTc6V",
-        "link_list_YhWnE6",
-        "text_DiXFda",
-        "image_KKKMG6"
-      ],
       "settings": {
         "color_scheme": "scheme-1",
-        "newsletter_enable": false,
+        "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": false,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": false,
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
         "padding_top": 36,
