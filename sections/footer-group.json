@@ -13,6 +13,49 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_EN8hiT": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_HFtz3q": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "footer_menu": "footer"
+          }
+        },
+        "link_list_T8AYQe": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "footer_menu": "footer"
+          }
+        },
+        "text_LE9cAK": {
+          "type": "text",
+          "settings": {
+            "heading": "Heading",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+          }
+        },
+        "image_WQmQGV": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_EN8hiT",
+        "link_list_HFtz3q",
+        "link_list_T8AYQe",
+        "text_LE9cAK",
+        "image_WQmQGV"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
