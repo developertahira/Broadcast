@@ -23,15 +23,15 @@
         "link_list_LLTc6V": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "footer_menu": "footer"
+            "heading": "Customer Care",
+            "footer_menu": "customer-care"
           }
         },
         "link_list_YhWnE6": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "footer_menu": "footer"
+            "heading": "Resources",
+            "footer_menu": "resources"
           }
         },
         "text_DiXFda": {
