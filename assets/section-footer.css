@@ -552,9 +552,13 @@ span.icon {
   padding-top: 75px;
   padding-bottom: 30px;
 }
-@media (max-width: 740) {
+.footer-block--mene:nth-child(2) {
+  border-bottom: none;
+}
+@media (max-width: 740px) {
   .footer__blocks-wrapper {
     padding-top: 40px;
     padding-bottom: 0px;
+
   }
 }
