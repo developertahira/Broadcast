@@ -24,13 +24,14 @@
   {% endif %}
 
   {% if section.settings.color-transparent and template == 'index' %}
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 940px) {
     .list-menu__item, details[open]>.header__submenu {
   color: {{ section.settings.color-transparent }} !important;
       background: transparent;
     }
   
 }
+
   .header__icon.link,.header__active-menu-item,.disclosure__button,.header__heading-link .h2{
   color: {{ section.settings.color-transparent }} !important;
     }
@@ -50,7 +51,7 @@
   {%- endif -%}
 
   {%- if section.settings.menu_type_desktop != "drawer" -%}
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 890px) {
       header-drawer {
         display: none;
       }
@@ -155,7 +156,7 @@
       if section.settings.menu != blank
         render 'header-drawer'
       endif
-
+    
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
@@ -221,6 +222,7 @@
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true
+
                 }}
               </div>
             {%- else -%}
@@ -261,9 +263,12 @@
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+          class="header__icon header__icon--account link focus-inset"
           rel="nofollow"
         >
+        {% comment %}
+          {% if section.settings.menu != blank %} small-hide{% endif %}
+        {% endcomment %}
           {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
               {%- if customer and customer.has_avatar? -%}
@@ -313,7 +318,39 @@
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+<style>
+  @media screen and (max-width: 750px) {
+  /* Style the header icons wrapper */
+  .header__icons {
+    display: flex;               /* Makes the icons align in a row */
+    justify-content: space-evenly; /* Even spacing between icons */
+    align-items: center;         /* Vertically center icons */
+    padding: 10px 0;             /* Add some padding for spacing */
+  }
 
+  /* Adjust individual icon size */
+  .header__icon svg {
+    width: 24px;                 /* Adjust size of the icon */
+    height: 24px;
+  }
+
+  /* Optional: Add specific spacing between icons */
+  .header__icon {
+    margin: 0 5px;               /* Add margins for extra spacing */
+  }
+
+  /* Adjust header wrapper for mobile */
+  .header__wrapper {
+    padding: 0 15px;             /* Add padding inside header */
+  }
+
+  /* Ensure no extra space */
+  .header {
+    text-align: center;          /* Center-align content in header */
+  }
+}
+
+</style>
 
 <script>
     let items = document.querySelector(".header__inline-menu").querySelectorAll("details");

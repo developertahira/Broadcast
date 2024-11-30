@@ -82,14 +82,16 @@ at 770px ViewPoint:
   {% endcomment %} 
 {%- for block in section.blocks -%}
   <div
-    class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {{ block.shopify_attributes }}
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    style="--animation-order: {{ forloop.index }};"
-        
-    {% endif %}
-  >
+class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+{{ block.shopify_attributes }}
+{% if settings.animations_reveal_on_scroll %}
+  data-cascade
+style="--animation-order: {{ forloop.index }};
+{% if forloop.index == 1 %} padding-right: 37px; {% endif %}
+{% if forloop.index == 2 or forloop.index == 3 %} font-size: 1.4rem; font-weight: 200; {% endif %}"
+{% endif %}
+>
+
     {%- if block.settings.heading != blank -%}
       <h2 class="footer-block__heading inline-richtext">
         {{- block.settings.heading -}}
@@ -431,6 +433,10 @@ span.toggle-icon {
   margin: 0px;
 
 }
+.footer-block--menu:nth-child(2)
+{
+  border-bottom: none;
+}
 }
 .footer-block__heading {
   margin-bottom: 1em;
@@ -442,9 +448,13 @@ span.toggle-icon {
  /* margin: .5em 0; */
   font-family: "ITC Novaresa", serif;
     font-weight: 500;
-    font-size: 1.9rem;
+    font-size: 2.29375rem;
     padding-right: 26px;
     padding-right: 26px;
+}
+.rte p {
+  font-size: 1.4rem;
+    margin-right: 5px;
 }
 .footer__blocks-wrapper {
   font-family: "ITC Novaresa", serif;
