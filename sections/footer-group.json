@@ -13,15 +13,58 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_Ujz4fh": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_iLfnwx": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Customer Care",
+            "footer_menu": "customer-care"
+          }
+        },
+        "link_list_PpTcN9": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Resources",
+            "footer_menu": "resources"
+          }
+        },
+        "text_Ednrbj": {
+          "type": "text",
+          "settings": {
+            "heading": "Heading",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+          }
+        },
+        "image_49tEfT": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_Ujz4fh",
+        "link_list_iLfnwx",
+        "link_list_PpTcN9",
+        "text_Ednrbj",
+        "image_49tEfT"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": false,
         "show_social": false,
-        "enable_country_selector": false,
+        "enable_country_selector": true,
         "enable_language_selector": true,
-        "payment_enable": true,
+        "payment_enable": false,
         "show_policy": true,
         "margin_top": 0,
         "padding_top": 36,
