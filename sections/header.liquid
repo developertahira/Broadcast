@@ -154,7 +154,7 @@
  
   {%- liquid
       if section.settings.menu != blank
-        render 'header-drawer'
+        render 'header-drawer' 
       endif
     
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
@@ -853,7 +853,7 @@
       "label": "Overlay Text",
       "default": "Shop the Lookbook"
     }
-  ],
+  ]
 },
 {
   "type": "feautred_menu",
@@ -905,7 +905,6 @@
       }
   ]
 }
-  ],
-
+  ]
 }
 {% endschema %}
