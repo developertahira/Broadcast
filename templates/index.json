@@ -467,10 +467,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "list_with_image_slider_kfJag7": {
-      "type": "list-with-image-slider",
-      "settings": {}
     }
   },
   "order": [
@@ -491,7 +487,6 @@
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "list_with_image_slider_kfJag7"
+    "multicolumn_mNGAyt"
   ]
 }
