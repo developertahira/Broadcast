@@ -75,6 +75,34 @@
   padding: calc(2rem + var(--inputs-border-width));
   background: rgb(var(--color-background));
 }
+button.disclosure__button.localization-form__select.localization-selector.link.link--text.caption-large {
+  background-color: transparent;
+}
+svg.icon.icon-caret {
+  color: black;
+}
+button.disclosure__button.localization-form__select.localization-selector.link.link--text.caption-large span {
+  color: black;
+}
+.footer__localization h2 {
+  display: none;
+}
+@media (min-width: 1439px) {
+  .footer__content-bottom.scroll-trigger.animate--slide-in {
+    display: flex;
+  }
+  .footer__copyright {
+    margin-top: 2.5rem;
+  }
+}
+@media (max-width: 740px) {
+  .disclosure {
+    margin-right: 11px;
+  }
+  .footer__localization {
+    display: block;
+  }
+}
 
 .localization-form__select .icon-caret {
   position: absolute;

@@ -61,6 +61,16 @@
 .collection-container {
   width: 50%;
 }
+@media (min-width: 1500px) {
+  .collection-container {
+    padding: 130px 30px 53px 30px;
+}
+}
+@media (max-width: 1500px) and (min-width:1200px) {
+  .collection-container {
+    padding: 80px 30px 53px 30px;
+}
+}
   @media only screen and (min-width: 990px) and (max-width: 1399px) {
   .shop-featured-products {
     width: 90%;

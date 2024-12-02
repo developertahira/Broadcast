@@ -28,6 +28,7 @@
   .footer {
     background-color: #eae6dd;
   }
+
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
@@ -63,114 +64,133 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           {%- endif -%}
           
-          <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-            {% endif %}
-          >
-            {%- for block in section.blocks -%}
-              <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
-                {%- endif -%}
+         
+<div
+class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+{% if settings.animations_reveal_on_scroll %}
+  data-cascade
+{% endif %}
+>
+{% comment %}
+   style="--animation-order: {{ forloop.index }}; width: {% if forloop.index == 1 %}25%{% elsif forloop.index == 2 %}20%{% elsif forloop.index == 3 %}20%{% else %}30%{% endif %}; 
+       {% if forloop.index == 1 %} padding-right: 37px; {% elsif forloop.index == 4 %} padding-right: 8%; {% elsif forloop.index == 2 %} margin-bottom: 0px; 
+       {% elsif forloop.index == 3 %} margin-top: 0px;{% endif %}"
+at 770px ViewPoint:
+{% elsif forloop.index == 2 %} margin-bottom: 0px; 
+       {% elsif forloop.index == 3 %} margin-top: 0px;
 
-                {%- case block.type -%}
-                  {%- when '@app' -%}
-                    {% render block %}
-                  {%- when 'text' -%}
-                    <div class="footer-block__details-content rte">
-                      {{ block.settings.subtext }}
-                    </div>
-                    <form method="post" action="{{ routes.root_url }}/contact#newsletter" class="styled-form">
-                      <input type="hidden" name="form_type" value="customer">
-                      <input type="hidden" name="utf8" value="✓">
+  {% endcomment %} 
+{%- for block in section.blocks -%}
+  <div
+class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+{{ block.shopify_attributes }}
+{% if settings.animations_reveal_on_scroll %}
+  data-cascade
+style="--animation-order: {{ forloop.index }};
+{% if forloop.index == 1 %} padding-right: 37px; {% endif %}
+{% if forloop.index == 2 or forloop.index == 3 %} font-size: 1.4rem; font-weight: 200; {% endif %}"
+{% endif %}
+>
 
-                      <input 
-                        type="text" 
-                        name="contact[firstname]" 
-                        placeholder="Name" 
-                        class="form-input" 
-                        required 
-                        aria-label="Name"
-                      >
+    {%- if block.settings.heading != blank -%}
+      <h2 class="footer-block__heading inline-richtext">
+        {{- block.settings.heading -}}
+        {% if block.type == 'link_list' %}
+          <span class="icon">+</span>
+        {% endif %}
+      </h2>
+    {%- endif -%}
 
-                      <input 
-                        type="email" 
-                        name="contact[email]" 
-                        placeholder="Email" 
-                        class="form-input" 
-                        required 
-                        aria-label="Email"
-                      > 
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        {% render block %}
+      {%- when 'text' -%}
+        <div class="footer-block__details-content rte">
+          {{ block.settings.subtext }}
+        </div>
+        <form method="post" action="{{ routes.root_url }}/contact#newsletter" class="styled-form">
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
+      
+        <input 
+          type="text" 
+          name="contact[firstname]" 
+          placeholder="Name" 
+          class="form-input" 
+          required 
+          aria-label="Name"
+        >
+      
+        <input 
+          type="email" 
+          name="contact[email]" 
+          placeholder="Email" 
+          class="form-input" 
+          required 
+          aria-label="Email"
+        > 
+      
+        <button type="submit" class="form-button">
+          Join
+        </button>
+      </form>
 
-                      <button type="submit" class="form-button">
-                        Join
-                      </button>
-                    </form>
-
-                  {%- when 'link_list' -%}
-                    {%- if block.settings.footer_menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled footer-style">
-                        {%- for link in block.settings.footer_menu.links -%}
-                          <li >
-                            <a
-                              href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} custom_styling" 
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    {%- endif -%}
-                  {%- when 'brand_information' -%}
-                    <div class="footer-block__brand-info">
-                      {%- if settings.brand_image != blank -%}
-                        {%- assign brand_image_height = settings.brand_image_width
-                          | divided_by: settings.brand_image.aspect_ratio
-                        -%}
-                        <div
-                          class="footer-block__image-wrapper"
-                          style="max-width: min(100%, {{ settings.brand_image_width }}px);"
-                        >
-                          {{
-                            settings.brand_image
-                            | image_url: width: 1100
-                            | image_tag:
-                              loading: 'lazy',
-                              widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                              height: brand_image_height,
-                              width: settings.brand_image_width
-                          }}
-                        </div>
-                      {%- endif -%}
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
-                      {%- endif -%}
-                      {%- if settings.brand_description != blank -%}
-                        <div class="rte">{{ settings.brand_description }}</div>
-                      {%- endif -%}
-                      {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons', class: 'footer__list-social' -%}
-                      {%- endif -%}
-                    </div>
-                {%- endcase -%}
-              </div>
+      {%- when 'link_list' -%}
+        {%- if block.settings.footer_menu != blank -%}
+          <ul class="footer-block__details-content list-unstyled footer-style">
+            {%- for link in block.settings.footer_menu.links -%}
+              <li>
+                <a
+                  href="{{ link.url }}"
+                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} custom_styling" 
+                >
+                  {{ link.title | escape }}
+                </a>
+              </li>
             {%- endfor -%}
-          </div>
+          </ul>
+        {%- endif -%}
+      {%- when 'brand_information' -%}
+        <div class="footer-block__brand-info">
+          {%- if settings.brand_image != blank -%}
+            {%- assign brand_image_height = settings.brand_image_width
+              | divided_by: settings.brand_image.aspect_ratio
+            -%}
+            <div
+              class="footer-block__image-wrapper"
+              style="max-width: min(100%, {{ settings.brand_image_width }}px);"
+            >
+              {{
+                settings.brand_image
+                | image_url: width: 1100
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
+                  height: brand_image_height,
+                  width: settings.brand_image_width
+              }}
+            </div>
+          {%- endif -%}
+          {%- if settings.brand_headline != blank -%}
+            <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
+          {%- endif -%}
+          {%- if settings.brand_description != blank -%}
+            <div class="rte">{{ settings.brand_description }}</div>
+          {%- endif -%}
+          {%- if block.settings.show_social and has_social_icons -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
+          {%- endif -%}
+        </div>
+    {%- endcase -%}
+  </div>
+{%- endfor -%}
+</div>
+
         {%- endif -%}
 
 {% for block in section.blocks %}
   {% if block.settings.image1 %}
-    <img src="{{ block.settings.image1 | img_url: 'large' }}" alt="Block Image" width="100%">
+    <img src="{{ block.settings.image1 | img_url: 'master' }}" alt="Block Image" width="100%" >
   {% endif %}
 {% endfor %}
 
@@ -333,75 +353,162 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="currency-selector">
-      <form method="get" action="/currency" id="currency-selector-form">
-        <select name="currency" id="currency-selector">
-          {% for currency in shop.enabled_currencies %}
-            <option value="{{ currency }}" {% if currency == shop.currency %}selected{% endif %}>
-              {{ currency | upcase }}
-            </option>
-          {% endfor %}
-        </select>
-      </form>
-    </div>
+
     
   </div>
 </footer>
 <style>
   /* Styling for the newsletter form */
-.styled-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Space between input fields and button */
-  max-width: 300px; /* Limit form width for cleaner design */
-}
+  .styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input fields and button */
+  }
 
-.styled-form .form-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  color: #000;
-  border: 0;
-  border-bottom: 1px solid #212121;
-  border-radius: 0; /* Match the flat styling in the example */
-  background-color: transparent;
-}
+  .styled-form .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    border: 0;
+    border-bottom: 1px solid #212121;
+    border-radius: 0; /* Match the flat styling in the example */
+    background-color: transparent;
+  }
 
-.styled-form .form-input::placeholder {
-  color: whitesmoke /* Placeholder text color */
-}
+  .styled-form .form-input::placeholder {
+    color: gray; /* Placeholder text color */
+  }
 
-.styled-form .form-input:focus {
-  outline: none;
-  border-color: #000; /* Change border color on focus */
-}
+  .styled-form .form-input:focus {
+    outline: none; /* Removes the default browser outline */
+    border-bottom: 2px solid #000; /* Optional: Add a custom focus style */
+  }
 
-.styled-form .form-button {
-  background-color: #000; /* Black button background */
-  color: white; /* White text */
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px; /* Slight letter spacing for style */
-  transition: background-color 0.3s ease;
-}
+  .styled-form .form-button {
+    background-color: #000; /* Black button background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Slight letter spacing for style */
+    transition: background-color 0.3s ease;
+  }
 
-.styled-form .form-button:hover {
-  background-color: #333; /* Darker hover effect */
-}
+  .styled-form .form-button:hover {
+    background-color: #333; /* Darker hover effect */
+  }
 
-/* Add a bit of space above the form if needed */
-.styled-form {
-  margin-top: 20px;
-}
-a.link.link--text.list-menu__item.list-menu__item--link.custom_styling {
+  /* Add a bit of space above the form if needed */
+  .styled-form {
+    margin-top: 20px;
+  }
+
+  a.link.link--text.list-menu__item.list-menu__item--link.custom_styling {
     color: black !important;
+  }
+  .styled-form .form-input:focus {
+    outline: none !important;
+    box-shadow: none !important; /* Removes focus shadow */
+    border-bottom: 1px solid #212121; /* Optional: Keeps the border consistent */
 }
+span.toggle-icon {
+    display: none;
+}
+@media (max-width: 750px) {
+  span.toggle-icon {
+    display: block;
+}
+}
+
+@media (max-width: 750px) {
+  .footer-block--menu {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 1.5rem 30px 1.5rem 0;
+  margin: 0px;
+
+}
+.footer-block--menu:nth-child(2)
+{
+  border-bottom: none;
+}
+}
+.footer-block__heading {
+  margin-bottom: 1em;
+  font-weight: 500;
+  font-size: 2.29375rem;
+  font-family: "ITC Novarese", serif;
+}
+.rte {
+ /* margin: .5em 0; */
+  font-family: "ITC Novaresa", serif;
+    font-weight: 500;
+    font-size: 2.29375rem;
+    padding-right: 26px;
+    padding-right: 26px;
+}
+.rte p {
+  font-size: 1.4rem;
+    margin-right: 5px;
+}
+.footer__blocks-wrapper {
+  font-family: "ITC Novaresa", serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+@media (min-width: 1000px) {
+  
+}
+/*
+@media screen and (min-width: 1000px) {
+    .--animation-order  {
+      width: {% if forloop.index == 1 %}25%{% elsif forloop.index == 2 %}20%{% elsif forloop.index == 3 %}20%{% else %}30%{% endif %};
+    }
+    .animation-order-1 {
+      padding-right: 37px;
+    }
+    --animation-order .index-4 {
+      padding-right: 8%;
+    }
+      .animation-order-2 {
+      margin-bottom: 0px;
+      }
+       .animation-order-3 {
+      margin-top: 0px;
+      }
+  } */
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBlocks = document.querySelectorAll('.footer-block--menu');
+  menuBlocks.forEach(block => {
+    const heading = block.querySelector('.footer-block__heading');
+    if (heading) {
+      // Check if a toggle-icon already exists to avoid duplication
+      if (!heading.querySelector('.toggle-icon')) {
+        heading.innerHTML = `${heading.innerHTML} <span class="toggle-icon">+</span>`;
+      }
+
+      heading.addEventListener('click', () => {
+        block.classList.toggle('faq-open');
+
+        // Update the + or - sign based on the dropdown state
+        const toggleIcon = heading.querySelector('.toggle-icon');
+        if (block.classList.contains('faq-open')) {
+          toggleIcon.textContent = '-';
+        } else {
+          toggleIcon.textContent = '+';
+        }
+      });
+    }
+  });
+});
+</script>
 {% schema %}
 {
   "name": "Footer",

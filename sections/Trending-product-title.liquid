@@ -1,22 +1,18 @@
-<div class="Collection-List-Hover-Container" style="background-image: url('{{ section.settings.bg_best_img | img_url: 'master' }}'); height: 300px; width: 100%">
-     <div class="collection-hover-inner-frame-container">
-           {% comment %} 
-            select list of products and display its title only with Superscript value 
-           {% endcomment %}
-           <div class="collection-selector">
+<div class="Collection-List-Hover-Container" style="background-image: url('{{ section.settings.bg_best_img | img_url: 'master' }}'); height: 650px; width: 100%">
+    <div class="collection-hover-inner-frame-container">
+        <div class="collection-selector">
             {% for collection in section.settings.selected_Trending_collections %}
-              <div class="collection-item">
-                <a href="{{ collection.url }}" class="collection-link" data-bg-image="{{ collection.image | img_url: 'master' }};">
-                    <h2>{{ collection.title }}<sup>{{ collection.products_count }}</sup></h2>
-                </a>
-              </div>
+                <div class="collection-item" data-bg-image="{{ collection.image | img_url: 'master' }}">
+                    <h2>{{ collection.title }}</h2>
+                </div>
             {% endfor %}
-          </div>
-     </div>
+        </div>
+    </div>
 </div>
 
 <style>
-   .collection-selector {
+/* Desktop view */
+.collection-selector {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -29,45 +25,99 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    transition: background-image 0.3s ease-in-out; /* Smooth transition */
-    height: 650px !important;
+    transition: background-image 0.3s ease-in-out;
     margin: 80px 0px 50px 0px;
 }
 
-.collection-item a h2 {
+.collection-item h2 {
     transition: color 0.3s ease;
-    color: white; /* Default color */
+    color: white;
     opacity: 0.5;
-    font-size: 9rem;
-    margin-left: 37px;
-
+    font-size: 3rem;
+    text-align: center;
 }
 
-.collection-item a:hover h2 {
-    color: white; /* Hover color */
-    opacity: 3;
+.collection-item:hover h2 {
+    opacity: 1;
 }
 
-.collection-item a {
-    display: inline-block;
-    text-decoration: none;
-}
+/* Mobile view at 790px or below */
+@media (max-width: 790px) {
+    .collection-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+        z-index: 2;
+    }
 
+    .Collection-List-Hover-Container {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .collection-item h2 {
+        font-size: 2rem;
+    }
+
+    .Collection-List-Hover-Container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{ section.settings.bg_best_img | img_url: "master" }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+        transition: background-image 0.3s ease-in-out;
+    }
+}
 </style>
+
 <script>
-    document.querySelectorAll('.collection-item a').forEach(item => {
-    item.addEventListener('mouseenter', function () {
-        var newBgImage = this.getAttribute('data-bg-image');  // Get the featured image URL
-        document.querySelector('.Collection-List-Hover-Container').style.backgroundImage = `url(${newBgImage})`;
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.Collection-List-Hover-Container');
+    const items = document.querySelectorAll('.collection-item');
+
+    // Handle hover effect for desktop
+    items.forEach(item => {
+        const bgImage = item.getAttribute('data-bg-image');
+
+        item.addEventListener('mouseenter', () => {
+            container.style.backgroundImage = `url(${bgImage})`;
+        });
+
+        item.addEventListener('mouseleave', () => {
+            container.style.backgroundImage = `url('{{ section.settings.bg_best_img | img_url: "master" }}')`;
+        });
     });
 
-    item.addEventListener('mouseleave', function () {
-        var defaultBgImage = '{{ section.settings.bg_best_img | img_url: "master" }}';  // Default background image
-        document.querySelector('.Collection-List-Hover-Container').style.backgroundImage = `url(${defaultBgImage})`;
-    });
+    // Handle scrolling and dynamic title highlighting for mobile
+    if (window.innerWidth <= 790) {
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        container.style.backgroundImage = `url(${entry.target.getAttribute('data-bg-image')})`;
+                        entry.target.querySelector('h2').style.color = 'gold'; // Highlight title
+                    } else {
+                        entry.target.querySelector('h2').style.color = 'white'; // Reset title color
+                    }
+                });
+            },
+            { root: null, threshold: 0.5 } // Adjust threshold for triggering
+        );
+
+        items.forEach(item => observer.observe(item));
+    }
 });
-
 </script>
+
 {% schema %}
 {
     "name": "Trending Collection Title",
@@ -75,18 +125,18 @@
         {
             "type": "image_picker",
             "id": "bg_best_img",
-            "label": "Select img"
+            "label": "Default Background Image"
         },
-         {
-      "type": "collection_list",
-      "id": "selected_Trending_collections",
-      "label": "Select Collections"
-    }
-        ],
-        "presets": [
-            {
-                "name": "Trending Collection"
-            }
-        ]
+        {
+            "type": "collection_list",
+            "id": "selected_Trending_collections",
+            "label": "Select Collections"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Trending Collection"
+        }
+    ]
 }
-{% endschema %}"
+{% endschema %}
