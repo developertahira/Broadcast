@@ -284,3 +284,29 @@ if (!customElements.get('cart-note')) {
     }
   );
 }
+
+// Define the updateCartTitle function
+function updateCartTitle() {
+  fetch('/cart.js') // Fetch cart details
+      .then(response => response.json())
+      .then(cart => {
+          const itemCount = cart.item_count; // Get the number of items in the cart
+          const cartTitle = document.getElementById('cart-title');
+
+          // Update the title based on item count
+          if (itemCount > 0) {
+              cartTitle.textContent = `Cart (${itemCount})`;
+          } else {
+              cartTitle.textContent = 'Your Cart';
+          }
+      })
+      .catch(error => console.error('Error fetching cart data:', error));
+}
+
+// Trigger the function after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  updateCartTitle(); // Initial call to set the cart title
+
+  // Listen for custom cart update events
+  document.addEventListener('cart:updated', updateCartTitle);
+});
