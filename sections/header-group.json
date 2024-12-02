@@ -95,8 +95,8 @@
       ],
       "settings": {
         "logo_position": "middle-center",
-        "menu": "customer-care",
-        "menu_type_desktop": "dropdown",
+        "menu": "broadcast",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "none",
         "show_line_separator": false,
         "color_scheme": "scheme-1",
