@@ -471,6 +471,14 @@
     "list_with_image_slider_kfJag7": {
       "type": "list-with-image-slider",
       "blocks": {
+        "list_xHTfid": {
+          "type": "list",
+          "settings": {
+            "title": "Community Oriented",
+            "description": "We partner with various organizations in our areas that support creative endeavours for underrepresented communities and arts & crafts programs for youth and children. We want to help people pursue their creativity!",
+            "image": "shopify://shop_images/DTS_Daniel_Faro_Treasure_001-2-removebg-preview.png"
+          }
+        },
         "list_NnWc6L": {
           "type": "list",
           "settings": {
@@ -486,20 +494,12 @@
             "description": "1% of all of our profits are donated to the ATC foundation to combat deforestation. We do our part by using non-harmful, compostable packaging materials. All of our ingredients are naturally sourced and biodegradable.",
             "image": "shopify://shop_images/DTS_Daniel_Faro_Treasure_036-2-removebg-preview.png"
           }
-        },
-        "list_xHTfid": {
-          "type": "list",
-          "settings": {
-            "title": "Community Oriented",
-            "description": "We partner with various organizations in our areas that support creative endeavours for underrepresented communities and arts & crafts programs for youth and children. We want to help people pursue their creativity!",
-            "image": "shopify://shop_images/DTS_Daniel_Faro_Treasure_001-2-removebg-preview.png"
-          }
         }
       },
       "block_order": [
+        "list_xHTfid",
         "list_NnWc6L",
-        "list_njgtfK",
-        "list_xHTfid"
+        "list_njgtfK"
       ],
       "settings": {}
     }
@@ -521,8 +521,8 @@
     "essentials_collection_pLnGJk",
     "favorite_product_NwJA4B",
     "commitment_content_F3Qkic",
+    "list_with_image_slider_kfJag7",
     "multicolumn_Mm8xic",
-    "multicolumn_mNGAyt",
-    "list_with_image_slider_kfJag7"
+    "multicolumn_mNGAyt"
   ]
 }
