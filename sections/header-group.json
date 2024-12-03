@@ -64,12 +64,13 @@
         "menu_qAeREi": {
           "type": "menu",
           "settings": {
-            "menu1": "",
+            "menu1": "rings",
             "menu1_title": "Rings",
-            "menu2": "",
+            "menu2": "necklaces",
             "menu2_title": "Necklaces",
-            "menu3": "",
+            "menu3": "earrings",
             "menu3_title": "Earrings",
+            "overlay_image": "shopify://shop_images/pexels-jasmin-chew-5411883-removebg-preview.png",
             "overlay_text": "Shop the Lookbook"
           }
         },
