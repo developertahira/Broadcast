@@ -470,6 +470,37 @@
     },
     "list_with_image_slider_kfJag7": {
       "type": "list-with-image-slider",
+      "blocks": {
+        "list_NnWc6L": {
+          "type": "list",
+          "settings": {
+            "title": "Quality & Care",
+            "description": "Most of the jewelry is 14k gold filled, sterling silver, or rose gold filled. The best jewelry is always well-cared for. Knowing the best ways to maintain your jewelry can keep your precious pieces looking great for life.",
+            "image": "shopify://shop_images/DTS_OBJECTS_Daniel_Faro_7375-removebg-preview.png"
+          }
+        },
+        "list_njgtfK": {
+          "type": "list",
+          "settings": {
+            "title": "Giving Back",
+            "description": "1% of all of our profits are donated to the ATC foundation to combat deforestation. We do our part by using non-harmful, compostable packaging materials. All of our ingredients are naturally sourced and biodegradable.",
+            "image": "shopify://shop_images/DTS_Daniel_Faro_Treasure_036-2-removebg-preview.png"
+          }
+        },
+        "list_xHTfid": {
+          "type": "list",
+          "settings": {
+            "title": "Community Oriented",
+            "description": "We partner with various organizations in our areas that support creative endeavours for underrepresented communities and arts & crafts programs for youth and children. We want to help people pursue their creativity!",
+            "image": "shopify://shop_images/DTS_Daniel_Faro_Treasure_001-2-removebg-preview.png"
+          }
+        }
+      },
+      "block_order": [
+        "list_NnWc6L",
+        "list_njgtfK",
+        "list_xHTfid"
+      ],
       "settings": {}
     }
   },
