@@ -68,7 +68,7 @@
                                       aria-current="page"
                                     {% endif %}
                                   >
-                          jknknkn
+                          
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
@@ -128,7 +128,7 @@
                                     </div>
                                   </details>
                                 {%- endif -%}
-                             
+                              </li>
                             {%- endfor -%}
                            
                           </ul>
@@ -337,21 +337,23 @@
     border-top: 1px solid #eee; /* Add a border above the menu */
     border-bottom: 1px solid #eee; /* Add a border below the menu */
     text-align: left; /* Ensure left alignment */
+    list-style: none;
+    line-height: 1.3;
 }
-
+.drawer__footer-policies a
 .Top-header-menu li {
     list-style: none; /* Remove bullet points */
-    margin: 10px 0; /* Add spacing between items */
-    padding: 10px 0; /* Add padding inside each menu item */
+    padding: 4px 0; /* Add padding inside each menu item */
 
 }
 
 .Top-header-menu a {
     text-decoration: none; /* Remove underline from links */
     color: #333; /* Text color */
-    font-size: 16px; /* Adjust font size */
+    font-size: 20px; /* Adjust font size */
     font-weight: 400; /* Normal font weight */
     display: block; /* Ensure the clickable area spans the entire row */
+    padding: 4px;
 }
 
 /* Polices Style*/
@@ -368,6 +370,7 @@
     font-weight: 400; /* Normal font weight */
     display: block; /* Make links take full width */
     padding: 10px 0; /* Add padding for spacing */
+    line-height: 1.3;
 }
 .policies-list li {
   list-style: none;
@@ -380,5 +383,8 @@ a.menu-drawer__account.link.focus-inset.h5.medium-hide.large-up-hide {
 }
 .menu-drawer__localization {
   display: flex;
+}
+ul.policies-list {
+    padding-left: 25px;
 }
 </style>
