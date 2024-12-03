@@ -42,14 +42,11 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
-    },
+    }, 
     "top-header": {
       "type": "head-navigation",
       "settings": {
-        "custom_menu": "",
-        "tiktock_link": "",
-        "insta_link": "",
-        "linked_page": ""
+
       }
     },
     "header": {
@@ -89,15 +86,15 @@
         "feautred_menu_yVf6qt"
       ],
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "menu": "broadcast",
         "menu_type_desktop": "mega",
         "sticky_header_type": "none",
-        "show_line_separator": false,
+        "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": false,
-        "enable_language_selector": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,

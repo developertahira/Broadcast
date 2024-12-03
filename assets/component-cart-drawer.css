@@ -408,3 +408,10 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
     margin-left: 0;
   }
 }
+@media (max-width: 750px) {
+  .footer__column.footer__localization.isolate {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+}
