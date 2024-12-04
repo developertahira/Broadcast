@@ -5,11 +5,13 @@
 </div>
 <div class="Ethical-cards-cont">
    
-    <div class="eth-Timeless">
+    <div class="eth-Timeless brick-block">
+        <div class="bg-image-contain">
         <img src="{{ section.settings.timeless_img| img_url: 'master' }}" alt="TImeless" />
+        </div>
         <div class="eth-overlay">
-            <h1 >{{section.settings.eth_ring_heading}}</h1>
-            <p>{{section.settings.ring_description}}</p>
+            <h1 class="overlay-heading" >{{section.settings.eth_ring_heading}}</h1>
+            <p class="overlay-para">{{section.settings.ring_description}}</p>
             {% if section.settings.button_Text %}
                 <a href="#" class="eth-button">
                   {{ section.settings.button_Text }}
@@ -17,11 +19,13 @@
             {% endif %}
         </div>
     </div>
-    <div class="eth-Ring">
+    <div class="eth-Ring brick-block">
+        <div class="bg-image-contain">
         <img src="{{ section.settings.ring_img| img_url: 'master' }}" alt="Ring" />
+        </div>
         <div class="eth-overlay">
-            <h1 class="jew-heading">{{section.settings.eth_timeless_heading}}</h1>
-            <p>{{section.settings.Timeless_description}}</p>
+            <h1 class="overlay-heading">{{section.settings.eth_timeless_heading}}</h1>
+            <p class="overlay-para">{{section.settings.Timeless_description}}</p>
             {% if section.settings.button_timeless %}
                 <a href="#" class="eth-button">
                   {{ section.settings.button_timeless }}
@@ -31,9 +35,8 @@
         </div>
     </div>
 </div>
-
 <style>
-    .content-contain {
+        .content-contain {
       padding: 50px;
     }
     .content-contain .cont-caption {
@@ -50,86 +53,66 @@
             margin-top: 0px;
         }
     .Ethical-cards-cont {
-        width: 100%;
-        height: 50vh;
-        box-sizing: border-box;
         display: flex;
-        gap: 20px;
-        align-items: stretch;
-        padding: 0px 40px;
-    }
-    .eth-Ring {
-        width: 50%;
-
-    }
-    .eth-Ring img {
-        max-height: 100% ;
         width: 100%;
-        object-fit: cover;
-
+        gap:32px;
+        max-width: none;
+        margin: 0 auto;
+        padding: 0px 50px 82px 50px;
     }
-    .eth-Timeless {
-        width: 50%;
-
-    }
-    .eth-Timeless img {
-        max-height: 100%;
+    .brick-block {
         width: 100%;
-        object-fit: cover;
-
+        position: relative;
     }
-    .eth-Ring, .eth-Timeless {
-    position: relative;
-  }
-  
-  .eth-overlay {
-        position: absolute;
-        top: 0px;
-        left: 0;
+    .bg-image-contain img{
+        width: 100%;
+        height: 450px;
+        display: flex; 
+        align-items: center;
+        object-fit: cover;
+    }
+    .eth-overlay {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        color: #fff;
- /*       margin: 80px;
-        margin-top: 200px; */
-        margin-left: 20px;
-        margin-top: 30px;
-
-    }
-    .eth-overlay h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        font-weight: 600;
+        padding: 50px;
+        overflow-wrap: break-word;
         color: white;
+        position: absolute;
+        bottom: 0;
     }
-    .eth-overlay p {
-        font-size: 16px;
-        margin-bottom: 20px;
+    .overlay-heading, .overlay-para {
+        margin-top: 0px;
+        margin-bottom: 1px;
+    }
+        a.eth-button {
         color: white;
-    }
-    .eth-button {
-        padding: 10px 20px;
-        border: 2px solid #fff;
-        color: #fff;
         text-decoration: none;
-        font-size: 14px;
-        margin: ;
+        border: 1px solid white;
+        width: 100px;
+   }
+
+    @media (min-width: 750px) {
+        .Ethical-cards-cont {
+            flex-wrap: nowrap;
+        }
+        .brick-block {
+          flex: 1 1 50%;
+        }
     }
-@media (max-width: 1450px) and (min-width: 930px) {
-    .eth-overlay {
-        margin-top: 100px;
-        margin-bottom: 30px;1
+    @media (max-width: 749px) {
+    .Ethical-cards-cont {
+        display: flex; /* Maintain flex layout */
+        flex-direction: column; /* Stack containers vertically */
+        width: 100%; /* Ensure full width */
+        gap: 32px; /* Maintain gap between items */
     }
-} 
-  @media (max-width: 960px) and (min-width: 800px) {
-    .eth-Timeless img, .eth-Ring img {
-      
+
+    .brick-block {
+        width: 100%; /* Each container takes full width */
+        flex: 0 0 auto; /* Prevent shrinking or growing */
     }
-  }
+}
 </style>
-
-
 {% schema %}
 {
     "name": "Ethical Products",
