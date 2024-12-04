@@ -59,6 +59,7 @@
                           </button>
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
+                                                  {% if link.title == "shop " %} kdlsklsl {% endif %}
                               {%- if childlink.links == blank -%}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
@@ -78,7 +79,7 @@
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
 
-                                      {{ childlink.title | escape }} djksalas
+                                      {{ childlink.title | escape }} 
                                       <span class="svg-wrapper">
                                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                                       </span>
