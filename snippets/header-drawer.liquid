@@ -59,7 +59,55 @@
                           </button>
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
-                                                  {% if link.title == "shop " %} kdlsklsl {% endif %}
+                                                  
+                                    {% if link.title == "shop " %}
+                      <!-- custom-menus-image.liquid -->
+                      <div class="custom-menus-image-section">
+                        <div class="menus-container">
+                          {% for block in section.blocks %}
+                            {% if block.type == "menu" %}
+                              <div class="menu">
+                                <h3>{{ block.settings.menu1_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu1].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu2_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu2].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              <div class="menu">
+                                <h3>{{ block.settings.menu3_title }}</h3>
+                                <ul>
+                                  {% for link in linklists[block.settings.menu3].links %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              {% for block in section.blocks %}
+                                {% if block.type == "menu" %}
+                                  <div class="image-overlay">
+                                    <img src="{{ block.settings.overlay_image | img_url: 'master' }}" alt="Overlay Image">
+                                    <div class="overlay-text">{{ block.settings.overlay_text }}</div>
+                                  </div>
+                                {% endif %}
+                              {% endfor %}
+                            {% endif %}
+                          {% endfor %}
+
+                        </div>
+
+                        <div class="image-container">
+                          
+                        </div>
+                      </div>
+                    {% endif %}
                               {%- if childlink.links == blank -%}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
