@@ -1215,7 +1215,12 @@
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
-      }
+      },
+      {
+        "type": "link_list",
+        "id": "drawer_menu",
+        "label": "Drawer Menu"
+    }
     ]
   },
   {
@@ -1825,3 +1830,4 @@
     ]
   }
 ]
+

@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 750px) {
   .footer__content-top .grid {
-    row-gap: 6rem;
+  /*  row-gap: 6rem; */
     margin-bottom: 0;
   }
 }
@@ -287,7 +287,7 @@
 }
 .footer__copyright {
   text-align: left;
-  padding-left: 20px;
+ /* padding-left: 20px; */
   margin-top: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -346,9 +346,7 @@
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link:hover,
   .copyright__content a:hover {
-    color: rgb(var(--color-foreground));
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    color: gray;
   }
 
   .footer-block__details-content .list-menu__item--active:hover {
@@ -568,3 +566,12 @@ span.icon {
   }
 }
 
+/* Policies sytling */
+.policies li:before {
+  display: none;
+}
+small.copyright__content {
+  color: #000000bd;
+  font-size: 16px;
+  padding: 5px;
+}

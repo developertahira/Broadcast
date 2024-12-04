@@ -7,6 +7,7 @@
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    
     <summary
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
@@ -19,15 +20,20 @@
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
+ 
           <nav class="menu-drawer__navigation">
+            
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+              
                 <li>
+              
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                       
                       >
                         {{ link.title | escape }}
                         <span class="svg-wrapper">
@@ -36,12 +42,14 @@
                         <span class="svg-wrapper">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
+                       
                       </summary>
                       <div
                         id="link-{{ link.handle | escape }}"
                         class="menu-drawer__submenu has-submenu gradient motion-reduce"
                         tabindex="-1"
                       >
+                  
                         <div class="menu-drawer__inner-submenu">
                           <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                             <span class="svg-wrapper">
@@ -51,8 +59,7 @@
                           </button>
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
-                              <li>
-                                {%- if childlink.links == blank -%}
+                              {%- if childlink.links == blank -%}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                     href="{{ childlink.url }}"
@@ -61,6 +68,7 @@
                                       aria-current="page"
                                     {% endif %}
                                   >
+                          
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
@@ -69,7 +77,8 @@
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
-                                      {{ childlink.title | escape }}
+
+                                      {{ childlink.title | escape }} djksalas
                                       <span class="svg-wrapper">
                                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                                       </span>
@@ -96,6 +105,7 @@
                                         tabindex="-1"
                                       >
                                         {%- for grandchildlink in childlink.links -%}
+
                                           <li>
                                             <a
                                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -105,16 +115,22 @@
                                                 aria-current="page"
                                               {% endif %}
                                             >
+                                            
                                               {{ grandchildlink.title | escape }}
+
                                             </a>
+                                        
                                           </li>
+                                         
                                         {%- endfor -%}
+                                        
                                       </ul>
                                     </div>
                                   </details>
                                 {%- endif -%}
                               </li>
                             {%- endfor -%}
+                           
                           </ul>
                         </div>
                       </div>
@@ -134,7 +150,27 @@
                 </li>
               {%- endfor -%}
             </ul>
+            <ul class="policies-list">
+              <li>
+                <div class="drawer__footer-policies">
+                  {% for policy in shop.policies %}
+                    <a href="{{ policy.url }}" class="drawer__policy-link">{{ policy.title }}</a>
+                  {% endfor %}
+                </div>
+              </li>
+            </ul>
           </nav>
+
+          <div class="Top-header-menu">
+            {% if settings.drawer_menu %}
+              {% for link in linklists[settings.drawer_menu].links %}
+                  <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+              {% endfor %}
+          {% endif %}
+          </div>
+       
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
@@ -293,3 +329,62 @@
     </div>
   </details>
 </header-drawer>
+<style>
+/* Menu Style */
+.Top-header-menu {
+    padding: 10px 20px;
+    background-color: #fff; /* Background color of the menu */
+    border-top: 1px solid #eee; /* Add a border above the menu */
+    border-bottom: 1px solid #eee; /* Add a border below the menu */
+    text-align: left; /* Ensure left alignment */
+    list-style: none;
+    line-height: 1.3;
+}
+.drawer__footer-policies a
+.Top-header-menu li {
+    list-style: none; /* Remove bullet points */
+    padding: 4px 0; /* Add padding inside each menu item */
+
+}
+
+.Top-header-menu a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    font-size: 20px; /* Adjust font size */
+    font-weight: 400; /* Normal font weight */
+    display: block; /* Ensure the clickable area spans the entire row */
+    padding: 4px;
+}
+
+/* Polices Style*/
+.drawer__footer-policies {
+    padding: 10px 0px;
+    background-color: #fff; /* Same background as the menu */
+    text-align: left; /* Align the content to the left */
+}
+
+.drawer__footer-policies a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    font-size: 16px; /* Match the font size of the menu */
+    font-weight: 400; /* Normal font weight */
+    display: block; /* Make links take full width */
+    padding: 10px 0; /* Add padding for spacing */
+    line-height: 1.3;
+}
+.policies-list li {
+  list-style: none;
+}
+a.menu-drawer__account.link.focus-inset.h5.medium-hide.large-up-hide {
+    display: none;
+}
+.menu-drawer__utility-links {
+  margin-bottom: 100px;
+}
+.menu-drawer__localization {
+  display: flex;
+}
+ul.policies-list {
+    padding-left: 25px;
+}
+</style>

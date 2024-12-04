@@ -291,7 +291,7 @@ style="--animation-order: {{ forloop.index }};
       data-cascade
     {% endif %}
   >
-    <div class="footer__content-bottom-wrapper page-width">
+    <div class="footer__content-bottom-wrapper page-width selectors">
       <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form>
@@ -332,7 +332,7 @@ style="--animation-order: {{ forloop.index }};
         {%- endif -%}
       </div>
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %} polices">
       <div class="footer__copyright caption">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
@@ -367,7 +367,7 @@ style="--animation-order: {{ forloop.index }};
 
   .styled-form .form-input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     font-size: 14px;
     font-family: 'Arial', sans-serif;
     color: #000;
@@ -447,14 +447,16 @@ span.toggle-icon {
 .rte {
  /* margin: .5em 0; */
   font-family: "ITC Novaresa", serif;
-    font-weight: 500;
     font-size: 2.29375rem;
     padding-right: 26px;
     padding-right: 26px;
 }
 .rte p {
   font-size: 1.4rem;
-    margin-right: 5px;
+  margin: .5em 0;
+}
+.footer-block__details-content.rte p {
+  margin: .5em 0;
 }
 .footer__blocks-wrapper {
   font-family: "ITC Novaresa", serif;
@@ -482,6 +484,25 @@ span.toggle-icon {
       margin-top: 0px;
       }
   } */
+   @media (min-width: 1400px) {
+    .footer-block.grid__item.scroll-trigger.animate--slide-in:nth-child(1) {
+    width: 25% !important;
+  }
+  .footer-block--menu:nth-child(2) {
+
+    width: 20%;
+  }
+  .footer-block--menu:nth-child(3) {
+
+    width: 20%;
+  }
+  .footer-block.grid__item.scroll-trigger.animate--slide-in:nth-child(4) {
+
+    width: 30%;
+    padding-right: 166px;
+  }
+   }
+  
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
