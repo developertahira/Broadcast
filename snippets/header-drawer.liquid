@@ -68,27 +68,38 @@
                             {% if block.type == "menu" %}
                               <div class="menu">
                                 <h3>{{ block.settings.menu1_title }}</h3>
+                            {% comment %}
+                              
                                 <ul>
                                   {% for link in linklists[block.settings.menu1].links %}
                                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                                   {% endfor %}
                                 </ul>
+                                    {% endcomment %}  
                               </div>
                               <div class="menu">
                                 <h3>{{ block.settings.menu2_title }}</h3>
+                                {% comment %}
+                                  
+                               
                                 <ul>
                                   {% for link in linklists[block.settings.menu2].links %}
                                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                                   {% endfor %}
                                 </ul>
+                               {% endcomment %}
                               </div>
                               <div class="menu">
                                 <h3>{{ block.settings.menu3_title }}</h3>
+                                {% comment %}
+                                  
+                            
                                 <ul>
                                   {% for link in linklists[block.settings.menu3].links %}
                                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                                   {% endfor %}
                                 </ul>
+                                  {% endcomment %}
                               </div>
                               {% for block in section.blocks %}
                                 {% if block.type == "menu" %}
