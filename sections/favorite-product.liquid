@@ -1,11 +1,15 @@
-<div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 60vh;">
+
+<div class="parent-container">
+<div class="favourit-product-main-container" style="background-image: url('{{ section.settings.fp_bg_img | img_url: 'master' }}'); height: 70vh;">
   <div class="inner-fp-container">
     <div class="fb-content">
       <h2 class="fp-head">{{ section.settings.fp_heading }}</h2>
       <p class="fp-para">{{ section.settings.fp_Discription }}</p>
+      <div class="hero-fp-button-container">
       <a href="{{ section.settings.fp_button_link }}" class="fp-button">
         {{ section.settings.fp_button_text }}
       </a>
+      </div>
     </div>
     <div class="fp-product-container">
       {% if section.settings.fp_selected_product %}
@@ -25,7 +29,7 @@
                   <span class="original-price">{{ product.compare_at_price | money }}</span>
                 {% endif %}
               </div>
-              <p class="product-description">{{ product.description | truncate: 100 }}</p>
+              <p class="product-description" style="margin: 0px;">{{ product.description | truncate: 100 }}</p>
             </div>
           </div>
         {% else %}
@@ -35,14 +39,17 @@
     </div>
   </div>
 </div>
-
+</div>
 <style>
+  p {
+    margin: 0px;
+    font-size: 14px;
+}
   .favourit-product-main-container {
   width: 100%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -50,93 +57,106 @@
 
 .inner-fp-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding-top: 50px;
   height: 100%;
 }
 
 .fb-content {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
   color: white;
-  padding: 100px 50px 50px 50px;
-
-  
+  overflow-wrap: break-word;
 }
 
 .fp-head {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  color: white;
+    font-size: 51px;
+    font-family: "ITC Novarese", serif;
+    line-height: 1.2;
+    letter-spacing: 0.0em;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
 
 .fp-para {
-  font-size: 1rem;
-  margin-bottom: 20px;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.0em;
 }
 
 .fp-button {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 5px;
-  display: inline-block;
-
+    background-color: #FFF;
+    color: black;
+    text-decoration: none;
+    margin-top: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 22px;
+    border: 1px solid #FFF;
+    border-radius: 0px;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 12px;
+    line-height: 1.375;
+    font-weight: 400;
+    letter-spacing: 0.125em;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    transition: .25s ease-out;
+    transition-property: color, background, border;
 }
 
 .fp-button:hover {
-  background-color: #444;
+  border: #f2f2f2;
+  background-color: #f2f2f2;
+  color: #000;
 }
 
 .fp-product-container {
-   padding: 20px;
-
+   width: 50%;
 }
-
-
 .fp-product-card {
-  padding: 100px 20px 20px 20px;
-  border-radius: 8px;
-
   display: flex;
-  
-
 }
 
 .product-fp-image {
   text-align: center;
-  margin-bottom: -10px;
 }
 
 .product-fp-image img {
   width: 100%;
-  height: 95%;
-
+  height: 100%;
+  object-fit: cover;
 }
 
 .fp-product-info {
   text-align: left;
-  padding: 21px;
   background-color: #f5f2ec;
 }
 
 .product-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.f-product-pricing {
-  margin-bottom: 10px;
+  font-size: calc(16px * 1.0);
+  margin-bottom: .5em;
+ /* font-family: "Montserrat", sans-serif; */
+  font-weight: 400;
+  letter-spacing: 0.0em;
 }
 
 .current-price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #000;
+  font-size: calc(14px * 1.0);
+  margin-bottom: .5em;
+   /*  font-family: "Montserrat", sans-serif; */
+  font-weight: 400;
+  letter-spacing: 0.0em;
 }
 
 .original-price {
@@ -151,9 +171,7 @@
   color: #555;
 }
 @media (max-width: 990px) {
-  .favourit-product-main-container {
-    height: 85vh !important;
-}
+
   .inner-fp-container {
     display: block; 
   }
@@ -161,14 +179,87 @@
     padding: 0px;
     margin: 0px;
   }
-  .product-fp-image img {
-    height: 96%;
-  }
   .fb-content {
     width: 100%;
   }
 }
+@media (min-width: 990px) {
+  .fp-product-card {
+    max-width: 500px;
+    margin-left: auto;
+}
+}
+@media (min-width:990px) {
+  .fp-product-info {
+    padding: 24px;
+  }
+}
+@media (min-width: 448px) {
+  .fp-product-info {
+    padding-right: 85px;
+  }
+}
+@media (min-width: 990px) {
+  .fp-product-container {
+    padding: 50px;
+  }
+    }
+@media (max-width: 989px) and (min-width: 615px) {
+  .favourit-product-main-container {
+    height: auto !important;
+  }
+  .fp-product-container {
+    width: 100%;
+    padding-top: 10px;
+  }
+  .fp-product-card {
+    height: 150px;
+  }
+  .fp-product-info {
+    width: 880px;
+    padding: 16px;
+  }
+  .fb-content {
+   padding: 30px 30px 1rem 30px;
+   padding-top: 145px;
+  }
+  .parent-container {
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+  .product-fp-image img {
+    width: auto;
+  }
+}
+@media (max-width: 614px) {
+  .favourit-product-main-container {
+    height: auto !important;
+  }
+  .fp-product-container {
+    width: 100%;
+  }
+  .fp-product-info {
+    width: 500px;
+  }
+  .product-fp-image img {
+    width: auto;
+  }
+  .fp-product-card {
+    height: 150px;
+  }
+  .parent-container {
+    padding-bottom: 120px;
+  }
+  .fb-content {
+    padding: 30px 30px 1rem 30px;
+  }
+}
+@media (max-width: 990px) {
+  .fb-content
+}
+@media (max-width: 1100px) and (min-width: 995px) {
   
+}
 </style>
 {% schema %}
   {
