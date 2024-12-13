@@ -1,6 +1,56 @@
+<div class="marquee">
+  <div class="marquee-content"> 
+    
+    <div class="marquee-item">
+      <img src="https://via.placeholder.com/600/000000/FFFFFF/?text=01" alt="">
+    </div>
+    
+  </div>
+</div>
+
+
+<style>  
+
+.marquee {
+/*   overflow: hidden; */
+}
+
+.marquee-content {
+  display: flex;
+  animation: scrolling 10s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 16vw;
+  margin: 0 1vw;
+/*   flex: 0 0 20vw; */
+/*   margin: 0 2vw; */
+}
+
+.marquee-item img {
+  display: block;
+  width: 100%;
+/*   padding: 0 20px; */
+}
+
+@keyframes scrolling {
+  0% { transform: translateX(0); }
+  100% { transform: translatex(-144vw); }
+}
+
+</style>
+
+
+
+
 {% schema %}
   {
     "name": "Section name",
-    "settings": []
+    "settings": [],
+    "presets": [
+      {
+        "name": "image marquee"
+      }
+    ]
   }
 {% endschema %}
