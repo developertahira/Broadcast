@@ -110,6 +110,45 @@
   color: black;
   text-transform: uppercase;
 }
+@media screen and (max-width: 749px) {
+  .product-img-main-container {
+    flex-direction: column-reverse; /* Make slider come first, product below */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .Featured-Prod-contan-slid {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f5f2ec;
+    z-index: 10;
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+  }
+
+  .img-slider-container {
+    width: 100%;
+    height: calc(100vh - 250px); /* Leave space for fixed product section */
+    padding: 10px;
+  }
+
+  .image-slider {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .Inner-prod-cond {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .Specific-product-item {
+    width: 100%;
+  }
+}
 
 </style>
 <script>
