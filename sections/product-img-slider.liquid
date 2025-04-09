@@ -111,10 +111,14 @@
   text-transform: uppercase;
 }
 /* Maximum 749px screen */
-.Featured-Prod-contan-slid {
-  position: sticky;
-  top: 0;
-}
+  @media(max-width: 749px) {
+    .Featured-Prod-contan-slid {
+      width: 100%;
+      position: sticky;
+      top: 0;
+    }
+  }
+
   
 </style>
 <script>
